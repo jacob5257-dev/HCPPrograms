@@ -5,6 +5,7 @@ public class Generator {
         Scanner myScanner = new Scanner(System.in);
         System.out.print("Enter 1 to validate, 2 to generate: ");
         String optionInput = myScanner.nextLine();
+
         if (Objects.equals(optionInput, "1")) {
             System.out.print("Enter CC#: ");
             String ccInput = myScanner.nextLine();
@@ -21,7 +22,7 @@ public class Generator {
             if (count < 0) System.out.println("Negative number, going with infinity...");
 
             while (count != 0) {
-                String ccNumber = generateVisa();
+                String ccNumber = "4" + generateRandomNumbers(15);
                 if (Main.validate(ccNumber, false)) {
                     System.out.println(ccNumber);
                     count--;
@@ -29,10 +30,6 @@ public class Generator {
             }
         }
         else System.out.println("Invalid option!");
-    }
-
-    public static String generateVisa() {
-        return "4" + generateRandomNumbers(15);
     }
 
     public static String generateRandomNumbers(int numOfNum) {
