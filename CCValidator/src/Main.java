@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-    public static void validate(String ccInput) {
+    public static boolean validate(String ccInput) {
         List<Integer> numsToDouble = new ArrayList<>();
         if (ccInput.length() != 16) throw new RuntimeException("Invalid credit card number!");
         String ccReverse = reverseString(ccInput);
@@ -29,8 +29,14 @@ public class Main {
             sum += integer;
         }
 
-        if (sum % 10 == 0) System.out.println("Good number!");
-        else System.out.println("Bad number!");
+        if (sum % 10 == 0) {
+            System.out.println("Good number!");
+            return true;
+        }
+        else {
+            System.out.println("Bad number!");
+            return false;
+        }
     }
 
     public static String reverseString(String original) {

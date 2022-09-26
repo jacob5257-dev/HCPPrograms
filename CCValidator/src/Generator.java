@@ -1,44 +1,39 @@
-import java.util.Objects;
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 
 public class Generator {
     public static void main(String[] args) {
         Scanner myScanner = new Scanner(System.in);
         System.out.print("Enter 1 to validate, 2 to generate: ");
         String optionInput = myScanner.nextLine();
-        System.out.println(optionInput);
         if (Objects.equals(optionInput, "1")) {
             System.out.print("Enter CC#: ");
             String ccInput = myScanner.nextLine();
             Main.validate(ccInput);
         }
         else if (Objects.equals(optionInput, "2")) {
-
-
-            System.out.println("WIP");
+            while (true) {
+                String ccNumber = generateVisa();
+                if (Main.validate(ccNumber)) {
+                    System.out.println(ccNumber);
+                    break;
+                }
+            }
         }
         else System.out.println("Invalid option!");
     }
 
-    public static String generateMastercard() {
-        //51-55
-
-        return "WIP";
-    }
-
     public static String generateVisa() {
-        return "WIP";
+        return "4" + generateRandomNumbers(15);
     }
 
-    public static int generateRandomNumbers(int numOfNum) {
+    public static String generateRandomNumbers(int numOfNum) {
+        String numbers = "";
         for (int i = 0; i < numOfNum; i++) {
-
+            Random random = new Random();
+            int randomNumber = random.nextInt(10);
+            numbers += String.valueOf(randomNumber);
         }
 
-
-
-
-        return 0;
+        return numbers;
     }
 }
