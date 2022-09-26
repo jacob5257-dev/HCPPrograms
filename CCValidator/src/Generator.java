@@ -8,14 +8,23 @@ public class Generator {
         if (Objects.equals(optionInput, "1")) {
             System.out.print("Enter CC#: ");
             String ccInput = myScanner.nextLine();
-            Main.validate(ccInput);
+            Main.validate(ccInput, true);
         }
         else if (Objects.equals(optionInput, "2")) {
-            while (true) {
+            System.out.print("How many numbers to generate? ");
+            optionInput = myScanner.nextLine();
+            int count = 1;
+
+            try { count = Integer.parseInt(optionInput); }
+            catch (Exception e) { System.out.println("Invalid option, going with 1..."); }
+            if (count == 0) System.out.println("Done!");
+            if (count < 0) System.out.println("Negative number, going with infinity...");
+
+            while (count != 0) {
                 String ccNumber = generateVisa();
-                if (Main.validate(ccNumber)) {
+                if (Main.validate(ccNumber, false)) {
                     System.out.println(ccNumber);
-                    break;
+                    count--;
                 }
             }
         }
