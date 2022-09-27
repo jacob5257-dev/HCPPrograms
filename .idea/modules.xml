@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CCValidator/CCValidator.iml" filepath="$PROJECT_DIR$/CCValidator/CCValidator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CodingBat-Strings1/CodingBat-Strings1.iml" filepath="$PROJECT_DIR$/CodingBat-Strings1/CodingBat-Strings1.iml" />
       <module fileurl="file://$PROJECT_DIR$/Strings/Strings.iml" filepath="$PROJECT_DIR$/Strings/Strings.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/programs.iml" filepath="$PROJECT_DIR$/.idea/programs.iml" />
     </modules>
