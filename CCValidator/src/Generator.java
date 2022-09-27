@@ -1,22 +1,21 @@
+import javax.swing.*;
 import java.util.*;
 
 public class Generator {
     public static void main(String[] args) {
-        Scanner myScanner = new Scanner(System.in);
-        System.out.print("Enter 1 to validate, 2 to generate: ");
-        String optionInput = myScanner.nextLine();
+        Object[] options = {"Validate", "Generate"};
+        int optionInput = createPopup(options);
 
-        if (Objects.equals(optionInput, "1")) {
-            System.out.print("Enter CC#: ");
-            String ccInput = myScanner.nextLine();
-            Main.validate(ccInput, true);
+        if (Objects.equals(optionInput, 0)) {
+            String ccInput = createOption("Enter CC#.");
+            if (Main.validate(ccInput, false)) JOptionPane.showMessageDialog(null, "This is a valid credit card number!");
+            else JOptionPane.showMessageDialog(null, "This is not a valid number!");
         }
-        else if (Objects.equals(optionInput, "2")) {
-            System.out.print("How many numbers to generate? ");
-            optionInput = myScanner.nextLine();
+        else if (Objects.equals(optionInput, 1)) {
+            String optionInput2 = createOption("How many numbers to generate?");
             int count = 1;
 
-            try { count = Integer.parseInt(optionInput); }
+            try { count = Integer.parseInt(optionInput2); }
             catch (Exception e) { System.out.println("Invalid option, going with 1..."); }
             if (count == 0) System.out.println("Done!");
             if (count < 0) System.out.println("Negative number, going with infinity...");
@@ -41,5 +40,18 @@ public class Generator {
         }
 
         return numbers;
+    }
+
+    public static int createPopup(Object[] options1) {
+        JPanel panel = new JPanel();
+        panel.add(new JLabel("What would you like to do?"));
+
+        return JOptionPane.showOptionDialog(null, panel, "Select an option.",
+                JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE,
+                null, options1, null);
+    }
+
+    public static String createOption(String text) {
+        return JOptionPane.showInputDialog(text);
     }
 }
