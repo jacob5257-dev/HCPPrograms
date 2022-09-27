@@ -14,19 +14,30 @@ public class Generator {
         else if (Objects.equals(optionInput, 1)) {
             String optionInput2 = createOption("How many numbers to generate?");
             int count = 1;
+            Object[] options2 = {"Visa", "MasterCard"};
+            int type = createPopup(options2);
 
             try { count = Integer.parseInt(optionInput2); }
             catch (Exception e) { System.out.println("Invalid option, going with 1..."); }
             if (count == 0) System.out.println("Done!");
             if (count < 0) System.out.println("Negative number, going with infinity...");
 
+            String output = "";
+            String ccNumber;
             while (count != 0) {
-                String ccNumber = "4" + generateRandomNumbers(15);
+
+                if (type == 0) ccNumber = "4" + generateRandomNumbers(15);
+                else if (type == 1) ccNumber = "5" + generateMCFirstDigit() + generateRandomNumbers(14);
+                else ccNumber = "0000000000000000";
+
                 if (Main.validate(ccNumber, false)) {
-                    System.out.println(ccNumber);
+                    output += ccNumber;
+                    output += "\n";
                     count--;
                 }
             }
+
+            JOptionPane.showMessageDialog(null, output);
         }
         else System.out.println("Invalid option!");
     }
@@ -40,6 +51,11 @@ public class Generator {
         }
 
         return numbers;
+    }
+
+    public static String generateMCFirstDigit() {
+        Random random = new Random();
+        return String.valueOf(random.nextInt(5) + 1);
     }
 
     public static int createPopup(Object[] options1) {
