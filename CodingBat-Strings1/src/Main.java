@@ -56,9 +56,12 @@ public class Main {
         if (front) return str.substring(0, 1);
         else return str.substring(str.length() - 1, str.length());
     }
-    public String withouEnd2(String str) {
+    public String withoutEnd2(String str) {
         if (str.length() < 2) return "";
         return str.substring(1, str.length() - 1);
+    }
+    public String middleTwo(String str) {
+        return str.substring(str.length() / 2 - 1, str.length() / 2 + 1);
     }
 
 }
