@@ -114,5 +114,20 @@ public class Main {
         if (str.length() < 2) return false;
         return Objects.equals(str.substring(0, 2), str.substring(str.length() - 2));
     }
+    public String minCat(String a, String b) {
+        while (a.length() > b.length()) a = a.substring(1, a.length());
+        while (b.length() > a.length()) b = b.substring(1, b.length());
+        return a + b;
+    }
+    public String extraFront(String str) {
+        if (str.length() < 2) return str + str + str;
+        String substr = str.substring(0, 2);
+        return substr + substr + substr;
+    }
+    public String without2(String str) {
+        if (str.length() < 2) return str;
+        if (Objects.equals(str.substring(0, 2), str.substring(str.length() - 2))) return str.substring(2);
+        else return str;
+    }
 
 }
