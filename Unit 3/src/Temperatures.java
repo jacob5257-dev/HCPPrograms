@@ -21,4 +21,10 @@ public class Temperatures {
         if (low_temp <= 32) System.out.println("Freeze warning!");
         if (high_temp - low_temp > 40) System.out.println("Large temperature swing!");
     }
+
+    public static void getReturnThings(int high_temp, int low_temp) {
+        if (high_temp >= 90) System.out.println("Heat warning!");
+        if (low_temp <= 32) System.out.println("Freeze warning!");
+        if (high_temp - low_temp > 40) System.out.println("Large temperature swing!");
+    }
 }
