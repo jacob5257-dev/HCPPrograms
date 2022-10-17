@@ -3,8 +3,9 @@ import java.util.Scanner;
 public class Grades {
     public static void main(String[] args) {
         Scanner myObj = new Scanner(System.in);
-        System.out.println("Grade: ");
+        System.out.print("Grade: ");
         String user_grade = myObj.nextLine();
+        String letter_grade = "F";
 
         int grade;
         try {
@@ -14,10 +15,11 @@ public class Grades {
             throw new RuntimeException("Invalid grade!");
         }
 
-        if (grade >= 90) System.out.println("Your grade is an A.");
-        if (grade >= 80) System.out.println("Your grade is a B.");
-        if (grade >= 70) System.out.println("Your grade is an C.");
-        if (grade >= 60) System.out.println("Your grade is an D.");
-        else System.out.println("Your grade is an F.");
+        if (grade >= 90) letter_grade = "A";
+        else if (grade >= 80) letter_grade = "B";
+        else if (grade >= 70) letter_grade = "C";
+        else if (grade >= 60) letter_grade = "D";
+
+        System.out.println("Letter grade: " + letter_grade);
     }
 }
