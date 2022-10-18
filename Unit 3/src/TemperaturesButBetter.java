@@ -8,6 +8,15 @@ public class TemperaturesButBetter {
         String url = "https://api.weather.gov/gridpoints/PSR/158,57/forecast";
         String response = getResponse(url);
         System.out.println(response);
+        /*
+        Goal:
+        Get the response from the API in url variable;
+        Parse response from api to json object;
+        And gather the temperature from the json object;
+
+        I've seen some people use the JSONObject from javax.json library, but that doesn't seem to be packaged with the latest version of Java (I think).
+        Some people also use external libraries like GSON or org.json, but I not sure how to add it without creating a package.
+         */
     }
 
     private static String getResponse(String url) {
