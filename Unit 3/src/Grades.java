@@ -9,7 +9,7 @@ public class Grades {
 
         int grade;
         try {
-            grade = Integer.parseInt(user_grade);
+            grade = (int) Double.parseDouble(user_grade);
         }
         catch (Exception e) {
             throw new RuntimeException("Invalid grade!");
