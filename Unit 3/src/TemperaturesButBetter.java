@@ -8,8 +8,8 @@ import java.net.http.HttpResponse;
 import java.util.Objects;
 
 //WARNING: READ BEFORE RUNNING!!!!!!
-//This code requires the org.json dependancy to be available. 
-//To run this program, set up a project with org.json as a dependancy. 
+//This code requires the org.json dependency to be available.
+//To run this program, set up a project with org.json as a dependency.
 //Then, copy/paste this code into the editor of your choice.
 
 public class Main {
