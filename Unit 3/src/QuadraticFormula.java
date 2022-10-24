@@ -21,9 +21,18 @@ public class QuadraticFormula {
         int result = JOptionPane.showConfirmDialog(null, myPanel,
                 "Please enter values.", JOptionPane.OK_CANCEL_OPTION);
         if (result == JOptionPane.OK_OPTION) {
-            double a = Double.parseDouble(aField.getText());
-            double b = Double.parseDouble(bField.getText());
-            double c = Double.parseDouble(cField.getText());
+            double a;
+            double b;
+            double c;
+            try {
+                a = Double.parseDouble(aField.getText());
+                b = Double.parseDouble(bField.getText());
+                c = Double.parseDouble(cField.getText());
+            }
+            catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Invalid input.");
+                return;
+            }
             double sqrt = Math.sqrt(b * b - 4 * a * c);
             double x1 = (-b + sqrt) / (2 * a);
             double x2 = (-b - sqrt) / (2 * a);
