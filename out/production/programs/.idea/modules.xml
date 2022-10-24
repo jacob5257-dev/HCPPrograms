@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/CCValidator/CCValidator.iml" filepath="$PROJECT_DIR$/CCValidator/CCValidator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CodingBat-Strings1/CodingBat-Strings1.iml" filepath="$PROJECT_DIR$/CodingBat-Strings1/CodingBat-Strings1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Scratch/Scratch.iml" filepath="$PROJECT_DIR$/Scratch/Scratch.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Strings/Strings.iml" filepath="$PROJECT_DIR$/Strings/Strings.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Unit 1/Unit 1.iml" filepath="$PROJECT_DIR$/Unit 1/Unit 1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Unit 2/Unit 2.iml" filepath="$PROJECT_DIR$/Unit 2/Unit 2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Unit 3/Unit 3.iml" filepath="$PROJECT_DIR$/Unit 3/Unit 3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Unit 4/Unit 4.iml" filepath="$PROJECT_DIR$/Unit 4/Unit 4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Unit 5/Unit 5.iml" filepath="$PROJECT_DIR$/Unit 5/Unit 5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/programs.iml" filepath="$PROJECT_DIR$/.idea/programs.iml" />
+    </modules>
+  </component>
+</project>

@@ -38,10 +38,18 @@ public class GradesPart2 {
             throw new RuntimeException("Invalid grade!");
         }
 
-        if (grade >= 90) letter_grade = "A";
-        else if (grade >= 80) letter_grade = "B";
-        else if (grade >= 70) letter_grade = "C";
-        else if (grade >= 60) letter_grade = "D";
+        if (grade >= 97) letter_grade = "A+";
+        else if (grade >= 93) letter_grade = "A";
+        else if (grade >= 90) letter_grade = "A-";
+        else if (grade >= 87) letter_grade = "B+";
+        else if (grade >= 83) letter_grade = "B";
+        else if (grade >= 80) letter_grade = "B-";
+        else if (grade >= 77) letter_grade = "C+";
+        else if (grade >= 73) letter_grade = "C";
+        else if (grade >= 70) letter_grade = "C-";
+        else if (grade >= 67) letter_grade = "D+";
+        else if (grade >= 63) letter_grade = "D";
+        else if (grade >= 60) letter_grade = "D-";
 
         System.out.println("Letter grade: " + letter_grade);
     }
