@@ -29,7 +29,7 @@ public class TemperaturesButBetter {
         int result = JOptionPane.showConfirmDialog(null, myPanel, "Enter current location.", JOptionPane.OK_CANCEL_OPTION);
         if (result == JOptionPane.OK_OPTION) {
             try {
-                if (latInput.getText().substring(latInput.getText().length() - 5).equals("debug")) debug = true;
+                if (latInput.getText().endsWith("debug")) debug = true;
                 lat = Double.parseDouble(latInput.getText());
                 lon = Double.parseDouble(lonInput.getText());
             }
