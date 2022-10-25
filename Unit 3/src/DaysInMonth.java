@@ -12,18 +12,9 @@ public class DaysInMonth {
         catch (Exception e) {
             throw new RuntimeException("Invalid month!");
         }
-        int month_even = 0;
-        if (month_number == 2) { month_even = 2; }
-        else if (month_number < 1 || month_number > 12) { System.out.println("Not a month!"); }
-        else {
-            if (month_number % 2 == 0) month_even = 1;
-            else if (month_number % 2 == 1) month_even = 0;
-
-            switch (month_even) {
-                case 0 -> System.out.println("The month has 31 days.");
-                case 1 -> System.out.println("The month has 30 days.");
-                case 2 -> System.out.println("This month has 28 days.");
-            }
-        }
+        if (month_number == 1 || month_number == 3 || month_number == 5 || month_number == 7 || month_number == 8 || month_number == 10 || month_number == 12) System.out.println("31 days");
+        else if (month_number == 4 || month_number == 6 || month_number == 9 || month_number == 11) System.out.println("30 days");
+        else if (month_number == 2) System.out.println("28 days");
+        else throw new RuntimeException("Invalid month!");
     }
 }
