@@ -1,3 +1,4 @@
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Random {
@@ -17,6 +18,10 @@ public class Random {
                 Scanner myObj = new Scanner(System.in);
                 System.out.println("Your guess: ");
                 try {
+                    if (Objects.equals(myObj.nextLine(), "stop")) {
+                        System.out.println("Stopped.");
+                        return;
+                    }
                     guess = Integer.parseInt(myObj.nextLine());
                 } catch (Exception e) {
                     throw new RuntimeException("Invalid input!");
