@@ -5,7 +5,7 @@ import java.util.List;
 public class LuhnChecker {
     public static void main(String[] args) {
         String digitsString = JOptionPane.showInputDialog("Enter digits to check:");
-       JOptionPane.showMessageDialog(null, getCheckDigit(digitsString));
+        JOptionPane.showMessageDialog(null, getCheckDigit(digitsString));
     }
 
     public static int getCheckDigit(String digits) {
@@ -13,7 +13,9 @@ public class LuhnChecker {
         String digitsReverse = Main.reverseString(digits);
         for (int i = 0; i < digitsReverse.length(); i++) {
             //first number = ?
-            int number = Integer.parseInt(String.valueOf(digitsReverse.charAt(i)));
+            int number;
+            try { number = Integer.parseInt(String.valueOf(digitsReverse.charAt(i))); }
+            catch (NumberFormatException e) { return -1; }
             if (i % 2 == 0) {
                 number *= 2;
                 if (number >= 10) {
