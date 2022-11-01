@@ -5,14 +5,13 @@ import java.util.List;
 public class LuhnChecker {
     public static void main(String[] args) {
         String digitsString = JOptionPane.showInputDialog("Enter digits to check:");
-        JOptionPane.showMessageDialog(null, getCheckDigit(digitsString));
+        JOptionPane.showMessageDialog(null, "Next digit is " + getCheckDigit(digitsString) + ".");
     }
 
     public static int getCheckDigit(String digits) {
         List<Integer> finalNums = new ArrayList<>();
         String digitsReverse = Main.reverseString(digits);
         for (int i = 0; i < digitsReverse.length(); i++) {
-            //first number = ?
             int number;
             try { number = Integer.parseInt(String.valueOf(digitsReverse.charAt(i))); }
             catch (NumberFormatException e) { return -1; }

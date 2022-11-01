@@ -5,8 +5,7 @@ import java.util.Scanner;
 public class LoginVerification {
     public static void main(String[] args) {
         Hashtable<String, String> logins = new Hashtable<>();
-        logins.put("a", "a");
-        logins.put("b", "b");
+        logins.put("username", "password");
 
         int attempts = 1;
 
