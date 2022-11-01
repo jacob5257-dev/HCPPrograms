@@ -14,7 +14,7 @@ public class Random {
         while (true) {
             guessed = false;
             tries = 0;
-            random = 1 + (int) (Math.random() * (max - min + 1) + min);
+            random = (int) (Math.random() * (max - min + 1) + min);
             while (!guessed) {
 
                 System.out.print("Your guess: ");
