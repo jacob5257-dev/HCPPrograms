@@ -36,15 +36,11 @@ public class QuadraticFormula {
             double sqrt = Math.sqrt(b * b - 4 * a * c);
             double x1 = (-b + sqrt) / (2 * a);
             double x2 = (-b - sqrt) / (2 * a);
-            if (Double.isNaN(x1) || Double.isNaN(x2)) {
-                JOptionPane.showMessageDialog(null, "No real solutions.");
-            }
-            else if (x1 == x2) {
-                JOptionPane.showMessageDialog(null, "x = " + x1);
-            }
-            else {
-                JOptionPane.showMessageDialog(null, "x1 = " + x1 + ", x2 = " + x2);
-            }
+            String output = "f(x) = " + a + "x^2 + " + b + "x + " + c + " = 0\n";
+            if (Double.isNaN(x1) || Double.isNaN(x2)) output += "No real solutions.";
+            else if (x1 == x2) output += "x = " + x1;
+            else output += "x1 = " + x1 + ", x2 = " + x2;
+            JOptionPane.showMessageDialog(null, output);
         }
         else {
             JOptionPane.showMessageDialog(null, "Cancelled.");
