@@ -11,5 +11,23 @@ public class FizzBuzz {
             }
         }
         System.out.println(answer);
+        withPrintf();
+    }
+
+    public static void withPrintf() {
+        for (int i = 1; i <= 100; i++) {
+            if (i % 15 == 0) {
+                System.out.printf("FizzBuzz ");
+            } else if (i % 5 == 0) {
+                System.out.printf("Buzz ");
+            } else if (i % 3 == 0) {
+                System.out.printf("Fizz ");
+            } else {
+                System.out.printf("%d ", i);
+            }
+            if (i % 10 == 0) {
+                System.out.println();
+            }
+        }
     }
 }
