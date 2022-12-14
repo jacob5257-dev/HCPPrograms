@@ -9,7 +9,7 @@ public class InBetween {
         try {
             System.out.println("First number: ");
             num1 = myObj.nextInt();
-            System.out.println("Second number: ");
+            System.out.println("Second number:+++ ");
             num2 = myObj.nextInt();
         }
         catch (Exception e) {

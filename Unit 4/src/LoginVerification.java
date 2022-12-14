@@ -9,9 +9,7 @@ public class LoginVerification {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to the login verification system!");
         System.out.print("Enter admin password or blank to skip: ");
-        //TEST LOGIN: username, password
         String adminPassword = scanner.nextLine();
-        LoginVerificationManager.addLogin("username", "password");
         if (Objects.equals(adminPassword, "admin")) {
             while (true) {
                 String option = JOptionPane.showInputDialog("Enter option (add, remove, clear, or exit):");
@@ -31,7 +29,6 @@ public class LoginVerification {
                 else JOptionPane.showMessageDialog(null, "Invalid option.");
             }
         }
-
 
         int attempts = 1;
 
