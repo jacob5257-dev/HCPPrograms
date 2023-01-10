@@ -18,7 +18,8 @@ public class UserDefined2DArray {
                 sum += array[i][j];
                 if (array[i][j] % 2 == 0) {
                     even++;
-                } else {
+                }
+                else {
                     odd++;
                 }
             }
