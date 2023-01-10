@@ -15,9 +15,13 @@ public class ArrayUnitTest {
             elements = Integer.parseInt(arrayElements);
         }
         catch (Exception e) {
+            scanner.close();
             throw new RuntimeException("Invalid input provided! Try putting in positive whole numbers for the values above.");
         }
-        if (numbers <= 0 || elements <= 0) throw new RuntimeException("Positive whole numbers please!");
+        if (numbers <= 0 || elements <= 0) {
+            scanner.close();
+            throw new RuntimeException("Positive whole numbers please!");
+        }
         int[] numberOfCalls = new int[elements];
         for (int i = 0; i < elements; i++) {
             numberOfCalls[i] = 0;
@@ -29,5 +33,6 @@ public class ArrayUnitTest {
         for (int i = 0; i < elements; i++) {
             System.out.println(i + " was called " + numberOfCalls[i] + " times (" + (numberOfCalls[i] * 1.0 / numbers * 100.0) + "%).");
         }
+        scanner.close();
     }
 }
