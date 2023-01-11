@@ -1,33 +1,41 @@
 public class PairOfNumbers {
-    public static int sum(int a, int b) {
+    public PairOfNumbers(int a, int b) {
+        this.a = a;
+        this.b = b;
+    }
+    
+    private int a;
+    private int b;
+
+    public int sum() {
         return a + b;
     }
 
-    public static int difference(int a, int b) {
+    public int difference() {
         return a - b;
     }
 
-    public static int product(int a, int b) {
+    public int product() {
         return a * b;
     }
 
-    public static double quotient(int a, int b) {
+    public double quotient() {
         return (double) a / b;
     }
 
-    public static int average(int a, int b) {
-        return (a + b) / 2;
+    public double average() {
+        return (a + b) / 2.0;
     }
 
-    public static int distance(int a, int b) {
+    public int distance() {
         return Math.abs(a - b);
     }
 
-    public static int max(int a, int b) {
+    public int max() {
         return Math.max(a, b);
     }
 
-    public static int min(int a, int b) {
+    public int min() {
         return Math.min(a, b);
     }
 }
