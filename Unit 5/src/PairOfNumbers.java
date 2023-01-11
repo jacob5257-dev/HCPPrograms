@@ -23,8 +23,8 @@ public class PairOfNumbers {
         return (double) a / b;
     }
 
-    public double average() {
-        return (a + b) / 2.0;
+    public int average() {
+        return (a + b) / 2;
     }
 
     public int distance() {
