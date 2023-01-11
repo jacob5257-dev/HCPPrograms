@@ -1,9 +1,17 @@
 public class SodaCan {
-    public static double getSurfaceArea(double radius, double height) {
-        return 2 * Math.PI * radius * height + 2 * Math.PI * Math.pow(radius, 2);
+    public SodaCan(double radius, double height) {
+        this.radius = radius;
+        this.height = height;
     }
 
-    public static double getVolume(double radius, double height) {
-        return Math.PI * Math.pow(radius, 2) * height;
+    private double radius;
+    private double height;
+ 
+    public double getSurfaceArea() {
+        return 2 * Math.PI * this.radius * this.height + 2 * Math.PI * Math.pow(radius, 2);
+    }
+
+    public double getVolume() {
+        return Math.PI * Math.pow(this.radius, 2) * this.height;
     }
 }

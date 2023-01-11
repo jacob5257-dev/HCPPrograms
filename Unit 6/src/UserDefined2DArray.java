@@ -23,7 +23,7 @@ public class UserDefined2DArray {
                     odd++;
                 }
             }
-            System.out.printf("  Sum: %5d", sum);
+            System.out.printf("  Sum: %4d", sum);
             sum = 0;
             System.out.println();
         }
