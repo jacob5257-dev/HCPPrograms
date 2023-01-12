@@ -20,8 +20,7 @@ public class Easter {
             r = (2 * e + 2 * j - k - h + m + 32) % 7,
             n = (h - m + r + 90) / 25,
             p = (h - m + r + n + 19) % 32;
-        switch(n)
-        {
+        switch(n) {
             case 2 -> result = "February ";
             case 3 -> result = "March ";
             case 4 -> result = "April ";
