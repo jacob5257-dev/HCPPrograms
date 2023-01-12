@@ -8,13 +8,13 @@ public class Cashier {
         this.amountGiven = amountGiven;
     }
 
-    private double cost;
-    private double amountGiven;
+    private final double cost;
+    private final double amountGiven;
 
-    private double dollarValue = 1.0;
-    private double quarterValue = 0.25;
-    private double dimeValue = 0.1;
-    private double nickelValue = 0.05;
+    private final double dollarValue = 1.0;
+    private final double quarterValue = 0.25;
+    private final double dimeValue = 0.1;
+    private final double nickelValue = 0.05;
 
     public List<Integer> getChange() {
         List<Integer> change = new ArrayList<>();
