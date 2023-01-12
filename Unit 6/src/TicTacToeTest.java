@@ -25,7 +25,19 @@ public class TicTacToeTest
          int column = Integer.parseInt(input);
          
          game.set(row, column, player);   // make a move
-         
+         char winner = game.playerHasWon();
+         if (winner != ' ')
+         {
+            System.out.println(game);
+            JOptionPane.showMessageDialog(null, winner + " has won");
+            //Ask player if they want to play again
+            int playAgain = JOptionPane.showConfirmDialog(null, "Play again?", "Play again?", JOptionPane.YES_NO_OPTION);
+            if (playAgain == JOptionPane.YES_OPTION) {
+                game = new TicTacToe();
+                player = 'x';
+            } else System.exit(0);
+         }
+
  
          if (player == 'x')               // toggle the player
             player = 'o';
