@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.util.*;
 
+
 public class Generator {
     public static void main(String[] args) {
         Object[] options = {"Validate", "Generate"};
@@ -8,7 +9,8 @@ public class Generator {
 
         if (Objects.equals(optionInput, 0)) {
             String ccInput = createOption("Enter CC#.");
-            if (Main.validate(ccInput, false)) JOptionPane.showMessageDialog(null, "This is a valid credit card number!");
+            CC cc = new CC(ccInput);
+            if (cc.validate(false) == "Good number!") JOptionPane.showMessageDialog(null, "This is a valid credit card number!");
             else JOptionPane.showMessageDialog(null, "This is not a valid number!");
         }
         else if (Objects.equals(optionInput, 1)) {
@@ -29,8 +31,8 @@ public class Generator {
                 if (type == 0) ccNumber = "4" + generateRandomNumbers(15);
                 else if (type == 1) ccNumber = "5" + generateMCFirstDigit() + generateRandomNumbers(14);
                 else ccNumber = "0000000000000000";
-
-                if (Main.validate(ccNumber, false)) {
+                CC cc = new CC(ccNumber);
+                if (cc.validate(false) == "Good number!") {
                     output += ccNumber;
                     output += "\n";
                     count--;

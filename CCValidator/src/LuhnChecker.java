@@ -1,16 +1,16 @@
-import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class LuhnChecker {
-    public static void main(String[] args) {
-        String digitsString = JOptionPane.showInputDialog("Enter digits to check:");
-        JOptionPane.showMessageDialog(null, "Next digit is " + getCheckDigit(digitsString) + ".");
+    String digits;
+
+    public LuhnChecker(String digits) {
+        this.digits = digits;
     }
 
-    public static int getCheckDigit(String digits) {
+    public int getCheckDigit(String digits) {
         List<Integer> finalNums = new ArrayList<>();
-        String digitsReverse = Main.reverseString(digits);
+        String digitsReverse = reverseString(digits);
         for (int i = 0; i < digitsReverse.length(); i++) {
             int number;
             try { number = Integer.parseInt(String.valueOf(digitsReverse.charAt(i))); }
@@ -32,5 +32,19 @@ public class LuhnChecker {
         int checkDigit = 10 - (sum % 10);
         if (checkDigit == 10) checkDigit = 0;
         return checkDigit;
+    }
+
+    private static String reverseString(String original) {
+        String str = "";
+        char ch;
+
+
+        for (int i = 0; i< original.length(); i++)
+        {
+            ch= original.charAt(i);
+            str= ch+str;
+        }
+
+        return str;
     }
 }

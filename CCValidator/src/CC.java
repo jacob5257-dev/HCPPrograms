@@ -1,13 +1,21 @@
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
+import java.util.ArrayList;
 
-public class Main {
-    public static boolean validate(String ccInput, boolean printStuff) {
+public class CC {
+    private String cardNumber;
+
+    public CC(){}
+
+    public CC(String cardNumber) {
+        this.cardNumber = cardNumber;
+    }
+
+    public String validate(boolean printStuff) {
+
         List<Integer> numsToDouble = new ArrayList<>();
-        if (ccInput.length() != 16) throw new RuntimeException("Invalid credit card number!");
-        String ccReverse = reverseString(ccInput);
-        for (int i = 0; i < ccInput.length(); i++) {
+        if (cardNumber.length() != 16) throw new RuntimeException("Invalid credit card number!");
+        String ccReverse = reverseString(cardNumber);
+        for (int i = 0; i < cardNumber.length(); i++) {
             try {
                 int number = Integer.parseInt(String.valueOf(ccReverse.charAt(i)));
                 if (i % 2 != 0) {
@@ -30,16 +38,14 @@ public class Main {
         }
 
         if (sum % 10 == 0) {
-            if (printStuff) System.out.println("Good number!");
-            return true;
+            return "Good number!";
         }
         else {
-            if (printStuff) System.out.println("Bad number!");
-            return false;
+            return "Bad number!";
         }
     }
 
-    public static String reverseString(String original) {
+    private String reverseString(String original) {
         String str = "";
         char ch;
 
