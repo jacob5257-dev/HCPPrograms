@@ -1,10 +1,5 @@
 import java.util.Random;
 
-/*
- * Class Magic8Ball
- * Runs a simulated magic 8 ball with JOptionPane.
- * Magic8Ball.main() = runs program. Shows dialog box until cancel button is clicked.
- */
 public class Magic8Ball {
     public Magic8Ball() {
     }
