@@ -1,17 +1,31 @@
+/**
+ * This program tests the PrimesTable class.
+ * @author jacob5257
+ * @version 1.0
+ * @since 2023-01-18
+ * @see PrimesTable
+ * @see PrimesTableTest
+ */
 public class PrimesTableTest {
+    /**
+     * This method tests the PrimesTable class.
+     * @param args The command line arguments (not used).
+     * @since 2023-01-18
+     * @version 1.0
+     * @author jacob5257
+     * @see PrimesTable
+     * @see PrimesTableTest
+     */
     public static void main(String[] args) {
-        /*
-         * Write a program that prints out the first 100 primes in a 10x10 table.
-         * Use the PrimesTable class to get a list of the first 100 primes and print them in a 10x10 grid.
-         * Use printf to format your output and use a counter to output a newline after every 10 primes.  So you should have 10 rows with 10 primes in every row.
-         * 
-         */
+        // Create a table of primes starting at 1.
         PrimesTable pt = new PrimesTable(1);
         int[] primes = new int[100];
+        // Fill the array with the first 100 primes.
         for (int i = 0; i < primes.length; i++) {
             primes[i] = pt.nextPrime();
         }
         int counter = 0;
+        // Print the array, formatted with printf.
         for (int i = 0; i < primes.length; i++) {
             System.out.printf("%5d", primes[i]);
             counter++;
