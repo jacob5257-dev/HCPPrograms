@@ -6,6 +6,11 @@ import javax.swing.JOptionPane;
  * total number of coins and the value contained in the piggy bank.
  *  
  * @author gfw1
+ * @author jacob5257
+ * @revision 1.1
+ * @revisionDate 20123-01-18
+ * @revisionAuthor jacob5257
+ * @revisionDescription Finished program.
  *
  */
 public class PiggyBankTester 
