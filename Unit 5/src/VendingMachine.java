@@ -3,12 +3,6 @@
  * The price of a can is set when the machine is constructed.
  * The machine keeps track of the number of cans it contains.
  * The machine keeps track of the total amount of money it has received.
- * The machine dispenses a can only if it has been filled and enough money has been inserted.
- * The machine returns change if too much money has been inserted.
- * The machine does not dispense a can if it has not been filled.
- * The machine does not dispense a can if not enough money has been inserted.
- * The machine does not dispense a can if too much money has been inserted.
- * The machine does not dispense a can if it has been filled and enough money has been inserted, but the can has already been dispensed.
  * @author jacob5257
  * @version 1.0
  * @since 2023-01-18
