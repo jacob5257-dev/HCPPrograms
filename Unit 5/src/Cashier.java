@@ -2,14 +2,14 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 
-/*
+/**
  * This class calculates the change given to a customer.
  * @author jacob5257
  * @version 1.0
  * @since 2023-01-18
  */
 public class Cashier {
-    /*
+    /**
      * This method creates a new Cashier object.
      * @param cost The cost of the item.
      * @param amountGiven The amount of money given by the customer.
@@ -33,7 +33,7 @@ public class Cashier {
     private final double dimeValue = 0.1;
     private final double nickelValue = 0.05;
 
-    /*
+    /**
      * This method calculates the change given to the customer.
      * @return A list of the amount of each coin given to the customer.
      * @since 2023-01-18
@@ -75,7 +75,7 @@ public class Cashier {
         change.add((int) (amountOfChange * 100));
         return change;
     }
-    /*
+    /**
      * This method calculates the amount of dollars to be given to the customer.
      * @param totalChange The amount of change to be given to the customer.
      * @return A list of the amount of dollars and the amount of change left to be given to the customer.
@@ -92,7 +92,7 @@ public class Cashier {
         return dollarChange;
     }
 
-    /*
+    /**
      * This method calculates the amount of quarters to be given to the customer.
      *  @param totalChange The amount of change to be given to the customer.
      * @return A list of the amount of quarters and the amount of change left to be given to the customer.
@@ -109,7 +109,7 @@ public class Cashier {
         return dollarChange;
     }
 
-    /*
+    /**
      * This method calculates the amount of dimes to be given to the customer.
      * @param totalChange The amount of change to be given to the customer.
      * @return A list of the amount of dimes and the amount of change left to be given to the customer.
@@ -126,7 +126,7 @@ public class Cashier {
         return dollarChange;
     }
 
-    /*
+    /**
      * This method calculates the amount of nickels to be given to the customer.
      * @param totalChange The amount of change to be given to the customer.
      * @return A list of the amount of nickels and the amount of change left to be given to the customer.
