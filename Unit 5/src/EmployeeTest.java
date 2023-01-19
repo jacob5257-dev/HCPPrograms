@@ -25,6 +25,6 @@ public class EmployeeTest {
         employee.raiseSalary(10);
         System.out.println("Salary of " + employee.getName() + ": " + employee.getFormatSalary());
         employee2.raiseSalary(10);
-        System.out.println("Salary of " + employee.getName() + ": " + employee2.getFormatSalary());
+        System.out.println("Salary of " + employee2.getName() + ": " + employee2.getFormatSalary());
     }
 }
