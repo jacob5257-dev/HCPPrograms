@@ -13,6 +13,7 @@ public class TicTacToeTest
       TicTacToe game = new TicTacToe( );
       while (true)
       {
+         /* 
          System.out.println(game);                     // calls game.toString( )
          
          String input = JOptionPane.showInputDialog("Row for " + player + " (Cancel to exit)");
@@ -23,7 +24,12 @@ public class TicTacToeTest
          
          input = JOptionPane.showInputDialog("Column for " + player);
          int column = Integer.parseInt(input);
-         
+         */
+        // Create a JOptionPane with buttons corresponding to the 3x3 grid. If a player is occupying that cell in the 3x3 grid, the button will be disabled. Allow the user to click on a button to make a move.
+         Object[] options = {"1", "2", "3", "4", "5", "6", "7", "8", "9"};
+         int n = JOptionPane.showOptionDialog(null, "Choose a cell", "Tic Tac Toe", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
+         int row = n / 3;
+         int column = n % 3;
          game.set(row, column, player);   // make a move
          char winner = game.playerHasWon();
          if (winner != ' ')
