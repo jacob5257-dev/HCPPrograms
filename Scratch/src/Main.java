@@ -14,7 +14,7 @@ public class Main {
         JPanel panel = new JPanel( new GridLayout(2, 2) );
         panel.add( new JLabel("First Name") );
         JTextField firstName = new JTextField(10);
-//      firstName.addAncestorListener( new RequestFocusListener(false) );
+      //firstName.addAncestorListener( new RequestFocusListener(false) );
         panel.add( firstName );
         panel.add( new JLabel("Last Name") );
         JTextField lastName = new JTextField(10);
