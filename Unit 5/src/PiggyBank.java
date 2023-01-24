@@ -1,3 +1,5 @@
+import java.util.List;
+
 /**
  * This class contains the methods used to track the number of coins in a "piggy bank" and the 
  * total amount of money/value in the piggy bank.  Total number of coins is the total number of
@@ -117,5 +119,17 @@ public class PiggyBank
 	public String toString()
 	{
 		return "Total coins in the piggy bank = " + numCoins();
+	}
+
+	/**
+	 * This method will add the coins in the list to the piggy bank.
+	 * @param coinList The list containing the number of quarters, dimes, nickels, and pennies (in that order) to add to the piggy bank.
+	 */
+	public void addCoins(List<Integer> coinList) {
+		// The list coinList will be a list of integers.  The integers will be the number of quarters, dimes, nickels, and pennies respectively. Add the coins to the piggy bank.
+		quarters += coinList.get(0);
+		dimes += coinList.get(1);
+		nickels += coinList.get(2);
+		pennies += coinList.get(3);
 	}
 }
