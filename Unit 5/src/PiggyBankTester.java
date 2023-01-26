@@ -13,6 +13,10 @@ import java.util.ArrayList;
  * @revisionDate 20123-01-18
  * @revisionAuthor jacob5257
  * @revisionDescription Finished program.
+ * @revision 2.0
+ * @revisionDate 2023-01-26
+ * @revisionAuthor jacob5257
+ * @revisionDescription Added gui.
  */
 public class PiggyBankTester 
 {
@@ -46,13 +50,12 @@ public class PiggyBankTester
 			int quarters = Integer.parseInt(quarterInput.getText());
 			// Create a piggy bank object by creating an instance of the piggy bank class with user specified input (coins)
 			PiggyBank piggyBank = new PiggyBank(quarters, dimes, nickels, pennies);
-			// Display the total number of each coin, the total number of coins and the total value in the piggy bank.
-			JOptionPane.showMessageDialog(null, "The piggy bank has " + piggyBank.getQuarters() + " quarters, " + piggyBank.getDimes() + " dimes, " + piggyBank.getNickels() + " nickels, and " + piggyBank.getPennies() + " pennies.  The total number of coins is " + piggyBank.numCoins() + " and the total value is $" + piggyBank.totalValue());
 			while (true) {
 				// ask the user if they want to add more coins, and if so, how many of each type.
 				Object[] options = {"Yes", "No"};
                 JPanel panel = new JPanel();
-                panel.add(new JLabel("Do you want to add more coins?"));
+				panel.add(new JLabel("<html>The piggy bank has " + piggyBank.getQuarters() + " quarters, " + piggyBank.getDimes() + " dimes, " + piggyBank.getNickels() + " nickels, and " + piggyBank.getPennies() + " pennies.  The total number of coins is " + piggyBank.numCoins() + " and the total value is $" + piggyBank.totalValue() + ".<br>Do you want to add more coins?</html>"));
+				// Add a newline to the panel
                 int selection = ( JOptionPane.showOptionDialog(null, panel, "Select an option.", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE, null, options, null));
 				if (selection == 0) {
 					// If the user wants to add more coins, ask how many of each type
@@ -76,10 +79,19 @@ public class PiggyBankTester
 						System.exit(0);
 					}
 					// Convert all the strings to integers, throwing an error if the input is not a number
-					int pennies2 = Integer.parseInt(pennyInput2.getText());
-					int nickels2 = Integer.parseInt(nickelInput2.getText());
-					int dimes2 = Integer.parseInt(dimeInput2.getText());
-					int quarters2 = Integer.parseInt(quarterInput2.getText());
+					String pennyString2 = pennyInput2.getText();
+					String nickelString2 = nickelInput2.getText();
+					String dimeString2 = dimeInput2.getText();
+					String quarterString2 = quarterInput2.getText();
+					System.out.println(pennyString2);
+					int pennies2 = 0;
+					int nickels2 = 0;
+					int dimes2 = 0;
+					int quarters2 = 0;
+					if (pennyString2.length() > 0) pennies2 = Integer.parseInt(pennyInput2.getText());
+					if (nickelString2.length() > 0) nickels2 = Integer.parseInt(nickelInput2.getText());
+					if (dimeString2.length() > 0) dimes2 = Integer.parseInt(dimeInput2.getText());
+					if (quarterString2.length() > 0) quarters2 = Integer.parseInt(quarterInput2.getText());
 					// Add the coins to the piggy bank
 					List<Integer> coinList = new ArrayList<Integer>();
 					coinList.add(quarters2);
@@ -88,7 +100,7 @@ public class PiggyBankTester
 					coinList.add(pennies2);
 					piggyBank.addCoins(coinList);
 					// Display the total number of each coin, the total number of coins and the total value in the piggy bank.
-					JOptionPane.showMessageDialog(null, "The piggy bank has " + piggyBank.getQuarters() + " quarters, " + piggyBank.getDimes() + " dimes, " + piggyBank.getNickels() + " nickels, and " + piggyBank.getPennies() + " pennies.  The total number of coins is " + piggyBank.numCoins() + " and the total value is $" + piggyBank.totalValue());
+					JOptionPane.showMessageDialog(null, "");
 				}
 				else {
 					// If the user does not want to add more coins, exit the loop
@@ -97,6 +109,7 @@ public class PiggyBankTester
 			}
 		}
 		catch (NumberFormatException e) {
+			e.printStackTrace();
 			// If the input is not a number, display an error message
 			JOptionPane.showMessageDialog(null, "Error: Input is not a number");
 		}
