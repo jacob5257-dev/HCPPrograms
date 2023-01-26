@@ -10,13 +10,17 @@ import java.util.ArrayList;
  * @author gfw1
  * @author jacob5257
  * @revision 1.1
- * @revisionDate 20123-01-18
+ * @revisionDate 2023-01-18
  * @revisionAuthor jacob5257
  * @revisionDescription Finished program.
  * @revision 2.0
  * @revisionDate 2023-01-26
  * @revisionAuthor jacob5257
  * @revisionDescription Added gui.
+ * @revision 2.1
+ * @revisionDate 2023-01-26
+ * @revisionAuthor jacob5257
+ * @revisionDescription Bugfixing.
  */
 public class PiggyBankTester 
 {
