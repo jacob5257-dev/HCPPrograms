@@ -6,9 +6,16 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch PiggyBankTester",
+            "request": "launch",
+            "mainClass": "PiggyBankTester",
+            "projectName": "HCPPrograms_39c67d8d"
+        },
+        {
+            "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}"
-        },
+        }
     ]
 }

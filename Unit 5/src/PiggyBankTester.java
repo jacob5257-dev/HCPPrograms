@@ -43,19 +43,22 @@ public class PiggyBankTester
 			System.exit(0);
 		}
 		try {
-			// Convert all the strings to integers, throwing an error if the input is not a number
-			int pennies = Integer.parseInt(pennyInput.getText());
-			int nickels = Integer.parseInt(nickelInput.getText());
-			int dimes = Integer.parseInt(dimeInput.getText());
-			int quarters = Integer.parseInt(quarterInput.getText());
+			// Convert all the strings to integers, throwing an error if the input is not a number\
+			int pennies = 0;
+			int nickels = 0;
+			int dimes = 0;
+			int quarters = 0;
+			if (pennyInput.getText().length() > 0) pennies = Integer.parseInt(pennyInput.getText());
+			if (nickelInput.getText().length() > 0) nickels = Integer.parseInt(nickelInput.getText());
+			if (dimeInput.getText().length() > 0) dimes = Integer.parseInt(dimeInput.getText());
+			if (quarterInput.getText().length() > 0) quarters = Integer.parseInt(quarterInput.getText());
 			// Create a piggy bank object by creating an instance of the piggy bank class with user specified input (coins)
 			PiggyBank piggyBank = new PiggyBank(quarters, dimes, nickels, pennies);
 			while (true) {
-				// ask the user if they want to add more coins, and if so, how many of each type.
+				// Ask the user if they want to add more coins, and if so, how many of each type.
 				Object[] options = {"Yes", "No"};
                 JPanel panel = new JPanel();
-				panel.add(new JLabel("<html>The piggy bank has " + piggyBank.getQuarters() + " quarters, " + piggyBank.getDimes() + " dimes, " + piggyBank.getNickels() + " nickels, and " + piggyBank.getPennies() + " pennies.  The total number of coins is " + piggyBank.numCoins() + " and the total value is $" + piggyBank.totalValue() + ".<br>Do you want to add more coins?</html>"));
-				// Add a newline to the panel
+				panel.add(new JLabel("<html>The piggy bank has " + piggyBank.getQuarters() + " quarters, " + piggyBank.getDimes() + " dimes, " + piggyBank.getNickels() + " nickels, and " + piggyBank.getPennies() + " pennies.  The total number of coins is " + piggyBank.numCoins() + " and the total value is " + piggyBank.formattedTotalValue() + ".<br>Do you want to add more coins?</html>"));
                 int selection = ( JOptionPane.showOptionDialog(null, panel, "Select an option.", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE, null, options, null));
 				if (selection == 0) {
 					// If the user wants to add more coins, ask how many of each type
@@ -83,7 +86,6 @@ public class PiggyBankTester
 					String nickelString2 = nickelInput2.getText();
 					String dimeString2 = dimeInput2.getText();
 					String quarterString2 = quarterInput2.getText();
-					System.out.println(pennyString2);
 					int pennies2 = 0;
 					int nickels2 = 0;
 					int dimes2 = 0;
@@ -99,8 +101,6 @@ public class PiggyBankTester
 					coinList.add(nickels2);
 					coinList.add(pennies2);
 					piggyBank.addCoins(coinList);
-					// Display the total number of each coin, the total number of coins and the total value in the piggy bank.
-					JOptionPane.showMessageDialog(null, "");
 				}
 				else {
 					// If the user does not want to add more coins, exit the loop

@@ -74,11 +74,13 @@ public class PiggyBank
 	 */
 	public double totalValue()
 	{
-		double rawValue = (pennies * PENNY_VALUE) + (nickels * NICKEL_VALUE) + (dimes * DIME_VALUE) + (quarters * QUARTER_VALUE);
-		String balance = String.format("%.2f", rawValue);
-        return Double.parseDouble(balance);
+		return (pennies * PENNY_VALUE) + (nickels * NICKEL_VALUE) + (dimes * DIME_VALUE) + (quarters * QUARTER_VALUE);
 	}
 
+	public String formattedTotalValue()
+	{
+		return String.format("$%.2f", totalValue());
+	}
 	/**
 	 * Get the number of quarters in the piggy bank
 	 * @return The number of quarters in the piggy bank
