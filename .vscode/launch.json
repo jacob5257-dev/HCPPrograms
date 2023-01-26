@@ -6,6 +6,41 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch EasterTest",
+            "request": "launch",
+            "mainClass": "EasterTest",
+            "projectName": "HCPPrograms_39c67d8d"
+        },
+        {
+            "type": "java",
+            "name": "Launch PrimeFactorizationTest",
+            "request": "launch",
+            "mainClass": "PrimeFactorizationTest",
+            "projectName": "HCPPrograms_39c67d8d"
+        },
+        {
+            "type": "java",
+            "name": "Launch VendingMachineTest",
+            "request": "launch",
+            "mainClass": "VendingMachineTest",
+            "projectName": "HCPPrograms_39c67d8d"
+        },
+        {
+            "type": "java",
+            "name": "Launch SodaCanTest",
+            "request": "launch",
+            "mainClass": "SodaCanTest",
+            "projectName": "HCPPrograms_39c67d8d"
+        },
+        {
+            "type": "java",
+            "name": "Launch BankAccountTest",
+            "request": "launch",
+            "mainClass": "BankAccountTest",
+            "projectName": "HCPPrograms_39c67d8d"
+        },
+        {
+            "type": "java",
             "name": "Launch PiggyBankTester",
             "request": "launch",
             "mainClass": "PiggyBankTester",

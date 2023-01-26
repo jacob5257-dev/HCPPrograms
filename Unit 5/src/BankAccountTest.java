@@ -42,9 +42,7 @@ public class BankAccountTest {
                     JPanel panel = new JPanel();
                     String balance = String.format("%.2f", account.getBalance());
                     double formattedBal = Double.parseDouble(balance);
-                    panel.add(new JLabel("Welcome " + account.getName() + "! You have $" + formattedBal + " in your account.\n"));
-                    panel.add(new JLabel("What would you like to do?\n"));
-                    panel.add(new JLabel("Amount:"));
+                    panel.add(new JLabel("<html>Welcome " + account.getName() + "!<br>You have $" + formattedBal + " in your account.<br>What would you like to do?<br>Amount:</html>"));
                     JTextField input = new JTextField(5);
                     panel.add(input);
                     int selection = ( JOptionPane.showOptionDialog(null, panel, "Select an option.",
