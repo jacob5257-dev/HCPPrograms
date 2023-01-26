@@ -55,13 +55,11 @@ public class BankAccount {
     /**
      * Withdraws money from the bank account.
      * @param amount The amount to withdraw
-     * @throws IllegalArgumentException if the amount is greater than the balance
      */
     public void withdraw(double amount) {
         balance -= amount;
-        if (amount >= balance) {
+        if (amount > balance) {
             balance -= overdraftFee;
-            throw new IllegalArgumentException("Insufficient funds");
         }
     }
 

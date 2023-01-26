@@ -1,4 +1,4 @@
-import javax.swing.JOptionPane;
+import javax.swing.*;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -13,41 +13,73 @@ import java.util.ArrayList;
  * @revisionDate 20123-01-18
  * @revisionAuthor jacob5257
  * @revisionDescription Finished program.
- *
  */
 public class PiggyBankTester 
 {
 	public static void main(String[] args) 
 	{
 		// Setup a dialog input and request the number of coins to put in the piggy bank
-		String pennyString = JOptionPane.showInputDialog("Enter the number of pennies ");
-		String nickelString = JOptionPane.showInputDialog("Enter the number of nickels ");
-		String dimeString = JOptionPane.showInputDialog("Enter the number of dimes ");
-		String quarterString = JOptionPane.showInputDialog("Enter the number of quarters ");
+		JTextField quarterInput = new JTextField(5);
+        JTextField dimeInput = new JTextField(5);
+        JTextField nickelInput = new JTextField(5);
+        JTextField pennyInput = new JTextField(5);
+        // Creates a panel and adds the text fields to it.
+        JPanel myPanel = new JPanel();
+        myPanel.add(new JLabel("Quarters: "));
+        myPanel.add(quarterInput);
+        myPanel.add(new JLabel("Dimes: "));
+        myPanel.add(dimeInput);
+        myPanel.add(new JLabel("Nickels: "));
+        myPanel.add(nickelInput);
+        myPanel.add(new JLabel("Pennies: "));
+        myPanel.add(pennyInput);
+        int result = JOptionPane.showConfirmDialog(null, myPanel, "Piggy bank creation tool.", JOptionPane.OK_CANCEL_OPTION);
+		if (result != JOptionPane.OK_OPTION) {
+			// If the user does not click OK, exit the program
+			System.exit(0);
+		}
 		try {
 			// Convert all the strings to integers, throwing an error if the input is not a number
-			int pennies = Integer.parseInt(pennyString);
-			int nickels = Integer.parseInt(nickelString);
-			int dimes = Integer.parseInt(dimeString);
-			int quarters = Integer.parseInt(quarterString);
+			int pennies = Integer.parseInt(pennyInput.getText());
+			int nickels = Integer.parseInt(nickelInput.getText());
+			int dimes = Integer.parseInt(dimeInput.getText());
+			int quarters = Integer.parseInt(quarterInput.getText());
 			// Create a piggy bank object by creating an instance of the piggy bank class with user specified input (coins)
 			PiggyBank piggyBank = new PiggyBank(quarters, dimes, nickels, pennies);
 			// Display the total number of each coin, the total number of coins and the total value in the piggy bank.
 			JOptionPane.showMessageDialog(null, "The piggy bank has " + piggyBank.getQuarters() + " quarters, " + piggyBank.getDimes() + " dimes, " + piggyBank.getNickels() + " nickels, and " + piggyBank.getPennies() + " pennies.  The total number of coins is " + piggyBank.numCoins() + " and the total value is $" + piggyBank.totalValue());
 			while (true) {
 				// ask the user if they want to add more coins, and if so, how many of each type.
-				String addCoins = JOptionPane.showInputDialog("Would you like to add more coins? (y/n)");
-				if (addCoins.equals("y")) {
+				Object[] options = {"Yes", "No"};
+                JPanel panel = new JPanel();
+                panel.add(new JLabel("Do you want to add more coins?"));
+                int selection = ( JOptionPane.showOptionDialog(null, panel, "Select an option.", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE, null, options, null));
+				if (selection == 0) {
 					// If the user wants to add more coins, ask how many of each type
-					String pennyString2 = JOptionPane.showInputDialog("Enter the number of pennies ");
-					String nickelString2 = JOptionPane.showInputDialog("Enter the number of nickels ");
-					String dimeString2 = JOptionPane.showInputDialog("Enter the number of dimes ");
-					String quarterString2 = JOptionPane.showInputDialog("Enter the number of quarters ");
+					JTextField quarterInput2 = new JTextField(5);
+					JTextField dimeInput2 = new JTextField(5);
+					JTextField nickelInput2 = new JTextField(5);
+					JTextField pennyInput2 = new JTextField(5);
+					// Creates a panel and adds the text fields to it.
+					JPanel myPanel2 = new JPanel();
+					myPanel2.add(new JLabel("Quarters: "));
+					myPanel2.add(quarterInput2);
+					myPanel2.add(new JLabel("Dimes: "));
+					myPanel2.add(dimeInput2);
+					myPanel2.add(new JLabel("Nickels: "));
+					myPanel2.add(nickelInput2);
+					myPanel2.add(new JLabel("Pennies: "));
+					myPanel2.add(pennyInput2);
+					int result2 = JOptionPane.showConfirmDialog(null, myPanel2, "Piggy bank addition tool.", JOptionPane.OK_CANCEL_OPTION);
+					if (result2 != JOptionPane.OK_OPTION) {
+						// If the user does not click OK, exit the program
+						System.exit(0);
+					}
 					// Convert all the strings to integers, throwing an error if the input is not a number
-					int pennies2 = Integer.parseInt(pennyString2);
-					int nickels2 = Integer.parseInt(nickelString2);
-					int dimes2 = Integer.parseInt(dimeString2);
-					int quarters2 = Integer.parseInt(quarterString2);
+					int pennies2 = Integer.parseInt(pennyInput2.getText());
+					int nickels2 = Integer.parseInt(nickelInput2.getText());
+					int dimes2 = Integer.parseInt(dimeInput2.getText());
+					int quarters2 = Integer.parseInt(quarterInput2.getText());
 					// Add the coins to the piggy bank
 					List<Integer> coinList = new ArrayList<Integer>();
 					coinList.add(quarters2);
