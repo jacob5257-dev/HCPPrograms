@@ -6,6 +6,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch UserDefined2DArray",
+            "request": "launch",
+            "mainClass": "UserDefined2DArray",
+            "projectName": "HCPPrograms_39c67d8d"
+        },
+        {
+            "type": "java",
+            "name": "Launch DieRollTest",
+            "request": "launch",
+            "mainClass": "DieRollTest",
+            "projectName": "HCPPrograms_39c67d8d"
+        },
+        {
+            "type": "java",
+            "name": "Launch CardTest",
+            "request": "launch",
+            "mainClass": "CardTest",
+            "projectName": "HCPPrograms_39c67d8d"
+        },
+        {
+            "type": "java",
+            "name": "Launch PairOfNumbersTest",
+            "request": "launch",
+            "mainClass": "PairOfNumbersTest",
+            "projectName": "HCPPrograms_39c67d8d"
+        },
+        {
+            "type": "java",
             "name": "Launch EasterTest",
             "request": "launch",
             "mainClass": "EasterTest",
