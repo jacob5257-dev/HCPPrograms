@@ -2,13 +2,6 @@ import javax.swing.*;
 
 public class VendingMachineTest {
     public static void main(String[] args) {
-        /*
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter the price of a can: ");
-        double price = scanner.nextDouble();
-        VendingMachine machine = new VendingMachine(price);
-        machine.fillUp(10);
-        */
         JTextField priceInput = new JTextField(5);
         JTextField canInput = new JTextField(5);
         // Creates a panel and adds the text fields to it.
