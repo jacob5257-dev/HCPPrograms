@@ -1,6 +1,7 @@
-# If you want to contribute...
+# If you want to contribute
 
 Then make sure your code follows these guidelines:
+
 1. It works and meets all targets.
 2. It is shorter or faster than the current answer.
 3. It follows the code of conduct.

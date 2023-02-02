@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch RoachPopulationTest",
+            "request": "launch",
+            "mainClass": "RoachPopulationTest",
+            "projectName": "HCPPrograms_39c67d8d"
+        },
+        {
+            "type": "java",
             "name": "Launch UserDefined2DArray",
             "request": "launch",
             "mainClass": "UserDefined2DArray",

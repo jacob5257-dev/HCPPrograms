@@ -19,7 +19,7 @@ public class VendingMachineTest {
         double price = 0;
         int numCans = 0;
 		try {
-			// Convert all the strings to integers, throwing an error if the input is not a number\
+			// Convert all the strings to integers, throwing an error if the input is not a number
 			if (priceInput.getText().length() > 0) price = Double.parseDouble(priceInput.getText());
 			if (canInput.getText().length() > 0) numCans = Integer.parseInt(canInput.getText());
         }

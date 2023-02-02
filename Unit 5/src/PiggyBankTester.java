@@ -62,7 +62,7 @@ public class PiggyBankTester
 				// Ask the user if they want to add more coins, and if so, how many of each type.
 				Object[] options = {"Yes", "No"};
                 JPanel panel = new JPanel();
-				panel.add(new JLabel("<html>The piggy bank has " + piggyBank.getQuarters() + " quarters, " + piggyBank.getDimes() + " dimes, " + piggyBank.getNickels() + " nickels, and " + piggyBank.getPennies() + " pennies.  The total number of coins is " + piggyBank.numCoins() + " and the total value is " + piggyBank.formattedTotalValue() + ".<br>Do you want to add more coins?</html>"));
+				panel.add(new JLabel("<html>The piggy bank has " + piggyBank.getQuarters() + " quarters, " + piggyBank.getDimes() + " dimes, " + piggyBank.getNickels() + " nickels, and " + piggyBank.getPennies() + " pennies.<br>The total number of coins is " + piggyBank.numCoins() + " and the total value is " + piggyBank.formattedTotalValue() + ".<br>Do you want to add more coins?</html>"));
                 int selection = ( JOptionPane.showOptionDialog(null, panel, "Select an option.", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE, null, options, null));
 				if (selection == 0) {
 					// If the user wants to add more coins, ask how many of each type

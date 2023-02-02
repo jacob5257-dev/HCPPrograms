@@ -58,15 +58,16 @@ public class BankAccount {
      */
     public void withdraw(double amount) {
         balance -= amount;
-        if (amount > balance) {
+        if (balance < 0.0) {
             balance -= overdraftFee;
         }
     }
 
     /**
      * Adds interest to the bank account.
+     * Prevents people from adding interest to a negative balance.
      */
     public void addInterest() {
-        balance += balance * interestRate / 100;
+        if (balance > 0) balance += balance * interestRate / 100;
     }
 }
