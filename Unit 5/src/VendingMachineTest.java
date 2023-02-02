@@ -41,6 +41,7 @@ public class VendingMachineTest {
         while (true) { 
             JOptionPane optionPane = new JOptionPane("Do you want to buy a soda can?", JOptionPane.QUESTION_MESSAGE, JOptionPane.YES_NO_OPTION);
             JDialog dialog = optionPane.createDialog(null, "Vending Machine");
+            //skipcq: JAVA-W1062
             dialog.setVisible(true);
             int input = (int) optionPane.getValue();
             if (input == JOptionPane.YES_OPTION && machine.getCanCount() > 0) {
@@ -60,6 +61,7 @@ public class VendingMachineTest {
             else {
                 JOptionPane questionPane = new JOptionPane("<html>This machine is out of soda cans.<br>Do you want to refill it?", JOptionPane.QUESTION_MESSAGE, JOptionPane.YES_NO_OPTION);
                 JDialog questionDialog = questionPane.createDialog(null, "Vending Machine");
+                //skipcq: JAVA-W1062
                 questionDialog.setVisible(true);
                 int questionInput = (int) questionPane.getValue();
                 if (questionInput == JOptionPane.YES_OPTION) {
