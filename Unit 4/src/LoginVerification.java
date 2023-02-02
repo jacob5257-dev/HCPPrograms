@@ -46,12 +46,15 @@ public class LoginVerification {
 
             if (Objects.equals(logins.get(username), password)) {
                 System.out.println("Login successful!");
+                myObj.close();
                 break;
             }
             else {
                 System.out.println("Incorrect username or password!");
+                myObj.close();
                 attempts++;
             }
         }
+        scanner.close();
     }
 }

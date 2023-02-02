@@ -13,6 +13,7 @@ public class InBetween {
             num2 = myObj.nextInt();
         }
         catch (Exception e) {
+            myObj.close();
             throw new RuntimeException("Invalid input!");
         }
 
@@ -26,10 +27,11 @@ public class InBetween {
             lowerNumber = num1;
             higherNumber = num2;
         }
-        if (higherNumber - lowerNumber == 1 || higherNumber - lowerNumber == -1 || num1 - num2 == 0) { throw new RuntimeException("Select numbers that have more than one number in between them."); }
+        if (higherNumber - lowerNumber == 1 || higherNumber - lowerNumber == -1 || num1 - num2 == 0) { myObj.close(); throw new RuntimeException("Select numbers that have more than one number in between them."); }
 
         for (int i = lowerNumber; i < higherNumber - 1; i++) {
             System.out.println(i + 1);
         }
+        myObj.close();
     }
 }

@@ -17,5 +17,6 @@ public class CountByAnything {
                 times = 0;
             }
         }
+        myObj.close();
     }
 }

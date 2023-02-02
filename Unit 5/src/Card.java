@@ -1,3 +1,5 @@
+import java.lang.module.ResolutionException;
+
 /**
  * This class represents a playing card. It has a number and a suit.
  * @author jacob5257
@@ -55,6 +57,10 @@ public class Card {
      */
     public String getDescription() {
         // Converts the number and suit into a readable string and returns it.
-        return numbers[numberIndex] + " of " + suits[suitIndex];
+        String response = numbers[numberIndex] + " of " + suits[suitIndex];
+        if (response.equals(null)) {
+            throw new ResolutionException("Invalid card");
+        }
+        else return response;
     }
 }

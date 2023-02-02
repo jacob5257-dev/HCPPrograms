@@ -23,8 +23,8 @@ public class SodaCan {
         this.height = height;
     }
     // Variables of the soda can.
-    private double radius;
-    private double height;
+    private double radius = 1.0;
+    private double height = 1.0;
     /**
      * This method returns the surface area of the soda can.
      * @return The surface area of the soda can.
