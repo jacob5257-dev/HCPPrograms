@@ -1,5 +1,14 @@
 import javax.swing.*;
 
+/**
+ * This class is a test class for the VendingMachine class.
+ * It creates a VendingMachine object and allows the user to interact with it.
+ * It also allows the user to create a VendingMachine object with a custom price and number of cans.
+ * @author jacob5257
+ * @version 1.0
+ * @since 2023-02-02
+ * @see VendingMachine
+ */
 public class VendingMachineTest {
     public static void main(String[] args) {
         JTextField priceInput = new JTextField(5);
@@ -16,7 +25,7 @@ public class VendingMachineTest {
 			System.exit(0);
 		}
         VendingMachine machine;
-        double price = 0;
+        double price = 1.0;
         int numCans = 0;
 		try {
 			// Convert all the strings to integers, throwing an error if the input is not a number
@@ -32,12 +41,7 @@ public class VendingMachineTest {
         while (true) { 
             JOptionPane optionPane = new JOptionPane("Do you want to buy a soda can?", JOptionPane.QUESTION_MESSAGE, JOptionPane.YES_NO_OPTION);
             JDialog dialog = optionPane.createDialog(null, "Vending Machine");
-            SwingUtilities.invokeLater(new Runnable() {
-                @Override
-                public void run() {
-                    dialog.setVisible(true);
-                }
-            });
+            dialog.setVisible(true);
             int input = (int) optionPane.getValue();
             if (input == JOptionPane.YES_OPTION && machine.getCanCount() > 0) {
                 double moneyInserted = 0;
@@ -56,12 +60,7 @@ public class VendingMachineTest {
             else {
                 JOptionPane questionPane = new JOptionPane("<html>This machine is out of soda cans.<br>Do you want to refill it?", JOptionPane.QUESTION_MESSAGE, JOptionPane.YES_NO_OPTION);
                 JDialog questionDialog = questionPane.createDialog(null, "Vending Machine");
-                SwingUtilities.invokeLater(new Runnable() {
-                    @Override
-                    public void run() {
-                        questionDialog.setVisible(true);
-                    }
-                });
+                questionDialog.setVisible(true);
                 int questionInput = (int) questionPane.getValue();
                 if (questionInput == JOptionPane.YES_OPTION) {
                     machine.fillUp(10);
