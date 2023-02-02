@@ -28,6 +28,7 @@ public class CardTest {
             System.exit(0);
         }
         // Prints the description of the card.
+        // skipcq: JAVA-E1083
         System.out.println(card.getDescription());
         scanner.close();
     }
