@@ -1,3 +1,5 @@
+import java.text.DecimalFormat;
+
 /**
  * A bank account has a balance that can be changed by deposits and withdrawals.
  * @author jacob5257
@@ -69,5 +71,10 @@ public class BankAccount {
      */
     public void addInterest() {
         if (balance > 0) balance += balance * interestRate / 100;
+    }
+
+    public String getFormatBalance() {
+        DecimalFormat df = new DecimalFormat("#.00");
+        return df.format(balance);
     }
 }

@@ -30,6 +30,6 @@ public class EasterTest {
         }
         // Create an Easter object and display the date of Easter.
         Easter easter = new Easter(year);
-        JOptionPane.showMessageDialog(null, "Easter is on " + easter.getEasterDate() + ".");
+        JOptionPane.showMessageDialog(null, "Easter is on " + easter.getEasterDate() + ", " + year + ".");
     }
 }
