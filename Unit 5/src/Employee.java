@@ -10,7 +10,7 @@ import java.text.DecimalFormat;
  */
 public class Employee {
     // Instance variables
-    private final String name;
+    private String name;
     private double salary;
 
     /**
@@ -62,5 +62,13 @@ public class Employee {
     public void raiseSalary(double percent) {
         double raise = salary * percent / 100;
         salary += raise;
+    }
+
+    /**
+     * Changes the name of the employee.
+     * @param name the new name of the employee
+     */
+    public void changeName(String name) {
+        this.name = name;
     }
 }
