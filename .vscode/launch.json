@@ -6,6 +6,41 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch FavoritesTest",
+            "request": "launch",
+            "mainClass": "FavoritesTest",
+            "projectName": "HCPPrograms_39c67d8d"
+        },
+        {
+            "type": "java",
+            "name": "Launch Magic8BallTest",
+            "request": "launch",
+            "mainClass": "Magic8BallTest",
+            "projectName": "HCPPrograms_39c67d8d"
+        },
+        {
+            "type": "java",
+            "name": "Launch MultiplicationTable",
+            "request": "launch",
+            "mainClass": "MultiplicationTable",
+            "projectName": "HCPPrograms_39c67d8d"
+        },
+        {
+            "type": "java",
+            "name": "Launch RandomArray",
+            "request": "launch",
+            "mainClass": "RandomArray",
+            "projectName": "HCPPrograms_39c67d8d"
+        },
+        {
+            "type": "java",
+            "name": "Launch Generator",
+            "request": "launch",
+            "mainClass": "Generator",
+            "projectName": "HCPPrograms_39c67d8d"
+        },
+        {
+            "type": "java",
             "name": "Launch EmployeeTest",
             "request": "launch",
             "mainClass": "EmployeeTest",
