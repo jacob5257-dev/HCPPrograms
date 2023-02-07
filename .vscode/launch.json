@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch CannonballTest",
+            "request": "launch",
+            "mainClass": "CannonballTest",
+            "projectName": "HCPPrograms_39c67d8d"
+        },
+        {
+            "type": "java",
             "name": "Launch QuadraticTest",
             "request": "launch",
             "mainClass": "QuadraticTest",
