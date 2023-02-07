@@ -1,4 +1,5 @@
 public class Cannonball {
+    // Warning! May not work!
     private double v; // v = velocity of the cannonball
     private double s = 0; // s = position of the cannonball
     private double g = 9.81; // g = acceleration due to gravity
