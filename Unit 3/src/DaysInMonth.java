@@ -10,11 +10,16 @@ public class DaysInMonth {
             month_number = Integer.parseInt(month);
         }
         catch (Exception e) {
+            myObj.close();
             throw new RuntimeException("Invalid month!");
         }
         if (month_number == 1 || month_number == 3 || month_number == 5 || month_number == 7 || month_number == 8 || month_number == 10 || month_number == 12) System.out.println("31 days");
         else if (month_number == 4 || month_number == 6 || month_number == 9 || month_number == 11) System.out.println("30 days");
         else if (month_number == 2) System.out.println("28 days");
-        else throw new RuntimeException("Invalid month!");
+        else {
+            myObj.close();
+            throw new RuntimeException("Invalid month!");
+        }
+        myObj.close();
     }
 }

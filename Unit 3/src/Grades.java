@@ -12,6 +12,7 @@ public class Grades {
             grade = (int) Double.parseDouble(user_grade);
         }
         catch (Exception e) {
+            myObj.close();
             throw new RuntimeException("Invalid grade!");
         }
 
@@ -21,5 +22,7 @@ public class Grades {
         else if (grade >= 60) letter_grade = "D";
 
         System.out.println("Letter grade: " + letter_grade);
+        myObj.close();
+
     }
 }

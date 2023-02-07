@@ -35,6 +35,7 @@ public class GradesPart2 {
             System.out.println("Grade rounded to " + grade);
         }
         catch (Exception e) {
+            input.close();
             throw new RuntimeException("Invalid grade!");
         }
 
@@ -50,7 +51,7 @@ public class GradesPart2 {
         else if (grade >= 67) letter_grade = "D+";
         else if (grade >= 63) letter_grade = "D";
         else if (grade >= 60) letter_grade = "D-";
-
+        input.close();
         System.out.println("Letter grade: " + letter_grade);
     }
 }

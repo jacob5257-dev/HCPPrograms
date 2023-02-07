@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch QuadraticTest",
+            "request": "launch",
+            "mainClass": "QuadraticTest",
+            "projectName": "HCPPrograms_39c67d8d"
+        },
+        {
+            "type": "java",
+            "name": "Launch StudentTest",
+            "request": "launch",
+            "mainClass": "StudentTest",
+            "projectName": "HCPPrograms_39c67d8d"
+        },
+        {
+            "type": "java",
             "name": "Launch FavoritesTest",
             "request": "launch",
             "mainClass": "FavoritesTest",

@@ -10,10 +10,12 @@ public class EvenOdd {
         try {
             number = Integer.parseInt(user_number);
         } catch (Exception e) {
+            myObj.close();
             throw new RuntimeException("Not a number!");
         }
 
         if (number % 2 == 0) System.out.println("Number is even.");
         else System.out.println("Number is odd.");
+        myObj.close();
     }
 }

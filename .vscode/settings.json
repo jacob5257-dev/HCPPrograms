@@ -1,0 +1,5 @@
+{
+    "search.exclude": {
+        "Unit%203/src/TemperaturesButBetter.java": true,
+    }
+}

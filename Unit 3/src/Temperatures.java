@@ -14,12 +14,14 @@ public class Temperatures {
             high_temp = Integer.parseInt(user_high);
             low_temp = Integer.parseInt(user_low);
         } catch (Exception e) {
+            myObj.close();
             throw new RuntimeException("Invalid temperature.");
         }
 
         if (high_temp >= 90) System.out.println("Heat warning!");
         if (low_temp <= 32) System.out.println("Freeze warning!");
         if (high_temp - low_temp > 40) System.out.println("Large temperature swing!");
+        myObj.close();
     }
 
     public static void getReturnThings(int high_temp, int low_temp) {
