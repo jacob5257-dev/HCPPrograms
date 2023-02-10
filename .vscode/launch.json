@@ -6,6 +6,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch UnitConverterTest",
+            "request": "launch",
+            "mainClass": "UnitConverterTest",
+            "projectName": "HCPPrograms_39c67d8d"
+        },
+        {
+            "type": "java",
+            "name": "Launch DaysInMonthTest",
+            "request": "launch",
+            "mainClass": "DaysInMonthTest",
+            "projectName": "HCPPrograms_39c67d8d"
+        },
+        {
+            "type": "java",
+            "name": "Launch LeapYearTest",
+            "request": "launch",
+            "mainClass": "LeapYearTest",
+            "projectName": "HCPPrograms_39c67d8d"
+        },
+        {
+            "type": "java",
+            "name": "Launch StringComparerTest",
+            "request": "launch",
+            "mainClass": "StringComparerTest",
+            "projectName": "HCPPrograms_39c67d8d"
+        },
+        {
+            "type": "java",
             "name": "Launch CannonballTest",
             "request": "launch",
             "mainClass": "CannonballTest",
