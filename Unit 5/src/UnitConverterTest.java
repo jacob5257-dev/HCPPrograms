@@ -7,14 +7,15 @@ public class UnitConverterTest {
         JPanel panel = new JPanel();
         panel.add(new JLabel("What unit would you like to convert from?"));
         int option = JOptionPane.showOptionDialog(null, panel, "Select an option.", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE, null, options, null);
-        if (option == -1) throw new RuntimeException("Invalid unit!");
+        if (option == -1) JOptionPane.showMessageDialog(null, "Invalid option!");
         String input = JOptionPane.showInputDialog("Value: ");
-        double value;
+        double value = 0;
         try {
             value = Double.parseDouble(input);
         }
         catch (Exception e) {
-            throw new RuntimeException("Invalid value!");
+            JOptionPane.showMessageDialog(null, "Invalid option!");
+            System.exit(0);
         }
         JPanel panel2 = new JPanel();
         panel2.add(new JLabel("What unit would you like to convert to?"));
