@@ -1,6 +1,5 @@
 import java.util.List;
 
-
 public class UnitConverter {
     // Order: inches, feet, miles, meters, millimeters, centimeters, kilometers
     private List<Double> conversionsToMeters;
