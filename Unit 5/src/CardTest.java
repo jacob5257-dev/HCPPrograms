@@ -24,7 +24,7 @@ public class CardTest {
         if (cardInput.length() == 2) card = new Card(cardSplit[0], cardSplit[1]);
         else if (cardInput.length() == 3) card = new Card(cardSplit[0] + cardSplit[1], cardSplit[2]);
         else {
-            System.out.println("Invalid card");
+            System.out.println("Too many characters!");
             System.exit(0);
         }
         // Prints the description of the card.

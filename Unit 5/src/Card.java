@@ -1,5 +1,3 @@
-import java.lang.module.ResolutionException;
-
 /**
  * This class represents a playing card. It has a number and a suit.
  * @author jacob5257
@@ -15,6 +13,7 @@ public class Card {
     private String[] suitMaps = {"D", "S", "H", "C"};
     private String[] numbers = {"Ace", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King"};
     private String[] numberMaps = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+    private String errorMsg = "";
 
     /**
      * This method creates a new Card object.
@@ -41,10 +40,10 @@ public class Card {
         }
         // If the number or suit was not mappable (not a valid card), throw an IllegalArgumentException.
         if (numberIndex == -1) {
-            throw new IllegalArgumentException("Invalid number");
+            errorMsg += "Error: Invalid number! ";
         }
         if (suitIndex == -1) {
-            throw new IllegalArgumentException("Invalid suit");
+            errorMsg += "Error: Invalid suit! ";
         }
     }
     /**
@@ -57,9 +56,12 @@ public class Card {
      */
     public String getDescription() {
         // Converts the number and suit into a readable string and returns it.
+        if (!errorMsg.equals("")) {
+            return errorMsg;
+        }
         String response = numbers[numberIndex] + " of " + suits[suitIndex];
         if (response.equals(null)) {
-            throw new ResolutionException("Invalid card");
+            return "Error: Invalid card!";
         }
         else return response;
     }
