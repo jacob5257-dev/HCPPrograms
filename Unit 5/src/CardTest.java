@@ -18,7 +18,7 @@ public class CardTest {
         System.out.print("Enter a card: ");
         String cardInput = scanner.nextLine();
         // Splits the input into an array of strings.
-        String[] cardSplit = cardInput.split("", 0);
+        String[] cardSplit = cardInput.toUpperCase().split("", 0);
         // Creates a new Card object and defined it based on the length of the input. Catches invalid inputs.
         Card card = null;
         if (cardInput.length() == 2) card = new Card(cardSplit[0], cardSplit[1]);
