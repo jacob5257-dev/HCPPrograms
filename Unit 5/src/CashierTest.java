@@ -24,7 +24,7 @@ public class CashierTest {
         String cost = JOptionPane.showInputDialog(null, "Enter the cost of the item: ");
         String amountGiven = JOptionPane.showInputDialog(null, "Enter the amount given by the customer: ");
         // Handles cancel button
-        if (cost == null || amountGiven == null) System.exit(1);
+        if (cost == null || amountGiven == null) {System.out.println("You pressed cancel.");System.exit(1); }
         // Try to create a cashier object and get the change. Will fail if:
         // 1. The cost or amount given is not a number
         // 2. The amount given is less than the cost

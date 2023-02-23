@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch CashierTest",
+            "request": "launch",
+            "mainClass": "CashierTest",
+            "projectName": "HCPPrograms_39c67d8d"
+        },
+        {
+            "type": "java",
             "name": "Launch UnitConverterTest",
             "request": "launch",
             "mainClass": "UnitConverterTest",
