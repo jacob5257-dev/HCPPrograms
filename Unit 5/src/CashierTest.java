@@ -32,6 +32,8 @@ public class CashierTest {
             // Create a cashier object and gives the change in the JOptionPane.
             Cashier cashier = new Cashier(Double.parseDouble(cost), Double.parseDouble(amountGiven));
             List<Integer> change = cashier.getChange();
+            // Round to two decimal places with printf
+            System.out.printf("$%.2f", change.get(0) + change.get(1) * 0.25 + change.get(2) * 0.1 + change.get(3) * 0.05 + change.get(4) * 0.01);
             JOptionPane.showMessageDialog(null, "You need to give the customer " + change.get(0) + " dollars, " + change.get(1) + " quarters, " + change.get(2) + " dimes, " + change.get(3) + " nickels, and " + change.get(4) + " pennies.");    
         }
         catch (Exception e) {
