@@ -25,6 +25,10 @@ public class PrimeFactorizationTest {
             JOptionPane.showMessageDialog(null, "Cancelled or invalid number.");
             System.exit(number);
         }
+        if (number < 0) {
+            JOptionPane.showMessageDialog(null, "Number must be positive.");
+            System.exit(1);
+        }
         // Create a PrimeFactorization object and sets up the output string.
         PrimeFactorization pf = new PrimeFactorization(number);
         String output = "The prime factors of " + number + " are: ";
