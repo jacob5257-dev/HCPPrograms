@@ -1,19 +1,19 @@
+import java.util.List;
+import java.util.ArrayList;
+
 public class Main {
-    private Object storage;
-    public Main(Object storage) {
-        this.storage = storage;
-    }
-
-    public Object getStorage() {
-        return storage;
-    }
-
-    public void setStorage(Object storage) {
-        this.storage = storage;
-    }
-
     public static void main(String[] args) {
-        Main main = new Main(1);
-        System.out.println(main.getStorage());
+        List<Integer> numbers = new ArrayList<Integer>();
+        // Add numbers 1-10 to the list
+        for (int i = 1; i <= 10; i++) {
+            numbers.add(i);
+        }
+        System.out.println(numbers);
+        List<Integer> reversed = new ArrayList<>();
+        // Add the numbers in reverse order to the new list
+        for (int i = numbers.size() - 1; i >= 0; i--) {
+            reversed.add(numbers.get(i));
+        }
+        System.out.println(reversed);
     }
 }

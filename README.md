@@ -6,7 +6,7 @@ This repository holds the code for the HCP Programs. The HCP Programs are a set 
 
 ## How do I use this?
 
-This code is not compiled into a jarfile, so there is no need for build tools. Instead, clone this repo or download the source code and open it in your favorite IDE. The code is written in Java, so you will need the latest version of the JDK installed on your computer. You can download the latest version of the JDK [here](https://www.oracle.com/java/technologies/javase-downloads.html).
+This code is not compiled into a jarfile, so there is no need for build tools. Instead, clone this repo or download the source code and open it in your favorite IDE. The code is written in Java, so you will need the latest version of the JDK installed on your computer. You can download the latest version of the JDK [here](https://www.oracle.com/java/technologies/javase-downloads.html). Read [this document](https://docs.google.com/document/d/1PZhzZW_Y0zKCS_Stz90rnTRLZzQokKsdLrRuQHZBhWY/edit#) on how to use git.
 
 ## How do I contribute?
 
