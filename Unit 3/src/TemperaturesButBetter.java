@@ -1,3 +1,4 @@
+/*
 import org.json.*;
 
 import javax.swing.*;
@@ -11,6 +12,7 @@ import java.util.Objects;
 //This code requires the org.json dependency to be available.
 //To run this program, set up a project with org.json as a dependency.
 //Then, copy/paste this code into the editor of your choice.
+//Obviously, don't copy the comment tags at the beginning and end of this file!
 
 public class TemperaturesButBetter {
     public static void main(String[] args) {
@@ -95,3 +97,4 @@ public class TemperaturesButBetter {
         }
     }
 }
+*/

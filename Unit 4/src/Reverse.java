@@ -12,5 +12,6 @@ public class Reverse {
             reverse = letter + reverse;
         }
         System.out.println(reverse);
+        myObj.close();
     }
 }

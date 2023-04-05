@@ -1,3 +1,9 @@
 {
+<<<<<<< HEAD
     "cmake.configureOnOpen": true
+=======
+    "search.exclude": {
+        "Unit%203/src/TemperaturesButBetter.java": true,
+    }
+>>>>>>> 5ff3b5548617a11ee47e7af71b122df622c9b005
 }

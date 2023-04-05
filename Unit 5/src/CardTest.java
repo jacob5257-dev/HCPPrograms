@@ -18,16 +18,17 @@ public class CardTest {
         System.out.print("Enter a card: ");
         String cardInput = scanner.nextLine();
         // Splits the input into an array of strings.
-        String[] cardSplit = cardInput.split("", 0);
+        String[] cardSplit = cardInput.toUpperCase().split("", 0);
         // Creates a new Card object and defined it based on the length of the input. Catches invalid inputs.
         Card card = null;
         if (cardInput.length() == 2) card = new Card(cardSplit[0], cardSplit[1]);
         else if (cardInput.length() == 3) card = new Card(cardSplit[0] + cardSplit[1], cardSplit[2]);
         else {
-            System.out.println("Invalid card");
+            System.out.println("Too many characters!");
             System.exit(0);
         }
         // Prints the description of the card.
+        // skipcq: JAVA-E1083
         System.out.println(card.getDescription());
         scanner.close();
     }

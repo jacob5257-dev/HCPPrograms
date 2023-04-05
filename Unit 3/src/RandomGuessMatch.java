@@ -17,6 +17,7 @@ public class RandomGuessMatch {
                 try {
                     guess = Integer.parseInt(myObj.nextLine());
                 } catch (Exception e) {
+                    myObj.close();
                     throw new RuntimeException("Invalid input!");
                 }
                 if (guess == random) {
@@ -26,8 +27,8 @@ public class RandomGuessMatch {
                 else {
                     System.out.println("Incorrect! Your guess is " + Math.abs(guess - random) + " away from the correct answer.");
                 }
+                myObj.close();
             }
-
         }
     }
 }

@@ -6,6 +6,9 @@ public class TicTacToe
    /*****************************
       Constructs an empty board.
    ******************************/
+   private char[ ][ ] board;
+   private static final int ROWS = 3;
+   private static final int COLUMNS = 3;
    public TicTacToe( )
    {
       board = new char[ROWS][COLUMNS];
@@ -65,11 +68,7 @@ public class TicTacToe
       
       
       return ' ';
-   }
-
-   private char[ ][ ] board;
-   private static final int ROWS = 3;
-   private static final int COLUMNS = 3;
+   }  
 }
 
 

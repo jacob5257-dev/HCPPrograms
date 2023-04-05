@@ -24,10 +24,10 @@ public class Magic8BallTest {
         while (true) {
             // Asks the user a question every time they don't click cancel.
             String input = JOptionPane.showInputDialog("Ask a yes or no question (Cancel to exit)");
-            if (input == null) System.exit(0);
+            if (input == null) break;
             JOptionPane.showMessageDialog(null, ball.getResponse());
             int playAgain = JOptionPane.showConfirmDialog(null, "Ask another question?", "Ask another question?", JOptionPane.YES_NO_OPTION);
-            if (playAgain == JOptionPane.NO_OPTION) System.exit(0);
+            if (playAgain == JOptionPane.NO_OPTION) break;
         }
     }
 }

@@ -25,8 +25,8 @@ public class Cashier {
     }
 
     //Starting variables
-    private final double cost;
-    private final double amountGiven;
+    private double cost = 1.0;
+    private double amountGiven = 0.0;
     //Doubles that control the price of each coin.
     private final double dollarValue = 1.0;
     private final double quarterValue = 0.25;

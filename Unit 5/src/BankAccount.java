@@ -1,3 +1,5 @@
+import java.text.DecimalFormat;
+
 /**
  * A bank account has a balance that can be changed by deposits and withdrawals.
  * @author jacob5257
@@ -55,20 +57,24 @@ public class BankAccount {
     /**
      * Withdraws money from the bank account.
      * @param amount The amount to withdraw
-     * @throws IllegalArgumentException if the amount is greater than the balance
      */
     public void withdraw(double amount) {
         balance -= amount;
-        if (amount >= balance) {
+        if (balance < 0.0) {
             balance -= overdraftFee;
-            throw new IllegalArgumentException("Insufficient funds");
         }
     }
 
     /**
      * Adds interest to the bank account.
+     * Prevents people from adding interest to a negative balance.
      */
     public void addInterest() {
-        balance += balance * interestRate / 100;
+        if (balance > 0) balance += balance * interestRate / 100;
+    }
+
+    public String getFormatBalance() {
+        DecimalFormat df = new DecimalFormat("#.00");
+        return df.format(balance);
     }
 }

@@ -23,7 +23,10 @@ public class ThreeNumbersTest {
         Scanner file = new Scanner(reader);
         // While the file has a next line, create a new ThreeNumbers object and print out the smallest, middle, and largest numbers.
         while (file.hasNext()) {
-            ThreeNumbers numbers = new ThreeNumbers(file.nextDouble(), file.nextDouble(), file.nextDouble());
+            double a = file.nextDouble(),
+                   b = file.nextDouble(),
+                   c = file.nextDouble();
+            ThreeNumbers numbers = new ThreeNumbers(a, b, c);
             //Get numbers.getSmallest(), numbers.getMiddle(), and numbers.getLargest() and print them out, formatted with printf so they are aligned.
             System.out.printf("%10.2f%10.2f%10.2f\n", numbers.getSmallest(), numbers.getMiddle(), numbers.getLargest());
         }

@@ -17,17 +17,10 @@ public class Favorites {
         favorites.add("Avatar: The Last Airbender");
     }
 
-    /*
-    get user input
-    add at least 10 items to the list. 
-    print the ArrayList with all 10 items
-    remove at least 2 items from the list and print again
-    Use ArrayList methods add, size, get and remove
-     */
-
-    public String askQuestions() {
+    public List<String> askQuestions() {
         if (favorites.size() == 1) {
-            return "It's decided...";
+            options.add(favorites.get(0));
+            return options;
         }
         while (options.size() < 3) {
             int index = (int) (Math.random() * favorites.size());
@@ -38,11 +31,7 @@ public class Favorites {
                 break;
             }
         }
-        String output = "";
-        for (int i = 0; i < options.size(); i++) {
-            output += options.get(i) + ", ";
-        }
-        return "Which of the following is your favorite: " + output;
+        return options;
     }
 
     public void selectedOption(int option) {

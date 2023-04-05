@@ -18,7 +18,7 @@ public class TicTacToeTest
          String input = JOptionPane.showInputDialog("Row for " + player + " (Cancel to exit)");
          
          if (input == null)               // quit the game?
-            System.exit(0);
+            break;
          int row = Integer.parseInt(input);
          
          input = JOptionPane.showInputDialog("Column for " + player);
@@ -35,7 +35,7 @@ public class TicTacToeTest
             if (playAgain == JOptionPane.YES_OPTION) {
                 game = new TicTacToe();
                 player = 'x';
-            } else System.exit(0);
+            } else break;
          }
 
  

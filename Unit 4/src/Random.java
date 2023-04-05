@@ -21,10 +21,11 @@ public class Random {
                 String input = myObj.nextLine();
                 if (Objects.equals(input, "stop")) {
                     System.out.println("Stopped.");
+                    myObj.close();
                     return;
                 }
                 try { guess = Integer.parseInt(input); }
-                catch (Exception e) { throw new RuntimeException("Invalid input!"); }
+                catch (Exception e) { myObj.close(); throw new RuntimeException("Invalid input!"); }
                 tries++;
                 if (guess == random) {
                     System.out.println("Correct! It took you " + tries + " tries to guess correctly.");
