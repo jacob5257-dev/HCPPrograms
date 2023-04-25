@@ -36,7 +36,12 @@ public class MultipleChoiceQuiz {
             JPanel panel = new JPanel();
             panel.add(new JLabel("<html>Question:<br>" + questions[i] +"</html>"));
             int selection = ( JOptionPane.showOptionDialog(null, panel, "Question", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE, null, options, null));
-            if (answers[i][selection].equals(correct[i])) {
+            if (selection < 0 || selection > 2) {
+            	JOptionPane.showMessageDialog(null, "Don't close the quiz! Your quiz will be reset.");
+            	score = 0;
+            	i = -1;
+            }
+            else if (answers[i][selection].equals(correct[i])) {
                 JOptionPane.showMessageDialog(null, "Correct!");
                 score++;
             }
