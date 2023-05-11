@@ -26,10 +26,11 @@ public class TicTacToeTest
          
          game.set(row, column, player);   // make a move
          char winner = game.playerHasWon();
-         if (winner != ' ')
+         if (winner != ' ' || game.isFull())
          {
             System.out.println(game);
-            JOptionPane.showMessageDialog(null, winner + " has won");
+            if (game.isFull()) JOptionPane.showMessageDialog(null, "It was a tie!");
+            else JOptionPane.showMessageDialog(null, winner + " has won");
             //Ask player if they want to play again
             int playAgain = JOptionPane.showConfirmDialog(null, "Play again?", "Play again?", JOptionPane.YES_NO_OPTION);
             if (playAgain == JOptionPane.YES_OPTION) {

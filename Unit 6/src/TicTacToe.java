@@ -27,8 +27,10 @@ public class TicTacToe
    ************************************************************/
    public void set(int i, int j, char player)
    {
-      if (board[i][j] != ' ')
-         throw new IllegalArgumentException("Position occupied");
+      if (board[i][j] != ' ') {
+         System.out.println("Position already occupied");
+         return;
+      }
       board[i][j] = player;
    }
 
@@ -68,7 +70,13 @@ public class TicTacToe
       
       
       return ' ';
-   }  
+   }
+   public boolean isFull() {
+	   for (int i = 0; i < 3; i++) {
+		   for (int j = 0; j < 3; j++) {
+			   if (board[i][j] == ' ') return false;
+		   }
+	   }
+	   return true;
+   }
 }
-
-
