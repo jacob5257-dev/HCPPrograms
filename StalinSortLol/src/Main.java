@@ -20,17 +20,17 @@ public class Main {
             }
         }
         int finalListCount = 0;
-        for (int i = 0; i < intArray.length; i++) {
-            if (intArray[i] != 0) {
+        for (int j : intArray) {
+            if (j != 0) {
                 finalListCount++;
             }
         }
         int[] finalList = new int[finalListCount];
         // Move all elements that are not 0 from intArray to finalList
         int finalListIndex = 0;
-        for (int i = 0; i < intArray.length; i++) {
-            if (intArray[i] != 0) {
-                finalList[finalListIndex] = intArray[i];
+        for (int j : intArray) {
+            if (j != 0) {
+                finalList[finalListIndex] = j;
                 finalListIndex++;
             }
         }
