@@ -1,7 +1,7 @@
 import javax.swing.JOptionPane;
 import java.util.Arrays;
 
-public class Main {
+public class StalinSort {
     public static void main(String[] args) {
         // Ask the user for an unsorted list of integers
         String input = JOptionPane.showInputDialog("Enter a list of integers separated by spaces:");
