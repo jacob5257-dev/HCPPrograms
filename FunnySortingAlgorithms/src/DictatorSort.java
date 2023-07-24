@@ -2,6 +2,10 @@ import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The list is sorted. Deal with it.
+ * O(1)
+ */
 public class DictatorSort {
     public static void main(String[] args) {
         // Ask the user for an unsorted list of integers
@@ -9,7 +13,7 @@ public class DictatorSort {
         // Split the input into an array of strings
         String[] inputArray = input.split(" ");
         // Create an array of integers with the same length as the input array
-        List<Integer> intArray = new ArrayList<Integer>();
+        List<Integer> intArray = new ArrayList<>();
         // Convert each string in the input array to an integer and add it to the integer array
         for (String s : inputArray) {
             intArray.add(Integer.parseInt(s));

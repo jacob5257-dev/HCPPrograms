@@ -1,6 +1,10 @@
 import javax.swing.JOptionPane;
 import java.util.Arrays;
 
+/**
+ * Sorts a list and sends numbers out of order to gulag.
+ * O(n)
+ */
 public class StalinSort {
     public static void main(String[] args) {
         // Ask the user for an unsorted list of integers
