@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class Player {
     /* Implement the following methods:
@@ -31,7 +32,7 @@ public class Player {
         return this.sum;
     }
 
-    public ArrayList<Integer> getRolls() {
+    public List<Integer> getRolls() {
         return this.rolls;
     }
 
