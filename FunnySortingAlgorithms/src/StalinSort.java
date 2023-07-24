@@ -11,6 +11,10 @@ public class StalinSort {
         int[] intArray = new int[inputArray.length];
         // Convert each string in the input array to an integer and add it to the integer array
         for (int i = 0; i < inputArray.length; i++) {
+            if (inputArray[i].equals("0")) {
+                System.out.println("No zeroes in the list.");
+                System.exit(0);
+            }
             intArray[i] = Integer.parseInt(inputArray[i]);
         }
         for (int i = 1; i < intArray.length; i++) {
