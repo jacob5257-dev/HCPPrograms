@@ -13,7 +13,7 @@ public class TipCalculator {
         // Create a program that will take in a bill amount and a tip percentage and calculate the dollar amount of tips and the total bill
         double originalBill = 0;
         String input;
-        try { originalBill = Double.parseDouble(JOptionPane.showInputDialog("How much money was the original bill? (in dollars)")); }
+        try { originalBill = Double.parseDouble(JOptionPane.showInputDialog("<html>Welcome to the tip calculator.<br>How much money was the original bill? (in dollars)</html>")); }
         catch (Exception e) { JOptionPane.showMessageDialog(null, "Invalid input. Please enter a number."); System.exit(0); }
         // Give the user the option to tip 15%, 18%, 20%, or custom. If they select custom, ask them for the tip percentage
         Object[] options = {"15% (okay)", "18% (good)", "20% (great)", "Custom"};
