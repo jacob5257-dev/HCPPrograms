@@ -1,3 +1,9 @@
+/**
+ * Solves the locker problem.
+ * @since 7/27/2023
+ * @version 1.0
+ * @author jacob5257
+ */
 public class LockerProblem {
     public static void main(String[] args) {
         // Create an array of 100 booleans representing each locker.
