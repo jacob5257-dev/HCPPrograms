@@ -19,7 +19,7 @@ public class LockerProblem {
         // Loop through the array one last time, printing the locker number if it's open
         for (int i = 0; i < 100; i++) {
             if (lockers[i]) {
-                System.out.println(i + 1);
+                System.out.print(i + 1 + " ");
             }
         }
     }
