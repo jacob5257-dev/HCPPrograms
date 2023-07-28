@@ -108,5 +108,15 @@ public class Main {
         return string;
     }
 
+    public String repeatSeparator(String word, String sep, int count) {
+        String string = "";
+        if (count == 0) return string;
+        for (int i = 0; i < count - 1; i++) {
+            string += word;
+            string += sep;
+        }
+        string += word;
+        return string;
+    }
 
 }
