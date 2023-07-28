@@ -40,4 +40,30 @@ public class Main {
         }
         return 0;
     }
+
+    public boolean endOther(String a, String b) {
+        if (a.length() > b.length()) {
+            return a.toLowerCase().endsWith(b.toLowerCase());
+        }
+        else {
+            return b.toLowerCase().endsWith(a.toLowerCase());
+        }
+    }
+
+    public boolean bobThere(String str) {
+        for (int i = 0; i < str.length() - 2; i++) {
+            if (str.charAt(i) == 'b' && str.charAt(i + 2) == 'b') return true;
+        }
+        return false;
+    }
+
+    public boolean xyBalance(String str) {
+        boolean x = false;
+        if (str.isEmpty()) return true;
+        for (int i = str.length() - 1; i >= 0; i--) {
+            if (str.charAt(i) == 'y' && !x) return true;
+            if (str.charAt(i) == 'x') x = true;
+        }
+        return !x;
+    }
 }
