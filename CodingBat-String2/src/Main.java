@@ -66,4 +66,29 @@ public class Main {
         }
         return !x;
     }
+
+    public String mixString(String a, String b) {
+        String str = "";
+        if (a.length() > b.length()) {
+            for (int i = 0; i < b.length(); i++) {
+                str += String.valueOf(a.charAt(i));
+                str += String.valueOf(b.charAt(i));
+            }
+            str += a.substring(b.length());
+        }
+        else if (b.length() > a.length()) {
+            for (int i = 0; i < a.length(); i++) {
+                str += String.valueOf(a.charAt(i));
+                str += String.valueOf(b.charAt(i));
+            }
+            str += b.substring(a.length());
+        }
+        else {
+            for (int i = 0; i < b.length(); i++) {
+                str += String.valueOf(a.charAt(i));
+                str += String.valueOf(b.charAt(i));
+            }
+        }
+        return str;
+    }
 }
