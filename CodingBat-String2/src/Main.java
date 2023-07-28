@@ -99,4 +99,14 @@ public class Main {
         }
         return string;
     }
+
+    public String repeatFront(String str, int n) {
+        String string = "";
+        for (int i = n; i > 0; i--) {
+            string += str.substring(0, i);
+        }
+        return string;
+    }
+
+
 }
