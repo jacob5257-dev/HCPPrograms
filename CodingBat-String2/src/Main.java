@@ -8,6 +8,14 @@ public class Main {
         return return_str;
     }
 
+    public int countCode(String str) {
+        int count = 0;
+        for (int i = 0; i < str.length() - 3; i++) {
+            if (str.startsWith("co", i) && str.charAt(i + 3) == 'e') count++;
+        }
+        return count;
+    }
+
     public int countHi(String str) {
         int count = 0;
         for (int i = 0; i < str.length() - 1; i++) {
@@ -24,5 +32,12 @@ public class Main {
             if (str.startsWith("dog", i)) dog_count++;
         }
         return cat_count == dog_count;
+    }
+
+    public int countCodeAlternateSolution(String str) {
+        for (int i = 0; i < str.length() - 3; i++) {
+            if (str.startsWith("co", i) && str.charAt(i + 3) == 'e') return 1 + countCodeAlternateSolution(str.substring(i + 4));
+        }
+        return 0;
     }
 }
