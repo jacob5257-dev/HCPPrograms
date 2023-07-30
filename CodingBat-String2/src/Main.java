@@ -119,4 +119,29 @@ public class Main {
         return string;
     }
 
+    public String getSandwich(String str) {
+        for (int i = 0; i < str.length(); i++) {
+            if (str.startsWith("bread", i)) {
+                for (int j = str.length() - 1; j > i; j--) {
+                    if (str.startsWith("bread", j)) {
+                        return str.substring(i + 5, j);
+                    }
+                }
+            }
+        }
+        return "";
+    }
+
+    public String plusOut(String str, String word) {
+        String string = "";
+        for (int i = 0; i < str.length(); i++) {
+            if (str.startsWith(word, i)) {
+                string += word;
+                i += word.length() - 1;
+            }
+            else {
+                string += "+";
+            }
+        }
+        return string;
 }
