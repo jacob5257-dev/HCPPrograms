@@ -42,12 +42,8 @@ public class Main {
     }
 
     public boolean endOther(String a, String b) {
-        if (a.length() > b.length()) {
-            return a.toLowerCase().endsWith(b.toLowerCase());
-        }
-        else {
-            return b.toLowerCase().endsWith(a.toLowerCase());
-        }
+        if (a.length() > b.length()) return a.toLowerCase().endsWith(b.toLowerCase());
+        else return b.toLowerCase().endsWith(a.toLowerCase());
     }
 
     public boolean bobThere(String str) {
@@ -138,10 +134,10 @@ public class Main {
             if (str.startsWith(word, i)) {
                 string += word;
                 i += word.length() - 1;
-            }
-            else {
+            } else {
                 string += "+";
             }
         }
         return string;
+    }
 }
