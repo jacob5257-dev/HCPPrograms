@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
     // Automated my math hw lol
     /*
@@ -43,4 +46,8 @@ public class Main {
         return false;
     }
 
+    // Don't actually put all your code on one line lol
+    public String mixString(String a, String b) {
+        String str = "";if (a.length() > b.length()) {for (int i = 0; i < b.length(); i++) {str += String.valueOf(a.charAt(i));str += String.valueOf(b.charAt(i));}str += a.substring(b.length(), a.length());} else if (b.length() > a.length()) {for (int i = 0; i < a.length(); i++) {str += String.valueOf(a.charAt(i));str += String.valueOf(b.charAt(i));}str += b.substring(a.length(), b.length());} else {for (int i = 0; i < b.length(); i++) {str += String.valueOf(a.charAt(i));str += String.valueOf(b.charAt(i));}}return str;
+    }
 }
