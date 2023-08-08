@@ -140,4 +140,86 @@ public class Main {
         }
         return string;
     }
+
+    public boolean xyzThere(String str) {
+        for (int i = 0; i < str.length() - 2; i++) {
+            if (str.startsWith("xyz", i)) {
+                if (i == 0) return true;
+                if (str.charAt(i - 1) != '.') return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean prefixAgain(String str, int n) {
+        String substring = str.substring(0, n);
+        if (str.length() == 2 && n == 1 && str.charAt(0) == str.charAt(1)) return true;
+        for (int i = 1; i < str.length() - substring.length(); i++) {
+            String abc = str.substring(i, i + substring.length());
+            if (abc.equals(substring)) return true;
+        }
+        return false;
+    }
+
+    public boolean xyzMiddle(String str) {
+        int len = str.length();
+        if (len < 3) return false;
+        boolean xyz = str.substring(len / 2 - 1, len / 2 + 2).equals("xyz");
+        if (len % 2 == 0) return str.substring(len / 2 - 2, len / 2 + 1).equals("xyz") || xyz;
+        return xyz;
+    }
+
+    public boolean sameStarChar(String str) {
+        if (str.length() < 3) return true;
+        for (int i = 1; i < str.length() - 1; i++) {
+            if (str.charAt(i) == '*' && str.charAt(i - 1) != str.charAt(i + 1)) return false;
+        }
+        return true;
+    }
+
+    public String oneTwo(String str) {
+        String result = "";
+        for (int i = 0; i < str.length() - 2; i += 3) {
+            result += str.substring(i + 1, i + 3) + str.charAt(i);
+        }
+        return result;
+    }
+
+    public String zipZap(String str) {
+        if (str.length() < 3) return str;
+        String string = "";
+        for (int i = 0; i < str.length() - 2; i++) {
+            if (str.charAt(i) == 'z' && str.charAt(i + 2) == 'p') {
+                string += "zp";
+                i += 2;
+            }
+            else if (i == str.length() - 3) string += str.substring(str.length() - 3);
+            else string += str.substring(i, i + 1);
+        }
+        return string;
+    }
+
+    public String starOut(String str) {
+        String string = "";
+        for (int i = 0; i < str.length(); i++) {
+            if (i > 0 && str.charAt(i - 1) == '*') continue;
+            if (str.charAt(i) == '*') continue;
+            if (i < str.length() - 1 && str.charAt(i + 1) == '*') continue;
+            string += str.charAt(i);
+        }
+        return string;
+    }
+
+    public String wordEnds(String str, String word) {
+        String result = "";
+        int i = 0;
+        while (i < str.length()) {
+            int start = str.indexOf(word, i);
+            if (start == -1) break;
+            if (start > 0) result += str.charAt(start - 1);
+            if (start + word.length() < str.length()) result += str.charAt(start + word.length());
+            i = start + 1;
+        }
+        return result;
+    }
 }
