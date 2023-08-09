@@ -37,7 +37,7 @@ public class Main {
 
     public int sum13(int[] nums) {
         int sum = 0;
-        for (int i = 0; i < nums.length; i++) {
+        for (int i = 0; i < nums.length; i++) { // skipcq: JAVA-W1089
             if (nums[i] != 13) sum += nums[i];
             else i++;
         }
@@ -328,7 +328,7 @@ public class Main {
             if (nums[i] == 0) {
                 int max = 0;
                 for (int j = i; j < nums.length; j++) {
-                    if (nums[j] % 2 == 1 && nums[j] > max) max = nums[j];
+                    if (nums[j] % 2 != 0 && nums[j] > max) max = nums[j];
                 }
                 list[i] = max;
             }

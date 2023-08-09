@@ -25,8 +25,8 @@ public class CountDate {
         try {
             // Parses month by finding numbers between the beginning and the first "/", day by finding the characters between the two "/"'s, and the year by the characters
             // between the last "/" and the end. If there aren't enough slashes or they aren't integers, they are caught by the try/catch.
-            month = Integer.parseInt(input.substring(0, input.indexOf("/")));
-            day = Integer.parseInt(input.substring(input.indexOf("/") + 1, input.lastIndexOf("/")));
+            month = Integer.parseInt(input.substring(0, input.indexOf('/')));
+            day = Integer.parseInt(input.substring(input.indexOf('/') + 1, input.lastIndexOf("/")));
             year = Integer.parseInt(input.substring(input.lastIndexOf("/") + 1));
         }
         catch (Exception e) {
