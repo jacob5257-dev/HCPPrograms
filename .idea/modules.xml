@@ -4,7 +4,9 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CCValidator/CCValidator.iml" filepath="$PROJECT_DIR$/CCValidator/CCValidator.iml" />
       <module fileurl="file://$PROJECT_DIR$/CodingBat-Array1/CodingBat-Array1.iml" filepath="$PROJECT_DIR$/CodingBat-Array1/CodingBat-Array1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CodingBat-Array2/CodingBat-Array2.iml" filepath="$PROJECT_DIR$/CodingBat-Array2/CodingBat-Array2.iml" />
       <module fileurl="file://$PROJECT_DIR$/CodingBat-Logic1/CodingBat-Logic1.iml" filepath="$PROJECT_DIR$/CodingBat-Logic1/CodingBat-Logic1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CodingBat-Logic2/CodingBat-Logic2.iml" filepath="$PROJECT_DIR$/CodingBat-Logic2/CodingBat-Logic2.iml" />
       <module fileurl="file://$PROJECT_DIR$/CodingBat-String1/CodingBat-String1.iml" filepath="$PROJECT_DIR$/CodingBat-String1/CodingBat-String1.iml" />
       <module fileurl="file://$PROJECT_DIR$/CodingBat-String2/CodingBat-String2.iml" filepath="$PROJECT_DIR$/CodingBat-String2/CodingBat-String2.iml" />
       <module fileurl="file://$PROJECT_DIR$/DiceGame/DiceGame.iml" filepath="$PROJECT_DIR$/DiceGame/DiceGame.iml" />
