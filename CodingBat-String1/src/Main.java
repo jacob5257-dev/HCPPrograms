@@ -87,14 +87,14 @@ public class Main {
         else return "@@";
     }
     public String lastChars(String a, String b) {
-        if (a.length() == 0 && b.length() == 0) return "@@";
-        if (b.length() == 0) return a.charAt(0) + "@";
+        if (a.isEmpty() && b.isEmpty()) return "@@";
+        if (b.isEmpty()) return a.charAt(0) + "@";
         String substring = b.substring(b.length() - 1);
-        if (a.length() == 0) return "@" + substring;
+        if (a.isEmpty()) return "@" + substring;
         return a.charAt(0) + substring;
     }
     public String conCat(String a, String b) {
-        if (a.length() == 0 || b.length() == 0) return a + b;
+        if (a.isEmpty() || b.isEmpty()) return a + b;
         if (a.charAt(a.length() - 1) == b.charAt(0)) return a + b.substring(1);
         else return a + b;
     }
@@ -114,8 +114,8 @@ public class Main {
         return Objects.equals(str.substring(0, 2), str.substring(str.length() - 2));
     }
     public String minCat(String a, String b) {
-        while (a.length() > b.length()) a = a.substring(1, a.length());
-        while (b.length() > a.length()) b = b.substring(1, b.length());
+        while (a.length() > b.length()) a = a.substring(1);
+        while (b.length() > a.length()) b = b.substring(1);
         return a + b;
     }
     public String extraFront(String str) {
@@ -128,5 +128,54 @@ public class Main {
         if (Objects.equals(str.substring(0, 2), str.substring(str.length() - 2))) return str.substring(2);
         else return str;
     }
+
+    public String deFront(String str) {
+        if (str.isEmpty()) return "";
+        if (str.length() == 1) {
+            if (str == "a") return str;
+            return "";
+        }
+        String string = "";
+        if (str.charAt(0) == 'a') string += "a";
+        if (str.charAt(1) == 'b') string += "b";
+        string += str.substring(2);
+        return string;
+    }
+
+    public String startWord(String str, String word) {
+        if (str.isEmpty()) return "";
+        if (word.length() == 1) return str.substring(0, 1);
+        String word2 = word.substring(1);
+        if (str.substring(1).startsWith(word2)) return str.substring(0, word.length());
+        return "";
+    }
+
+    public String withoutX(String str) {
+        if (str.isEmpty()) return str;
+        if (str.length() == 1) {
+            if (str != "x") return str;
+            return "";
+        }
+        String string = "";
+        if (str.charAt(0) != 'x') string += str.substring(0, 1);
+        string += str.substring(1, str.length() - 1);
+        if (str.charAt(str.length() - 1) != 'x') string += str.substring(str.length() - 1);
+
+        return string;
+    }
+
+    public String withoutX2(String str) {
+        if (str.isEmpty()) return str;
+        if (str.length() == 1) {
+            if (str != "x") return str;
+            return "";
+        }
+        String string = "";
+        if (str.charAt(0) != 'x') string += str.substring(0, 1);
+        if (str.charAt(1) != 'x') string += str.substring(1, 2);
+        string += str.substring(2);
+        return string;
+    }
+
 
 }
