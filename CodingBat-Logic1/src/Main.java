@@ -106,4 +106,59 @@ public class Main {
         return die1 + die2;
     }
 
+    public boolean lessBy10(int a, int b, int c) {
+        return Math.abs(a - b) >= 10 || Math.abs(a - c) >= 10 || Math.abs(b - c) >= 10;
+    }
+
+    public int withoutDoubles(int die1, int die2, boolean noDoubles) {
+        if (noDoubles && die1 == die2) {
+            if (die1 + die2 == 12) return 7;
+            return die1 + die2 + 1;
+        }
+        return die1 + die2;
+
+    }
+
+    public int maxMod5(int a, int b) {
+        if (a == b) return 0;
+        if (a % 5 == b % 5) {
+            return Math.min(a, b);
+        }
+        return Math.max(a, b);
+    }
+
+    public int redTicket(int a, int b, int c) {
+        if (a == 2 && b == 2 && c == 2) return 10;
+        if (a == b && b == c) return 5;
+        if (b != a && c != a) return 1;
+        return 0;
+    }
+
+    public int greenTicket(int a, int b, int c) {
+        if (a == b && b == c) return 20;
+        if (a != b && b != c && a != c) return 0;
+        return 10;
+    }
+
+    public int blueTicket(int a, int b, int c) {
+        int ab = a + b;
+        int bc = b + c;
+        int ac = a + c;
+        if (ab == 10 || bc == 10 || ac == 10) return 10;
+        if (ab == 10 + bc || ab == 10 + ac) return 5;
+        return 0;
+    }
+
+    public boolean shareDigit(int a, int b) {
+        return a / 10 == b / 10 || a / 10 == b % 10 || a % 10 == b / 10 || a % 10 == b % 10;
+    }
+
+    public int sumLimit(int a, int b) {
+        int aLength = String.valueOf(a).length();
+        int sum = a + b;
+        if (String.valueOf(sum).length() == aLength) return sum;
+        return a;
+    }
+
+
 }
