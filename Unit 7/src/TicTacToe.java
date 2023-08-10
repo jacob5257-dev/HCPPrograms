@@ -10,7 +10,7 @@ public class TicTacToe {
     public static void main(String[] args) {
         // Create a board with positions 1-9 for the players to choose
         char[][] board = {{'1', '2', '3'}, {'4', '5', '6'}, {'7', '8', '9'}};
-        Object[] options = {"Single-player mode", "Multi-player mode"};
+        Object[] options = {"Single-player mode", "Multi-player mode", "Single-player with improved computer"};
         JPanel panel = new JPanel();
         panel.add(new JLabel("Select a game mode: "));
         // Ask if they want to play against someone else or against the computer
@@ -53,6 +53,147 @@ public class TicTacToe {
                 if (playerHasWon(board) != ' ') break;
             }
         }
+        else if (selection == 2) {
+            while (playerHasWon(board) == ' ') {
+                // Asks the first player (x) where they want to go
+                int nextPlace = printBoard(board);
+                // If they enter an invalid number, they are told their input is invalid and their turn is skipped.
+                if (nextPlace < 1 || nextPlace > 9) {
+                    JOptionPane.showMessageDialog(null, "Invalid input!");
+                    continue;
+                }
+                // Convert the number they entered into a row and column in the 2d array
+                int row = (nextPlace - 1) / 3;
+                int col = (nextPlace - 1) % 3;
+                // If the position they selected is already occupied, they are told the position is already occupied and their turn is skipped.
+                if (board[row][col] == 'x' || board[row][col] == 'o') {
+                    JOptionPane.showMessageDialog(null, "Position already occupied!");
+                    continue;
+                }
+                // Mark the new spot as x and check if anyone has won
+                board[row][col] = 'x';
+                if (playerHasWon(board) != ' ') break;
+                // Let the computer select a random place to go
+
+                // If there are two cells with the same value in a row, column, or diagonal, the computer will select the third cell to win/prevent loss
+                // Row 1
+                if (board[0][0] == board[0][1]) {
+                    row = 0;
+                    col = 2;
+                }
+                else if (board[0][0] == board[0][2]) {
+                    row = 0;
+                    col = 1;
+                }
+                else if (board[0][2] == board[0][1]) {
+                    row = 0;
+                    col = 0;
+                }
+                // Row 2
+                else if (board[1][0] == board[1][1]) {
+                    row = 1;
+                    col = 2;
+                }
+                else if (board[1][0] == board[1][2]) {
+                    row = 1;
+                    col = 1;
+                }
+                else if (board[1][1] == board[1][2]) {
+                    row = 1;
+                    col = 0;
+                }
+                // Row 3
+                else if (board[2][0] == board[2][1]) {
+                    row = 2;
+                    col = 2;
+                }
+                else if (board[2][0] == board[2][2]) {
+                    row = 2;
+                    col = 1;
+                }
+                else if (board[2][2] == board[2][1]) {
+                    row = 2;
+                    col = 0;
+                }
+                // Column 1
+                else if (board[0][0] == board[1][0]) {
+                    row = 2;
+                    col = 0;
+                }
+                else if (board[0][0] == board[2][0]) {
+                    row = 1;
+                    col = 0;
+                }
+                else if (board[1][0] == board[2][0]) {
+                    row = 0;
+                    col = 0;
+                }
+                // Column 2
+                else if (board[0][1] == board[2][1]) {
+                    row = 1;
+                    col = 1;
+                }
+                else if (board[0][1] == board[1][1]) {
+                    row = 2;
+                    col = 1;
+                }
+                else if (board[1][1] == board[2][1]) {
+                    row = 0;
+                    col = 1;
+                }
+                // Column 3
+                else if (board[0][2] == board[1][2]) {
+                    row = 2;
+                    col = 2;
+                }
+                else if (board[0][2] == board[2][2]) {
+                    row = 1;
+                    col = 2;
+                }
+                else if (board[1][2] == board[2][2]) {
+                    row = 0;
+                    col = 2;
+                }
+                // Diagonal 1
+                else if (board[0][0] == board[1][1]) {
+                    row = 2;
+                    col = 2;
+                }
+                else if (board[0][0] == board[2][2]) {
+                    row = 1;
+                    col = 1;
+                }
+                else if (board[2][2] == board[1][1]) {
+                    row = 0;
+                    col = 0;
+                }
+                // Diagonal 2
+                else if (board[2][0] == board[0][2]) {
+                    row = 1;
+                    col = 1;
+                }
+                else if (board[2][0] == board[1][1]) {
+                    row = 0;
+                    col = 2;
+                }
+                else if (board[0][2] == board[1][1]) {
+                    row = 2;
+                    col = 0;
+                }
+                else {
+                    nextPlace = (int) (Math.random() * 9) + 1;
+                    row = (nextPlace - 1) / 3;
+                    col = (nextPlace - 1) % 3;
+                }
+                while (board[row][col] == 'x' || board[row][col] == 'o') {
+                    nextPlace = (int) (Math.random() * 9) + 1;
+                    row = (nextPlace - 1) / 3;
+                    col = (nextPlace - 1) % 3;
+                }
+                board[row][col] = 'o';
+                if (playerHasWon(board) != ' ') break;
+            }
+        }
         // If they select single player mode, allow them to play against the computer
         else {
             while (playerHasWon(board) == ' ') {
@@ -88,7 +229,7 @@ public class TicTacToe {
             }
         }
         if (playerHasWon(board) == 't') JOptionPane.showMessageDialog(null, "It's a tie!");
-        else JOptionPane.showMessageDialog(null, "Player " + playerHasWon(board) + " has won!");
+        else JOptionPane.showMessageDialog(null, "<html>" + board[0][0] + " | " + board[0][1] + " | " + board[0][2] + "<br>---------<br>" + board[1][0] + " | " + board[1][1] + " | " + board[1][2] + "<br>---------<br>" + board[2][0] + " | " + board[2][1] + " | " + board[2][2] + "<br>Player " + playerHasWon(board) + " has won!</html>");
 
     }
 
