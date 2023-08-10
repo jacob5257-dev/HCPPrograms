@@ -15,8 +15,9 @@ public class TicTacToe {
         panel.add(new JLabel("Select a game mode: "));
         // Ask if they want to play against someone else or against the computer
         int selection = ( JOptionPane.showOptionDialog(null, panel, "Select an option.", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE, null, options, null));
-        // Keep going as long as nobody has won
+        // If they select multiplayer mode, allow both players to take turns
         if (selection == 1) {
+            // Keep going as long as nobody has won
             while (playerHasWon(board) == ' ') {
                 // Asks the first player (x) where they want to go
                 int nextPlace = printBoard(board);
@@ -52,6 +53,7 @@ public class TicTacToe {
                 if (playerHasWon(board) != ' ') break;
             }
         }
+        // If they select single player mode, allow them to play against the computer
         else {
             while (playerHasWon(board) == ' ') {
                 // Asks the first player (x) where they want to go
