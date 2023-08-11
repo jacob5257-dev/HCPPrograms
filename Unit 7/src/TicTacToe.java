@@ -195,7 +195,7 @@ public class TicTacToe {
             }
         }
         // If they select single player mode, allow them to play against the computer
-        else {
+        else if (selection == 0) {
             while (playerHasWon(board) == ' ') {
                 // Asks the first player (x) where they want to go
                 int nextPlace = printBoard(board);
@@ -227,6 +227,10 @@ public class TicTacToe {
                 board[row][col] = 'o';
                 if (playerHasWon(board) != ' ') break;
             }
+        }
+        else {
+            JOptionPane.showMessageDialog(null, "Invalid selection!");
+            System.exit(0);
         }
         if (playerHasWon(board) == 't') JOptionPane.showMessageDialog(null, "It's a tie!");
         else JOptionPane.showMessageDialog(null, "<html>" + board[0][0] + " | " + board[0][1] + " | " + board[0][2] + "<br>---------<br>" + board[1][0] + " | " + board[1][1] + " | " + board[1][2] + "<br>---------<br>" + board[2][0] + " | " + board[2][1] + " | " + board[2][2] + "<br>Player " + playerHasWon(board) + " has won!</html>");
