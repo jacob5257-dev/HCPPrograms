@@ -89,4 +89,64 @@ public class Main {
         return count;
     }
 
+
+    public int scoreUp(String[] key, String[] answers) {
+        int score = 0;
+        for (int i = 0; i < key.length; i++) {
+            if (answers[i].equals("?")) continue;
+            else if (answers[i].equals(key[i])) score += 4;
+            else score -= 1;
+        }
+        return score;
+    }
+
+    public String[] wordsWithout(String[] words, String target) {
+        List<String> wordArray = new ArrayList<>();
+        for (String i : words) {
+            if (i.equals(target)) continue;
+            else wordArray.add(i);
+        }
+        String[] wordList = new String[wordArray.size()];
+        for (int i = 0; i < wordList.length; i++) {
+            wordList[i] = wordArray.get(i);
+        }
+        return wordList;
+    }
+
+    public int scoresSpecial(int[] a, int[] b) {
+        return largestSpecial(a) + largestSpecial(b);
+
+    }
+    // Used for scoresSpecial
+    public int largestSpecial(int[] a) {
+        int highest = 0;
+        for (int i : a) {
+            if (i % 10 == 0 && i > highest) highest = i;
+        }
+        return highest;
+    }
+
+    public int sumHeights(int[] heights, int start, int end) {
+        int sum = 0;
+        for (int i = start; i < end; i++) {
+            sum += Math.abs(heights[i + 1] - heights[i]);
+        }
+        return sum;
+    }
+
+    public int sumHeights2(int[] heights, int start, int end) {
+        int sum = 0;
+        for (int i = start; i < end; i++) {
+            sum += heights[i + 1] > heights[i] ? (heights[i + 1] - heights[i]) * 2 : heights[i] - heights[i + 1];
+        }
+        return sum;
+    }
+
+    public int bigHeights(int[] heights, int start, int end) {
+        int count = 0;
+        for (int i = start; i < end; i++) {
+            count += Math.abs(heights[i + 1] - heights[i]) >= 5 ? 1 : 0;
+        }
+        return count;
+    }
 }
