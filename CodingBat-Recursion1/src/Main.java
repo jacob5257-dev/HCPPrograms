@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Main {
@@ -158,4 +159,32 @@ public class Main {
         return count;
     }
 
+    public int countHi2(String str) {
+        int count = 0;
+        if (str.length() <= 3) {
+            if (str.equals("xhi")) return 0;
+            if (str.contains("hi")) return 1;
+            return 0;
+        }
+        if (str.startsWith("xhi")) count += countHi2(str.substring(2));
+        else {if (str.startsWith("hi")) count += 1;
+            count += countHi2(str.substring(1));}
+        return count;
+    }
+
+    public int strCount(String str, String sub) {
+        int count = 0;
+        if (str.length() <= sub.length()) {
+            if (str.equals(sub)) return 1;
+            return 0;
+        }
+        if (str.startsWith(sub)) {
+            count++;
+            count += strCount(str.substring(sub.length()), sub);
+        }
+        else {
+            count += strCount(str.substring(1), sub);
+        }
+        return count;
+    }
 }

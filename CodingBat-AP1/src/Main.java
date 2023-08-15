@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Main {
@@ -148,5 +149,87 @@ public class Main {
             count += Math.abs(heights[i + 1] - heights[i]) >= 5 ? 1 : 0;
         }
         return count;
+    }
+
+    public boolean scoresClump(int[] scores) {
+        if (scores.length < 3) return true;
+        for (int i = 1; i < scores.length - 1; i++) {
+            if ((scores[i + 1] - scores[i - 1]) <= 2) return true;
+        }
+        return false;
+    }
+
+    public boolean dividesSelf(int n) {
+        String number = Integer.toString(n);
+        int[] nDigits = new int[number.length()];
+        for (int i = 0; i < number.length(); i++) {
+            nDigits[i] = Integer.parseInt(Character.toString(number.charAt(i)));
+        }
+        for (int i : nDigits) {
+            if (i == 0 || n % i != 0) return false;
+        }
+        return true;
+    }
+
+    public int userCompare(String aName, int aId, String bName, int bId) {
+        if (aName.compareTo(bName) < 0) return -1;
+        if (aName.compareTo(bName) > 0) return 1;
+        return Integer.compare(aId, bId);
+    }
+
+    public String[] mergeTwo(String[] a, String[] b, int n) {
+        String[] merged = new String[n];
+        int aIndex = 0;
+        int bIndex = 0;
+        for (int i = 0; i < n; i++) {
+            if (a[aIndex].compareTo(b[bIndex]) < 0) {
+                merged[i] = a[aIndex];
+                aIndex++;
+            }
+            else if (a[aIndex].compareTo(b[bIndex]) > 0) {
+                merged[i] = b[bIndex];
+                bIndex++;
+            }
+            else {
+                merged[i] = a[aIndex];
+                aIndex++;
+                bIndex++;
+            }
+        }
+        return merged;
+    }
+
+    public int commonTwo(String[] a, String[] b) {
+        a = removeDuplicates(a);
+        b = removeDuplicates(b);
+        int count = 0;
+        List<String> aList = new ArrayList<>(Arrays.asList(a));
+        List<String> bList = new ArrayList<>(Arrays.asList(b));
+        for (String i : aList) {
+            if (bList.contains(i)) count++;
+        }
+        return count;
+    }
+
+    public String[] removeDuplicates(String[] nums) {
+        List<String> list = new ArrayList<>();
+        for (String i : nums) {
+            if (!list.contains(i)) list.add(i);
+        }
+        String[] array = new String[list.size()];
+        for (int i = 0; i < list.size(); i++) array[i] = list.get(i);
+        return array;
+    }
+
+    public int scoresAverage(int[] scores) {
+        return (Math.max(average(scores, 0, scores.length / 2), average(scores, scores.length / 2, scores.length)));
+    }
+
+    public int average(int[] scores, int start, int end) {
+        int sum = 0;
+        for (int i = start; i < end; i++) {
+            sum += scores[i];
+        }
+        return sum / (end - start);
     }
 }
