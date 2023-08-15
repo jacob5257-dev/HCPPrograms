@@ -161,7 +161,7 @@ public class Main {
 
     public boolean dividesSelf(int n) {
         String number = Integer.toString(n);
-        int[] nDigits = new int[number.length()];
+        int[] nDigits = new int[number.length()]; // skipcq: JAVA-W0243
         for (int i = 0; i < number.length(); i++) {
             nDigits[i] = Integer.parseInt(Character.toString(number.charAt(i)));
         }
