@@ -75,122 +75,130 @@ public class TicTacToe {
                 if (playerHasWon(board) != ' ') break;
                 // Let the computer select a random place to go
 
-                // If there are two cells with the same value in a row, column, or diagonal, the computer will select the third cell to win/prevent loss
-                // Row 1
-                if (board[0][0] == board[0][1]) {
-                    row = 0;
-                    col = 2;
+                // Check if there are any row, column, or diagonal where two of the three spots are occupied by o and the third is empty. If there is, go there.
+                boolean selected = false;
+                // Check rows and columns
+                for (int i = 0; i < 3; i++) {
+                    if (board[i][0] == 'o' && board[i][1] == 'o' && board[i][2] != 'x') {
+                        board[i][2] = 'o';
+                        selected = true;
+                        break;
+                    }
+                    if (board[i][0] == 'o' && board[i][2] == 'o' && board[i][1] != 'x') {
+                        board[i][1] = 'o';
+                        selected = true;
+                        break;
+                    }
+                    if (board[i][1] == 'o' && board[i][2] == 'o' && board[i][0] != 'x') {
+                        board[i][0] = 'o';
+                        selected = true;
+                        break;
+                    }
+                    if (board[0][i] == 'o' && board[1][i] == 'o' && board[2][i] != 'x') {
+                        board[2][i] = 'o';
+                        selected = true;
+                        break;
+                    }
+                    if (board[0][i] == 'o' && board[2][i] == 'o' && board[1][i] != 'x') {
+                        board[1][i] = 'o';
+                        selected = true;
+                        break;
+                    }
+                    if (board[1][i] == 'o' && board[2][i] == 'o' && board[0][i] != 'x') {
+                        board[0][i] = 'o';
+                        selected = true;
+                        break;
+                    }
                 }
-                else if (board[0][0] == board[0][2]) {
-                    row = 0;
-                    col = 1;
+                // Check diagonals
+                if (board[0][0] == 'o' && board[1][1] == 'o' && board[2][2] != 'x') {
+                    board[2][2] = 'o';
+                    selected = true;
                 }
-                else if (board[0][2] == board[0][1]) {
-                    row = 0;
-                    col = 0;
+                if (board[0][0] == 'o' && board[2][2] == 'o' && board[1][1] != 'x') {
+                    board[1][1] = 'o';
+                    selected = true;
                 }
-                // Row 2
-                else if (board[1][0] == board[1][1]) {
-                    row = 1;
-                    col = 2;
+                if (board[1][1] == 'o' && board[2][2] == 'o' && board[0][0] != 'x') {
+                    board[0][0] = 'o';
+                    selected = true;
                 }
-                else if (board[1][0] == board[1][2]) {
-                    row = 1;
-                    col = 1;
+                if (board[0][2] == 'o' && board[1][1] == 'o' && board[2][0] != 'x') {
+                    board[2][0] = 'o';
+                    selected = true;
                 }
-                else if (board[1][1] == board[1][2]) {
-                    row = 1;
-                    col = 0;
+                if (board[0][2] == 'o' && board[2][0] == 'o' && board[1][1] != 'x') {
+                    board[1][1] = 'o';
+                    selected = true;
                 }
-                // Row 3
-                else if (board[2][0] == board[2][1]) {
-                    row = 2;
-                    col = 2;
+                if (board[1][1] == 'o' && board[2][0] == 'o' && board[0][2] != 'x') {
+                    board[0][2] = 'o';
+                    selected = true;
                 }
-                else if (board[2][0] == board[2][2]) {
-                    row = 2;
-                    col = 1;
+                // Check if there are any row, column, or diagonal where two of the three spots are occupied by x and the third is empty. If there is, go there.
+                if (!selected) {
+                    // Check rows and columns
+                    for (int i = 0; i < 3; i++) {
+                        if (board[i][0] == 'x' && board[i][1] == 'x' && board[i][2] != 'o') {
+                            board[i][2] = 'o';
+                            selected = true;
+                            break;
+                        }
+                        if (board[i][0] == 'x' && board[i][2] == 'x' && board[i][1] != 'o') {
+                            board[i][1] = 'o';
+                            selected = true;
+                            break;
+                        }
+                        if (board[i][1] == 'x' && board[i][2] == 'x' && board[i][0] != 'o') {
+                            board[i][0] = 'o';
+                            selected = true;
+                            break;
+                        }
+                        if (board[0][i] == 'x' && board[1][i] == 'x' && board[2][i] != 'o') {
+                            board[2][i] = 'o';
+                            selected = true;
+                            break;
+                        }
+                        if (board[0][i] == 'x' && board[2][i] == 'x' && board[1][i] != 'o') {
+                            board[1][i] = 'o';
+                            selected = true;
+                            break;
+                        }
+                        if (board[1][i] == 'x' && board[2][i] == 'x' && board[0][i] != 'o') {
+                            board[0][i] = 'o';
+                            selected = true;
+                            break;
+                        }
+                    }
+                    // Check diagonals
+                    if (board[0][0] == 'x' && board[1][1] == 'x' && board[2][2] != 'o') {
+                        board[2][2] = 'o';
+                        selected = true;
+                    }
+                    if (board[0][0] == 'x' && board[2][2] == 'x' && board[1][1] != 'o') {
+                        board[1][1] = 'o';
+                        selected = true;
+                    }
+                    if (board[1][1] == 'x' && board[2][2] == 'x' && board[0][0] != 'o') {
+                        board[0][0] = 'o';
+                        selected = true;
+                    }
                 }
-                else if (board[2][2] == board[2][1]) {
-                    row = 2;
-                    col = 0;
-                }
-                // Column 1
-                else if (board[0][0] == board[1][0]) {
-                    row = 2;
-                    col = 0;
-                }
-                else if (board[0][0] == board[2][0]) {
-                    row = 1;
-                    col = 0;
-                }
-                else if (board[1][0] == board[2][0]) {
-                    row = 0;
-                    col = 0;
-                }
-                // Column 2
-                else if (board[0][1] == board[2][1]) {
-                    row = 1;
-                    col = 1;
-                }
-                else if (board[0][1] == board[1][1]) {
-                    row = 2;
-                    col = 1;
-                }
-                else if (board[1][1] == board[2][1]) {
-                    row = 0;
-                    col = 1;
-                }
-                // Column 3
-                else if (board[0][2] == board[1][2]) {
-                    row = 2;
-                    col = 2;
-                }
-                else if (board[0][2] == board[2][2]) {
-                    row = 1;
-                    col = 2;
-                }
-                else if (board[1][2] == board[2][2]) {
-                    row = 0;
-                    col = 2;
-                }
-                // Diagonal 1
-                else if (board[0][0] == board[1][1]) {
-                    row = 2;
-                    col = 2;
-                }
-                else if (board[0][0] == board[2][2]) {
-                    row = 1;
-                    col = 1;
-                }
-                else if (board[2][2] == board[1][1]) {
-                    row = 0;
-                    col = 0;
-                }
-                // Diagonal 2
-                else if (board[2][0] == board[0][2]) {
-                    row = 1;
-                    col = 1;
-                }
-                else if (board[2][0] == board[1][1]) {
-                    row = 0;
-                    col = 2;
-                }
-                else if (board[0][2] == board[1][1]) {
-                    row = 2;
-                    col = 0;
-                }
-                else {
+                // If there are no spots for an instant win or to prevent loss, then it will randomly select a spot.
+                if (!selected) {
                     nextPlace = (int) (Math.random() * 9) + 1;
                     row = (nextPlace - 1) / 3;
                     col = (nextPlace - 1) % 3;
+                    // Checks that the randomly selected spot is not already occupied and if it is, it will select a new spot.
+                    while (board[row][col] == 'x' || board[row][col] == 'o') {
+                        nextPlace = (int) (Math.random() * 9) + 1;
+                        row = (nextPlace - 1) / 3;
+                        col = (nextPlace - 1) % 3;
+                    }
+                    // Sets the board to the randomly selected spot.
+                    board[row][col] = 'o';
                 }
-                while (board[row][col] == 'x' || board[row][col] == 'o') {
-                    nextPlace = (int) (Math.random() * 9) + 1;
-                    row = (nextPlace - 1) / 3;
-                    col = (nextPlace - 1) % 3;
-                }
-                board[row][col] = 'o';
+                // Checks if a player has won/tied
                 if (playerHasWon(board) != ' ') break;
             }
         }
