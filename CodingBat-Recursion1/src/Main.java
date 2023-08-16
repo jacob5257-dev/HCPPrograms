@@ -183,4 +183,80 @@ public class Main {
         }
         return count;
     }
+
+    public int count8(int n) {
+        int count = 0;
+        if (n < 10) {
+            if (n == 8) return 1;
+            return 0;
+        }
+        if (n % 10 == 8) {
+            if (n % 100 == 88) count += 2;
+            else count++;
+        }
+        count += count8(n / 10);
+        return count;
+    }
+
+    public String pairStar(String str) {
+        if (str.length() <= 1) return str;
+        if (str.charAt(0) == str.charAt(1)) return str.charAt(0) + "*" + pairStar(str.substring(1));
+        return str.charAt(0) + pairStar(str.substring(1));
+    }
+
+    public String endX(String str) {
+        if (str.length() <= 1) return str;
+        if (str.charAt(0) == 'x') return endX(str.substring(1)) + "x";
+        return str.charAt(0) + endX(str.substring(1));
+    }
+
+    public int countPairs(String str) {
+        int count = 0;
+        if (str.length() < 3) return 0;
+        if (str.length() == 3) {
+            if (str.charAt(0) == str.charAt(2)) return 1;
+            return 0;
+        }
+        if (str.charAt(0) == str.charAt(2)) count++;
+        count += countPairs(str.substring(1));
+        return count;
+    }
+
+    public String stringClean(String str) {
+        String result = "";
+        if (str.length() < 2) return str;
+        if (str.charAt(0) != str.charAt(1)) result += Character.toString(str.charAt(0));
+        result += stringClean(str.substring(1));
+        return result;
+    }
+
+    public String parenBit(String str) {
+        if (str.charAt(0) == '(') {
+            for (int i = 0; i < str.length(); i++) {
+                if (str.charAt(i) == ')') return str.substring(0, i + 1);
+            }
+        }
+        else return parenBit(str.substring(1));
+        return "";
+    }
+
+    public boolean nestParen(String str) {
+        if (str.isEmpty()) return true;
+        if (str.length() == 1) return false;
+        if (str.charAt(0) == '(' && str.charAt(str.length() - 1) == ')') return nestParen(str.substring(1, str.length() - 1));
+        return false;
+    }
+
+    public boolean strCopies(String str, String sub, int n) {
+        if (str.length() < sub.length()) return n == 0;
+        if (str.startsWith(sub)) return strCopies(str.substring(1), sub, n - 1);
+        return strCopies(str.substring(1), sub, n);
+    }
+
+    public int strDist(String str, String sub) {
+        if (str.length() < sub.length()) return 0;
+        if (str.startsWith(sub) && str.endsWith(sub)) return str.length();
+        if (str.startsWith(sub)) return strDist(str.substring(0, str.length() - 1), sub);
+        return strDist(str.substring(1), sub);
+    }
 }
