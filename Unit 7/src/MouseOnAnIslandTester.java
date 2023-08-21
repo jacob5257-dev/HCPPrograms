@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.text.DecimalFormat;
 
 public class MouseOnAnIslandTester {
     public static void main(String[] args) {
@@ -23,19 +24,19 @@ public class MouseOnAnIslandTester {
             MouseOnAnIsland island = new MouseOnAnIsland(PERCENT_BRIDGES);
             for (int j = 0; j < 50; j++) {
                 island.moveMouse();
-                if (island.isOnEdge() != 0) {
-                    if (island.isOnEdge() == 1) escaped++;
-                    else if (island.isOnEdge() == -1) drowned++;
-                }
-            }
-            if (island.isOnEdge() == 0) starved++;
-        }
-        System.out.println("Escaped: " + escaped + "\nDrowned: " + drowned + "\nStarved: " + starved + "\nMath: " + (escaped + drowned + starved == TRIALS));
+                // if island.isOnEdge() is 0, continue. If it is 1, increment escaped. If it is -1, increment drowned.
 
-        MouseOnAnIsland island = new MouseOnAnIsland(30);
-        System.out.println(island);
-        island.moveMouse();
-        System.out.println(island);
+                if (island.isOnEdge() == 1) { escaped++; System.out.println("The mouse escaped on turn " + island.getMoves()); break; }
+                else if (island.isOnEdge() == -1) { drowned++; System.out.println("The mouse drowned on turn " + island.getMoves()); break; }
+            }
+            if (island.isOnEdge() == 0) { starved++; System.out.println("The mouse starved on turn " + island.getMoves());}
+            System.out.println(i < 3 ? island : "");
+        }
+        DecimalFormat df = new DecimalFormat("#.##");
+        double escapedPercent = Double.parseDouble(df.format((double) escaped / TRIALS * 100));
+        double drownedPercent = Double.parseDouble(df.format((double) drowned / TRIALS * 100));
+        double starvedPercent = Double.parseDouble(df.format((double) starved / TRIALS * 100));
+        System.out.println("Escaped: " + escaped + " (" + escapedPercent + "%)\nDrowned: " + drowned + " (" + drownedPercent + "%)\nStarved: " + starved + " (" + starvedPercent + "%)\nMath: " + (escaped + drowned + starved == TRIALS));
     }
 
     public static boolean isNotNumeric(String strNum) {

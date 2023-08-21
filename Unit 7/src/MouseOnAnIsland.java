@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Random;
 
 public class MouseOnAnIsland {
@@ -6,6 +7,8 @@ public class MouseOnAnIsland {
     // The mouse's position
     private int mouseRow;
     private int mouseCol;
+    private int moves = 0;
+    public final int[][] originalIsland;
 
     /**
      * Creates a new simulation of a mouse on the island
@@ -30,24 +33,31 @@ public class MouseOnAnIsland {
             this.island[this.island.length - 1][i] = random.nextInt(100) < percentBridges ? 0 : -1;
         }
         // Places the mouse in the middle and calls the function to move it there.
-        setMouse(this.island.length / 2, this.island[0].length / 2);
+        this.mouseRow = this.island.length / 2;
+        this.mouseCol = this.island[0].length / 2;
+        setMouse();
+        // Copies the island to a new array so we can see the end state
+        this.originalIsland = new int[this.island.length][this.island[0].length];
+        for (int i = 0; i < this.island.length; i++) {
+            this.originalIsland[i] = Arrays.copyOf(this.island[i], this.island[i].length);
+        }
     }
 
     /**
-     * Moves the mouse to a new position.
-     * @param newMouseRow The row to move the mouse to.
-     * @param newMouseCol The column to move the mouse to.
+     * Moves the mouse to a new position. Modify the mouseRow and mouseCol variables first, and then call this method.
      * @throws IllegalArgumentException If the new position is not on the island.
      */
-    public void setMouse(int newMouseRow, int newMouseCol) {
+    public void setMouse() {
         // Check if the new position is on the island
-        if (newMouseRow < 0 || newMouseRow >= this.island.length || newMouseCol < 0 || newMouseCol >= this.island[0].length) throw new IllegalArgumentException("The new position must be on the island.");
-        // Change the old position to 0
-        this.island[mouseRow][mouseCol] = 0;
-        // Change the new position to 1
-        mouseRow = newMouseRow;
-        mouseCol = newMouseCol;
-        this.island[mouseRow][mouseCol] = 1;
+        //if (mouseRow < 0 || mouseRow >= this.island.length || mouseCol < 0 || mouseCol >= this.island[0].length) throw new IllegalArgumentException("The new position must be on the island.");        this.island[this.mouseRow][this.mouseCol] = 1;
+        // Find where there is a 1 on the island and store its position
+        for (int i = 0; i < this.island.length; i++) {
+            for (int j = 0; j < this.island[0].length; j++) {
+                if (this.island[i][j] == 1) this.island[i][j] = 0;
+            }
+        }
+        // Set the new position to 1
+        this.island[this.mouseRow][this.mouseCol] = 1;
     }
 
     /**
@@ -55,13 +65,15 @@ public class MouseOnAnIsland {
      * @throws IllegalArgumentException If the new position is not on the island.
      */
     public void moveMouse() {
+        moves++;
         Random random = new Random();
         int movement = random.nextInt(4) + 1;
         // 1 = up, 2 = right, 3 = down, 4 = left
-        if (movement == 1) setMouse(mouseRow, mouseCol--);
-        else if (movement == 2) setMouse(mouseRow++, mouseCol);
-        else if (movement == 3) setMouse(mouseRow, mouseCol++);
-        else setMouse(mouseRow--, mouseCol);
+        if (movement == 1) mouseCol--;
+        else if (movement == 2) mouseRow++;
+        else if (movement == 3) mouseCol++;
+        else mouseRow--;
+        setMouse();
     }
 
     /**
@@ -70,25 +82,25 @@ public class MouseOnAnIsland {
      */
     public int isOnEdge() {
         // Checks if the mouse is on an edge, and check if the cell it is on is a bridge, water, or land.
-        if (mouseRow == 0) {
-            if (this.island[mouseRow][mouseCol] == -1) return -1;
-            else if (this.island[mouseRow][mouseCol] == 0) return 1;
-            else return 0;
+        if (this.mouseRow == 0) {
+            if (this.originalIsland[this.mouseRow][this.mouseCol] == -1) return -1;
+            else if (this.originalIsland[this.mouseRow][this.mouseCol] == 0) return 1;
+            //else return 0;
         }
-        else if (mouseRow == this.island.length - 1) {
-            if (this.island[mouseRow][mouseCol] == -1) return -1;
-            else if (this.island[mouseRow][mouseCol] == 0) return 1;
-            else return 0;
+        else if (this.mouseRow == 9) {
+            if (this.originalIsland[this.mouseRow][this.mouseCol] == -1) return -1;
+            else if (this.originalIsland[this.mouseRow][this.mouseCol] == 0) return 1;
+            //else return 0;
         }
-        else if (mouseCol == 0) {
-            if (this.island[mouseRow][mouseCol] == -1) return -1;
-            else if (this.island[mouseRow][mouseCol] == 0) return 1;
-            else return 0;
+        else if (this.mouseCol == 0) {
+            if (this.originalIsland[this.mouseRow][this.mouseCol] == -1) return -1;
+            else if (this.originalIsland[this.mouseRow][this.mouseCol] == 0) return 1;
+            //else return 0;
         }
-        else if (mouseCol == this.island[0].length - 1) {
-            if (this.island[mouseRow][mouseCol] == -1) return -1;
-            else if (this.island[mouseRow][mouseCol] == 0) return 1;
-            else return 0;
+        else if (this.mouseCol == 14) {
+            if (this.originalIsland[this.mouseRow][this.mouseCol] == -1) return -1;
+            else if (this.originalIsland[this.mouseRow][this.mouseCol] == 0) return 1;
+            //else return 0;
         }
         return 0;
     }
@@ -101,10 +113,36 @@ public class MouseOnAnIsland {
         String result = "";
         for (int[] row : this.island) {
             for (int cell : row) {
-                result += cell == -1 ? cell + " " : cell + "  ";
+               switch (cell) {
+                   case -1 -> result += "W ";
+                   case 0 -> result += "B ";
+                   case 1 -> result += "M ";
+               }
             }
             result += "\n";
         }
         return result;
+    }
+
+    public String printTestString() {
+        String result = "";
+        for (int[] row : this.originalIsland) {
+            for (int cell : row) {
+                switch (cell) {
+                    case -1 -> result += "W ";
+                    case 0 -> result += "B ";
+                    case 1 -> result += "M ";
+                }
+            }
+            result += "\n";
+        }
+        return result;
+    }
+    /**
+     * Gets the number of moves the mouse has made.
+     * @return The number of moves the mouse has made.
+     */
+    public int getMoves() {
+        return moves;
     }
 }
