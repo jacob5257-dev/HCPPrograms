@@ -124,20 +124,6 @@ public class MouseOnAnIsland {
         return result;
     }
 
-    public String printTestString() {
-        String result = "";
-        for (int[] row : this.originalIsland) {
-            for (int cell : row) {
-                switch (cell) {
-                    case -1 -> result += "W ";
-                    case 0 -> result += "B ";
-                    case 1 -> result += "M ";
-                }
-            }
-            result += "\n";
-        }
-        return result;
-    }
     /**
      * Gets the number of moves the mouse has made.
      * @return The number of moves the mouse has made.

@@ -1,7 +1,7 @@
 import javax.swing.*;
 import java.text.DecimalFormat;
 
-public class MouseOnAnIslandTester {
+public class MouseOnAnIslandMain {
     public static void main(String[] args) {
         int escaped = 0, drowned = 0, starved = 0;
         // Ask the user how many trials and what the chance of bridges should be
