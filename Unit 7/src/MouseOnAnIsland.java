@@ -49,7 +49,7 @@ public class MouseOnAnIsland {
      */
     public void setMouse() {
         // Check if the new position is on the island
-        //if (mouseRow < 0 || mouseRow >= this.island.length || mouseCol < 0 || mouseCol >= this.island[0].length) throw new IllegalArgumentException("The new position must be on the island.");        this.island[this.mouseRow][this.mouseCol] = 1;
+        if (mouseRow < 0 || mouseRow >= this.island.length || mouseCol < 0 || mouseCol >= this.island[0].length) throw new IllegalArgumentException("The new position must be on the island.");        this.island[this.mouseRow][this.mouseCol] = 1;
         // Find where there is a 1 on the island and store its position
         for (int i = 0; i < this.island.length; i++) {
             for (int j = 0; j < this.island[0].length; j++) {
@@ -62,7 +62,6 @@ public class MouseOnAnIsland {
 
     /**
      * Moves the mouse to a new position randomly.
-     * @throws IllegalArgumentException If the new position is not on the island.
      */
     public void moveMouse() {
         moves++;
@@ -85,22 +84,18 @@ public class MouseOnAnIsland {
         if (this.mouseRow == 0) {
             if (this.originalIsland[this.mouseRow][this.mouseCol] == -1) return -1;
             else if (this.originalIsland[this.mouseRow][this.mouseCol] == 0) return 1;
-            //else return 0;
         }
         else if (this.mouseRow == 9) {
             if (this.originalIsland[this.mouseRow][this.mouseCol] == -1) return -1;
             else if (this.originalIsland[this.mouseRow][this.mouseCol] == 0) return 1;
-            //else return 0;
         }
         else if (this.mouseCol == 0) {
             if (this.originalIsland[this.mouseRow][this.mouseCol] == -1) return -1;
             else if (this.originalIsland[this.mouseRow][this.mouseCol] == 0) return 1;
-            //else return 0;
         }
         else if (this.mouseCol == 14) {
             if (this.originalIsland[this.mouseRow][this.mouseCol] == -1) return -1;
             else if (this.originalIsland[this.mouseRow][this.mouseCol] == 0) return 1;
-            //else return 0;
         }
         return 0;
     }
