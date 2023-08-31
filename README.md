@@ -2,7 +2,7 @@
 
 ## What is this?
 
-This repository holds the code for the HCP Programs. The HCP Programs are a set of programs used in the Honors Computer Programming 1 class. The programs are written with the latest version of Java on the latest version of the JDK. The programs are written in VSCode and IntelliJ IDEA on Ubuntu. CodingBat solutions are available under "CodingBat-<category>" folders. Programs are available by unit in their respective folder.
+This repository holds the code for the HCP Programs. The HCP Programs are a set of programs used in the Honors Computer Programming 1 class. The programs are written with the latest version of Java on the latest version of the JDK. The programs are written in VSCode and IntelliJ IDEA on Ubuntu. CodingBat solutions are available under "CodingBat-{category}" folders. Python CodingBats are in "CodingBatPython". Programs are available by unit in their respective folder.
 
 ## How do I use this?
 
