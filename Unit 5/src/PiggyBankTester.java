@@ -20,7 +20,7 @@ import java.util.ArrayList;
  * @revision 2.1
  * @revisionDate 2023-01-26
  * @revisionAuthor jacob5257
- * @revisionDescription Bugfixing.
+ * @revisionDescription Bugfix.
  */
 public class PiggyBankTester 
 {
@@ -52,10 +52,10 @@ public class PiggyBankTester
 			int nickels = 0;
 			int dimes = 0;
 			int quarters = 0;
-			if (pennyInput.getText().length() > 0) pennies = Integer.parseInt(pennyInput.getText());
-			if (nickelInput.getText().length() > 0) nickels = Integer.parseInt(nickelInput.getText());
-			if (dimeInput.getText().length() > 0) dimes = Integer.parseInt(dimeInput.getText());
-			if (quarterInput.getText().length() > 0) quarters = Integer.parseInt(quarterInput.getText());
+			if (!pennyInput.getText().isEmpty()) pennies = Integer.parseInt(pennyInput.getText());
+			if (!nickelInput.getText().isEmpty()) nickels = Integer.parseInt(nickelInput.getText());
+			if (!dimeInput.getText().isEmpty()) dimes = Integer.parseInt(dimeInput.getText());
+			if (!quarterInput.getText().isEmpty()) quarters = Integer.parseInt(quarterInput.getText());
 			// Create a piggy bank object by creating an instance of the piggy bank class with user specified input (coins)
 			PiggyBank piggyBank = new PiggyBank(quarters, dimes, nickels, pennies);
 			while (true) {
