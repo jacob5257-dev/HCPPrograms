@@ -149,7 +149,7 @@ public class DetermineHand {
      * @param cards The cards to check.
      * @return Whether the player has a straight (true = yes, false = no).
      */
-    public static boolean isStraight(List<String> cards) {
+    public static boolean isStraight(List<String> cards) { //skipcq: JAVA-R1000
         // Try to figure out what this does too lazy to comment
         int[] previousCards = new int[5];
         for (int i = 0; i < cards.size(); i++) {

@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) { //skipcq: JAVA-R1000
         Scanner scanner = new Scanner(System.in);
         // New player with 10 tokens
         Player player = new Player(10);
