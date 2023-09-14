@@ -6,27 +6,12 @@ public class Table {
     String[] revealedCards = new String[5];
     int currentBet = 0;
     public Table() {
-        String[] suits = {"S", "H", "C", "D"};
-        String[] values = {"A", "2", "3", "4", "5", "6", "7", "8", "9",
-                           "10", "J", "Q", "K"};
-        // Create a deck of cards. The deck should be A-K of each suit.
-        for (int i = 0; i < 4; i++) {
-            for (int j = 0; j < 13; j++) {
-                deck.add(values[j] + suits[i]);
-            }
-        }
-        // Deck is now created w/ formatting as 2C, 3C, etc.
+
     }
 
     public void shuffle() {
         // Shuffle the deck.
-        for (int i = 0; i < 1000; i++) {
-            int random1 = (int) (Math.random() * 52);
-            int random2 = (int) (Math.random() * 52);
-            String temp = deck.get(random1);
-            deck.set(random1, deck.get(random2));
-            deck.set(random2, temp);
-        }
+
     }
 
     public void shuffle(int depth) {
