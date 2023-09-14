@@ -136,7 +136,7 @@ public class DetermineHand {
         // Get the suit of the first card
         String suit = cards.get(0).substring(cards.get(0).length() - 1);
         for (String card : cards) {
-            // If the suit of any of the future cards don't match the first card, return false.
+            // If the suit of the future cards don't match the first card, return false.
             if (!card.substring(card.length() - 1).equals(suit)) {
                 return false;
             }
