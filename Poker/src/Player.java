@@ -113,6 +113,7 @@ public class Player {
     /**
      * Adds tokens to the player's total.
      * @param result The result of the {@link #getHandResult()} so the proper amount of tokens can be added.
+     * @throws IllegalArgumentException If the result is invalid.
      */
     public void addTokens(int result) {
         // This should also be pretty straightforward lol

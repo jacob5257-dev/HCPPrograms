@@ -30,4 +30,29 @@ public class Main {
         }
         return list;
     }
+
+    public List<String> noZ(List<String> strings) {
+        List<String> a = new ArrayList<String>();
+        for (String string : strings) {
+            if (!string.contains("z")) a.add(string);
+        }
+        return a;
+    }
+
+    public List<String> noLong(List<String> strings) {
+        List<String> a = new ArrayList<>();
+        for (String string : strings) {
+            if (string.length() < 4) a.add(string);
+        }
+        return a;
+    }
+
+    public List<String> no34(List<String> strings) {
+        List<String> a = new ArrayList<>();
+        for (String string : strings) {
+            if (string.length() != 4 && string.length() != 3) a.add(string);
+        }
+        return a;
+    }
+
 }
