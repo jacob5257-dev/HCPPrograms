@@ -55,13 +55,12 @@ public class Player {
      * @return The cards in a player's hand
      */
     public String toString() {
-        String result = cards.toString();
         // Replace H with ♥, D with ♦, C with ♣, and S with ♠
-        result = result.replace("H", "♥");
-        result = result.replace("D", "♦");
-        result = result.replace("C", "♣");
-        result = result.replace("S", "♠");
-        return result;
+        return cards.toString()
+                .replace("H", "♥")
+                .replace("D", "♦")
+                .replace("C", "♣")
+                .replace("S", "♠");
     }
 
     /**
