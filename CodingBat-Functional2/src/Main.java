@@ -55,4 +55,24 @@ public class Main {
         return a;
     }
 
+    public List<String> noYY(List<String> strings) {
+        strings.removeIf(s -> s.contains("yy"));
+        List<String> a = new ArrayList<>();
+        for (String string : strings) {
+            if (!string.endsWith("y")) a.add(string + "y");
+        }
+        return a;
+    }
+
+    public List<Integer> two2(List<Integer> nums) {
+        nums.removeIf(n -> n * 2 % 10 == 2);
+        nums.replaceAll(n -> n * 2);
+        return nums;
+    }
+
+    public List<Integer> square56(List<Integer> nums) {
+        nums.replaceAll(n -> n * n + 10);
+        nums.removeIf(n -> n % 10 == 5 || n % 10 == 6);
+        return nums;
+    }
 }
