@@ -18,8 +18,8 @@ If applicable, add screenshots to help explain your problem.
 
 **Desktop (please complete the following information):**
 
-- OS: [e.g. iOS]
-- IDE; [e.g. IntelliJ, Eclipse]
+- OS: [e.g. Windows, Linux, Mac]
+- IDE: [e.g. IntelliJ, Eclipse]
 - Version [e.g. 22]
 
 **Additional context**
