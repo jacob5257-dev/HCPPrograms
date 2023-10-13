@@ -10,3 +10,4 @@
 "bro about the camera"
 "this only wasted one pen"
 "the other square is bigger"
+"i thought 8 was odd"
