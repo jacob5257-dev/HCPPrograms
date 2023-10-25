@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/AmusementPark/AmusementPark.iml" filepath="$PROJECT_DIR$/AmusementPark/AmusementPark.iml" />
       <module fileurl="file://$PROJECT_DIR$/CCValidator/CCValidator.iml" filepath="$PROJECT_DIR$/CCValidator/CCValidator.iml" />
       <module fileurl="file://$PROJECT_DIR$/CodingBat-AP1/CodingBat-AP1.iml" filepath="$PROJECT_DIR$/CodingBat-AP1/CodingBat-AP1.iml" />
       <module fileurl="file://$PROJECT_DIR$/CodingBat-Array1/CodingBat-Array1.iml" filepath="$PROJECT_DIR$/CodingBat-Array1/CodingBat-Array1.iml" />
