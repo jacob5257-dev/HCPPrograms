@@ -11,3 +11,6 @@
 "this only wasted one pen"
 "the other square is bigger"
 "i thought 8 was odd"
+"this is a bigger scam"
+"please stop"
+"this is beautiful wait no it's not"
