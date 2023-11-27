@@ -36,7 +36,7 @@ public class MouseOnAnIsland {
         this.mouseRow = this.island.length / 2;
         this.mouseCol = this.island[0].length / 2;
         setMouse();
-        // Copies the island to a new array so we can see the end state
+        // Copies the island to a new array, so we can see the end state
         this.originalIsland = new int[this.island.length][this.island[0].length];
         for (int i = 0; i < this.island.length; i++) {
             this.originalIsland[i] = Arrays.copyOf(this.island[i], this.island[i].length);

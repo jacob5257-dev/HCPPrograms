@@ -3,7 +3,7 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$">
-      <excludeFolder url="file://$MODULE_DIR$/venv" />
+      <sourceFolder url="file://$MODULE_DIR$/venv/lib/python3.10" type="java-resource" />
     </content>
     <orderEntry type="jdk" jdkName="Python 3.10 (CodingBatPython-String1)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -11,6 +11,7 @@ import javax.swing.*;
  * @version 1.0
  * @since 2023-01-01
  */
+@SuppressWarnings("GrazieInspection")
 public class MultipleChoiceQuiz {
     /**
      * Generates a multiple choice quiz with 3 questions and 3 answers each, randomizes the order of the answers, and checks if the user's answer is correct.

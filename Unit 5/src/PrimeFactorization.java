@@ -44,7 +44,7 @@ public class PrimeFactorization {
     }
     /**
      * This method checks if the number has more factors.
-     * @return Whether or not the number has more factors.
+     * @return Whether not the number has more factors.
      * @since 2023-01-18
      * @version 1.0
      * @author jacob5257

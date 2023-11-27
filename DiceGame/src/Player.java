@@ -3,7 +3,7 @@ import java.util.List;
 
 public class Player {
     /* Implement the following methods:
-     * rollDice(Dice): uses the dice passed in to the function to roll a dice. Save to instance variable lastRoll and return it.
+     * rollDice(Dice): uses the dice passed in to the function to roll a die. Save to instance variable lastRoll and return it.
      * getSum(): return the sum of all the rolls the player has made.
      * getRolls(): return an arraylist of all the rolls the player has made.
      * getRollsCount(): return the number of rolls the player has made.

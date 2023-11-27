@@ -69,7 +69,7 @@ public class PiggyBank
 	}
 	
 	/**
-	 * This methods returns the value of the coins in the piggy bank (complete the method implementation)
+	 * These methods returns the value of the coins in the piggy bank (complete the method implementation)
 	 * @return The value of the coins in the piggy bank
 	 */
 	public double totalValue()

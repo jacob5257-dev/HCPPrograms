@@ -29,6 +29,8 @@ def count_code(str):
             count += 1
     return count
 
+
+# noinspection GrazieInspection
 def end_other(a, b):
     # check if a is shorter than b
     if b[-1 * len(a):].lower() == a.lower():

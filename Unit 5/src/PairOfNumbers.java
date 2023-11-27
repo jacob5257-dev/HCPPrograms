@@ -18,7 +18,7 @@ public class PairOfNumbers {
         this.b = b;
     }
     
-    // The numbers and the functions. Don't ask for javadocs for all the functions; they're self explanatory!
+    // The numbers and the functions. Don't ask for javadocs for all the functions; they're self-explanatory!
     private int a = 1;
     private int b = 2;
 

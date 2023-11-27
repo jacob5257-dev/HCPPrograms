@@ -26,7 +26,7 @@ public class PiggyBankTester
 {
 	public static void main(String[] args) 
 	{
-		// Setup a dialog input and request the number of coins to put in the piggy bank
+		// Set up a dialog input and request the number of coins to put in the piggy bank
 		JTextField quarterInput = new JTextField(5);
         JTextField dimeInput = new JTextField(5);
         JTextField nickelInput = new JTextField(5);

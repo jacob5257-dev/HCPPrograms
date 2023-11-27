@@ -7,6 +7,7 @@
  * @see PrimesTableTest
  */
 
+@SuppressWarnings("GrazieInspection")
 public class PrimesTable {
     private int a;
     /**

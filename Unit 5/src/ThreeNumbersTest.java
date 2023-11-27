@@ -26,7 +26,7 @@ public class ThreeNumbersTest {
                    b = file.nextDouble(),
                    c = file.nextDouble();
             ThreeNumbers numbers = new ThreeNumbers(a, b, c);
-            //Get numbers.getSmallest(), numbers.getMiddle(), and numbers.getLargest() and print them out, formatted with printf so they are aligned.
+            //Get numbers.getSmallest(), numbers.getMiddle(), and numbers.getLargest() and print them out, formatted with printf, so they are aligned.
             System.out.printf("%10.2f%10.2f%10.2f\n", numbers.getSmallest(), numbers.getMiddle(), numbers.getLargest());
         }
         file.close();
