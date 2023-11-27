@@ -1,27 +1,24 @@
 import javax.swing.JOptionPane;
 public class JOptionPaneReader {
-    public static void main(String[] args) {
-        String name = JOptionPane.showInputDialog("What is your name?");
-        String ageStr = JOptionPane.showInputDialog("How old are you?");
-        String moneyStr = JOptionPane.showInputDialog("How much money do you have?");
-        int age = 0;
-        double money = 0;
+    public static int readInt(String string) {
+        int output = 0;
         try {
-            age = Integer.parseInt(ageStr);
-            if (age < 1) throw new NumberFormatException();
+            output = Integer.parseInt(string);
         }
         catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, ageStr + " is an invalid age!");
-            System.exit(1);
+            throw new NumberFormatException(string + " is an invalid integer!");
         }
+        return output;
+    }
+
+    public static double readDouble(String string) {
+        double output = 0;
         try {
-            money = Double.parseDouble(moneyStr);
-            if (money < 0) throw new NumberFormatException();
+            output = Double.parseDouble(string);
         }
         catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, moneyStr + " is an invalid amount of money!");
-            System.exit(1);
+            throw new NumberFormatException(string + " is an invalid double!");
         }
-        JOptionPane.showMessageDialog(null, name + " is " + age + " years old and has $" + money + "!");
+        return output;
     }
 }
