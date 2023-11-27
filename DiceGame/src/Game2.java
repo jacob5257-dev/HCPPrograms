@@ -2,7 +2,7 @@ import java.util.*;
 import javax.swing.JOptionPane;
 
 public class Game2 {
-    public static void main(String[] args) {
+    public static void main(String[] args) { //skipcq: JAVA-R1000
         String playerCountString = JOptionPane.showInputDialog("How many players?");
         int playerCount = 0;
         try { 
@@ -18,7 +18,7 @@ public class Game2 {
 
         /*
          * Do the following:
-         * 1. Create a dice with the numbers +1, +2, +4, +8, +10, their negative counterparts, x2, /2, reset, and reset opponent.
+         * 1. Create a die with the numbers +1, +2, +4, +8, +10, their negative counterparts, x2, /2, reset, and reset opponent.
          * 2. While neither user has reached a sum exactly equal to 100, do the following:
          * a. Roll the dice for the player
          * b. Change the player's score based on the roll
@@ -51,6 +51,7 @@ public class Game2 {
                             players[i + 1].resetScore();
                         } catch (ArrayIndexOutOfBoundsException e) {
                             try {
+                                assert players[0] != null;
                                 players[0].resetScore();
                             } catch (ArrayIndexOutOfBoundsException e2) {
                                 JOptionPane.showMessageDialog(null, "No other players to reset!");

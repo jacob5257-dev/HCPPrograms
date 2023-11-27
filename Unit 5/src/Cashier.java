@@ -27,11 +27,6 @@ public class Cashier {
     //Starting variables
     private double cost = 1.0;
     private double amountGiven = 0.0;
-    //Doubles that control the price of each coin.
-    private final double dollarValue = 1.0;
-    private final double quarterValue = 0.25;
-    private final double dimeValue = 0.1;
-    private final double nickelValue = 0.05;
 
     /**
      * This method calculates the change given to the customer.
@@ -88,7 +83,9 @@ public class Cashier {
         List<Double> dollarChange = new ArrayList<>();
         int numberOfDollars = (int) totalChange;
         dollarChange.add((double) numberOfDollars);
-        dollarChange.add(Math.round((totalChange - numberOfDollars * this.dollarValue) * 100.0) / 100.0);
+        //Doubles that control the price of each coin.
+        double dollarValue = 1.0;
+        dollarChange.add(Math.round((totalChange - numberOfDollars * dollarValue) * 100.0) / 100.0);
         return dollarChange;
     }
 
@@ -105,7 +102,8 @@ public class Cashier {
         List<Double> dollarChange = new ArrayList<>();
         int numberOfQuarters = (int) (totalChange / 0.25);
         dollarChange.add((double) numberOfQuarters);
-        dollarChange.add(Math.round((totalChange - numberOfQuarters * this.quarterValue) * 100.0) / 100.0);
+        double quarterValue = 0.25;
+        dollarChange.add(Math.round((totalChange - numberOfQuarters * quarterValue) * 100.0) / 100.0);
         return dollarChange;
     }
 
@@ -122,7 +120,8 @@ public class Cashier {
         List<Double> dollarChange = new ArrayList<>();
         int numberOfDollars = (int) (totalChange / 0.1);
         dollarChange.add((double) numberOfDollars);
-        dollarChange.add(Math.round((totalChange - numberOfDollars * this.dimeValue) * 100.0) / 100.0);
+        double dimeValue = 0.1;
+        dollarChange.add(Math.round((totalChange - numberOfDollars * dimeValue) * 100.0) / 100.0);
         return dollarChange;
     }
 
@@ -139,7 +138,8 @@ public class Cashier {
         List<Double> dollarChange = new ArrayList<>();
         int numberOfDollars = (int) (totalChange / 0.05);
         dollarChange.add((double) numberOfDollars);
-        dollarChange.add(Math.round((totalChange - numberOfDollars * this.nickelValue) * 100.0) / 100.0);
+        double nickelValue = 0.05;
+        dollarChange.add(Math.round((totalChange - numberOfDollars * nickelValue) * 100.0) / 100.0);
         return dollarChange;
     }
 }

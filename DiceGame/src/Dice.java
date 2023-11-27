@@ -1,5 +1,5 @@
 public class Dice {
-    private int sides;
+    private final int sides;
 
     public Dice(int sides) {
         this.sides = sides;

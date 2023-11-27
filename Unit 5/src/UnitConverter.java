@@ -2,10 +2,10 @@ import java.util.List;
 
 public class UnitConverter {
     // Order: inches, feet, miles, meters, millimeters, centimeters, kilometers
-    private List<Double> conversionsToMeters;
-    private List<Double> conversionsFromMeters;
-    private int selectedIndex;
-    private double value;
+    private final List<Double> conversionsToMeters;
+    private final List<Double> conversionsFromMeters;
+    private final int selectedIndex;
+    private final double value;
 
     public UnitConverter(int units, double value) {
         this.selectedIndex = units;

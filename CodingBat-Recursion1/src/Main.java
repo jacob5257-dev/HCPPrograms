@@ -119,15 +119,14 @@ public class Main {
     public boolean array220(int[] nums, int index) {
         if (nums.length <= index + 1) return false;
         if (index == nums.length - 1) {
-            if (nums[index] * 10 == nums[index + 1]) return true;
-            return false;
+            return nums[index] * 10 == nums[index + 1];
         }
         return nums[index] * 10 == nums[index + 1] || array220(nums, index + 1);
     }
 
     public String allStar(String str) {
         if (str.length() <= 1) return str;
-        return Character.toString(str.charAt(0)) + "*" + allStar(str.substring(1));
+        return str.charAt(0) + "*" + allStar(str.substring(1));
     }
 
     public int countAbc(String str) {

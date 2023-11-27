@@ -3,7 +3,7 @@ import java.util.Random;
 
 public class MouseOnAnIsland {
     // The board the mouse is on
-    private int[][] island;
+    private final int[][] island;
     // The mouse's position
     private int mouseRow;
     private int mouseCol;

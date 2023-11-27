@@ -11,8 +11,8 @@ public class Player {
      */
     private int lastRoll;
     private int sum;
-    private ArrayList<Integer> rolls;
-    private Dice dice;
+    private final ArrayList<Integer> rolls;
+    private final Dice dice;
 
     public Player(Dice dice) {
         this.lastRoll = 0;
@@ -21,11 +21,10 @@ public class Player {
         this.dice = dice;
     }
 
-    public int rollDice() {
+    public void rollDice() {
         this.lastRoll = this.dice.roll();
         this.sum += this.lastRoll;
         this.rolls.add(this.lastRoll);
-        return this.lastRoll;
     }
 
     public int getSum() {

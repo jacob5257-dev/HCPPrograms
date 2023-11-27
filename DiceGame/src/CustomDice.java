@@ -1,7 +1,8 @@
 import java.util.*;
 
+@SuppressWarnings("UnusedReturnValue")
 public class CustomDice {
-    private List<String> sides;
+    private final List<String> sides;
     private String lastRoll;
 
     public CustomDice(List<String> sides) {

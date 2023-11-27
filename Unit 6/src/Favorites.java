@@ -12,9 +12,9 @@ import java.util.ArrayList;
  */
 public class Favorites {
     // Creates two instance variables.
-    List<String> favorites = new ArrayList<String>();
-    List<String> options = new ArrayList<String>();
-    // Pre fills the favorites list with 10 shows.
+    final List<String> favorites = new ArrayList<>();
+    List<String> options = new ArrayList<>();
+    // Pre-fills the favorites list with 10 shows.
     public Favorites() {
         favorites.add("The Office");
         favorites.add("Saturday Night Live");
@@ -25,7 +25,7 @@ public class Favorites {
         favorites.add("The Mandalorian");
         favorites.add("The Big Bang Theory");
         favorites.add("His Dark Materials");
-        favorites.add("Avatar: The Last Airbender");
+        favorites.add("Avatar");
     }
 
     /**
@@ -61,11 +61,11 @@ public class Favorites {
     public void selectedOption(int option) {
         //Remove the option from options, and remove the remaining elements from favorites
         options.remove(option);
-        for (int i = 0; i < options.size(); i++) {
-            favorites.remove(options.get(i));
+        for (String s : options) {
+            favorites.remove(s);
         }
         // Clears the options list for the next set of questions
-        options = new ArrayList<String>();
+        options = new ArrayList<>();
     }
 
     /**

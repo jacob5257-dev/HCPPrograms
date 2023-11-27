@@ -4,7 +4,7 @@ public class Cannonball {
     private double s = 0; // s = position of the cannonball
     private double g = 9.81; // g = acceleration due to gravity
     private double t = 0; // t = time
-    private double deltaT = 0.01; // delta t = how much time passes in each iteration in seconds
+    private final double deltaT = 0.01; // delta t = how much time passes in each iteration in seconds
     private double maxHeight = s;
 
     public Cannonball(double v, double s, double g) {

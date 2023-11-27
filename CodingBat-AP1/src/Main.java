@@ -6,8 +6,7 @@ public class Main {
     public boolean scoresIncreasing(int[] scores) {
         if (scores.length < 2) return true;
         if (scores.length == 2) {
-            if (scores[1] > scores[0]) return true;
-            return false;
+            return scores[1] > scores[0];
         }
         int previous = scores[0];
         for (int i = 1; i < scores.length; i++) {

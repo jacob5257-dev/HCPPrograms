@@ -11,8 +11,8 @@ import java.util.ArrayList;
  */
 public class DieRoll {
     // Creates instance variables to contain the number of rolls and the rolls themselves
-    private int numRolls;
-    private List<Integer> rolls = new ArrayList<Integer>();
+    private final int numRolls;
+    private final List<Integer> rolls = new ArrayList<Integer>();
 
     /**
      * Creates a new DieRoll object with the specified number of rolls.

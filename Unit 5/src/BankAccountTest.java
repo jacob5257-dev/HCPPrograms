@@ -1,5 +1,4 @@
 import javax.swing.*;
-import java.util.*;
 
 /**
  * A class to test the BankAccount class.
@@ -46,9 +45,9 @@ public class BankAccountTest {
                     int selection = ( JOptionPane.showOptionDialog(null, panel, "Select an option.",
                             JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE, null, options, null));
             
-                    if (Objects.equals(selection, 0)) account.deposit(Double.parseDouble(input.getText()));
-                    else if (Objects.equals(selection, 1)) account.withdraw(Double.parseDouble(input.getText()));
-                    else if (Objects.equals(selection, 2)) account.addInterest();
+                    if (selection == 0) account.deposit(Double.parseDouble(input.getText()));
+                    else if (selection == 1) account.withdraw(Double.parseDouble(input.getText()));
+                    else if (selection == 2) account.addInterest();
                     else {
                         JOptionPane.showMessageDialog(null, "Cancelled.");
                         return;
@@ -56,14 +55,14 @@ public class BankAccountTest {
                 }
             }
             catch (Exception e) {
-                e.printStackTrace();
+                System.out.println(e.getMessage());
                 JOptionPane.showMessageDialog(null, "Invalid input.");
-                return;
+                System.exit(1);
             }
         }
         else {
             JOptionPane.showMessageDialog(null, "Cancelled.");
-            return;
+            System.exit(0);
         }
     }
 }

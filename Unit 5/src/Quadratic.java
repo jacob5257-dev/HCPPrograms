@@ -8,9 +8,9 @@
 
 public class Quadratic {
     // Creates some basic variables
-    private double discriminant;
-    private double root1;
-    private double root2;
+    private final double discriminant;
+    private final double root1;
+    private final double root2;
 
     /**
      * The constructor for the quadratic equation.

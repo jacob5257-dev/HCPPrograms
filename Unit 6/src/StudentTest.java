@@ -17,8 +17,8 @@ public class StudentTest {
      */
     public static void main(String[] args) {
         // Creates the ArrayList for the Students to be put in.
-        List<Student> students = new ArrayList<Student>();
-        //Initalize 5 students, store them in the ArrayList, and print the names, degrees, and GPAs of all the students.
+        List<Student> students = new ArrayList<>();
+        //Initialize 5 students, store them in the ArrayList, and print the names, degrees, and GPAs of all the students.
 
         students.add(new Student("John", "Computer Science", 3.5));
         students.add(new Student("Jane", "Computer Science", 3.8));
@@ -26,8 +26,8 @@ public class StudentTest {
         students.add(new Student("Jill", "Computer Science", 3.9));
         students.add(new Student("Joe", "Computer Science", 3.1));
         // Prints out all the important values of the students.
-        for (int i = 0; i < students.size(); i++) {
-            System.out.println(students.get(i));
+        for (Student student : students) {
+            System.out.println(student);
         }
     }
 }

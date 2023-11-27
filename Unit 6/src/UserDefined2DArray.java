@@ -16,7 +16,6 @@ public class UserDefined2DArray {
      * This method creates a 2D array with user defined width and height and fills it with random numbers.
      * @param args The command line arguments (not used).
      * @since 2023-01-18
-     * @version 1.0
      * @see UserDefined2DArray
      * @author jacob5257
      */
@@ -33,7 +32,7 @@ public class UserDefined2DArray {
         int even = 0;
         int odd = 0;
         // Fills the array with random numbers
-        for (int i = 0; i < array.length; i++) {
+        for (int i = 0; i < array.length; i++) { //skipcq: JAVA-W1089
             for (int j = 0; j < array[i].length; j++) {
                 // Sets the value of the 2D array
                 array[i][j] = (int) (Math.random() * 100);
@@ -57,7 +56,7 @@ public class UserDefined2DArray {
         // Prints out the final number of even and odd numbers in the whole array.
         System.out.println("Even: " + even);
         System.out.println("Odd: " + odd);
-        // Closes the scanner cause resources idk
+        // Closes the scanner cause resources IDK
         scanner.close();
         
     }

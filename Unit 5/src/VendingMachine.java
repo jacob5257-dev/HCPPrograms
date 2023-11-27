@@ -13,7 +13,7 @@ public class VendingMachine {
     // Instance variables
     private int cans;
     private double money;
-    private double price;
+    private final double price;
     private double moneyInserted;
 
     /**

@@ -29,8 +29,8 @@ public class VendingMachineTest {
         int numCans = 0;
 		try {
 			// Convert all the strings to integers, throwing an error if the input is not a number
-			if (priceInput.getText().length() > 0) price = Double.parseDouble(priceInput.getText());
-			if (canInput.getText().length() > 0) numCans = Integer.parseInt(canInput.getText());
+			if (!priceInput.getText().isEmpty()) price = Double.parseDouble(priceInput.getText());
+			if (!canInput.getText().isEmpty()) numCans = Integer.parseInt(canInput.getText());
         }
         catch (NumberFormatException e) {
             // If the user enters a non-number, exit the program

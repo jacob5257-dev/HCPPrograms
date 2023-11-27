@@ -7,7 +7,7 @@ import javax.swing.*;
  * @version 1.0
  */
 public class TicTacToe {
-    public static void main(String[] args) {
+    public static void main(String[] args) { //skipcq: JAVA-R1000
         // Create a board with positions 1-9 for the players to choose
         char[][] board = {{'1', '2', '3'}, {'4', '5', '6'}, {'7', '8', '9'}};
         Object[] options = {"Single-player mode", "Multi-player mode", "Single-player with improved computer"};
@@ -267,7 +267,7 @@ public class TicTacToe {
      * @param board The current board state
      * @return The character of the winning player, t if it is a tie, or a space if nobody has won yet.
      */
-    public static char playerHasWon(char[][] board) {
+    public static char playerHasWon(char[][] board) { //skipcq: JAVA-R1000
         // Check rows
         for (int i = 0; i < 3; i++) {
             if (board[i][0] == board[i][1] && board[i][1] == board[i][2]) return board[i][0];

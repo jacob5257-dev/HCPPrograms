@@ -43,13 +43,18 @@ public class QuadraticTest {
                 return;
             }
             // Create a Quadratic object and use it to get the roots.
-            Quadratic q = new Quadratic(a, b, c);
-            // Create a string to display the roots with html for line breaks.
-            String output = "<html>f(x) = " + a + "x^2 + " + b + "x + " + c + "<br>";
-            if (!q.hasSolutions()) output += "No real solutions.</html>";
-            else if (q.hasEqualRoots()) output += "x = " + q.getRoot1() + "</html>";
-            else output += "x1 = " + q.getRoot1() + ", x2 = " + q.getRoot2() + "</html>";
+            String output = getString(a, b, c);
             JOptionPane.showMessageDialog(null, output);
         }
+    }
+
+    private static String getString(double a, double b, double c) {
+        Quadratic q = new Quadratic(a, b, c);
+        // Create a string to display the roots with html for line breaks.
+        String output = "<html>f(x) = " + a + "x^2 + " + b + "x + " + c + "<br>";
+        if (!q.hasSolutions()) output += "No real solutions.</html>";
+        else if (q.hasEqualRoots()) output += "x = " + q.getRoot1() + "</html>";
+        else output += "x1 = " + q.getRoot1() + ", x2 = " + q.getRoot2() + "</html>";
+        return output;
     }
 }

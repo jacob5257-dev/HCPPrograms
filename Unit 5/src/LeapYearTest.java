@@ -8,7 +8,6 @@ import java.util.Scanner;
  * @since 2023-02-14
  * @version 1.0
  * @see LeapYear
- * @see dates.dat
  */
 public class LeapYearTest {
     public static void main(String[] args) throws FileNotFoundException {

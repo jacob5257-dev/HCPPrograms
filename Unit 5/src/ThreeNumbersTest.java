@@ -9,7 +9,6 @@ import java.util.Scanner;
  * @since 2023-01-18
  * @see ThreeNumbers
  * @see ThreeNumbersTest
- * @see numbers.dat
  */
 public class ThreeNumbersTest {
     /**

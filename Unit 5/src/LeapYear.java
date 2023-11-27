@@ -6,7 +6,7 @@
  */
 public class LeapYear {
     // Instance variable that holds the year.
-    private int year;
+    private final int year;
 
     /**
      * Constructor that takes the year as a parameter.

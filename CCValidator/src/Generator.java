@@ -7,13 +7,13 @@ public class Generator {
         Object[] options = {"Validate", "Generate"};
         int optionInput = createPopup(options);
 
-        if (Objects.equals(optionInput, 0)) {
+        if (optionInput == 0) {
             String ccInput = createOption("Enter CC#.");
             CC cc = new CC(ccInput);
-            if (cc.validate(false) == "Good number!") JOptionPane.showMessageDialog(null, "This is a valid credit card number!");
+            if (Objects.equals(cc.validate(false), "Good number!")) JOptionPane.showMessageDialog(null, "This is a valid credit card number!");
             else JOptionPane.showMessageDialog(null, "This is not a valid number!");
         }
-        else if (Objects.equals(optionInput, 1)) {
+        else if (optionInput == 1) {
             String optionInput2 = createOption("How many numbers to generate?");
             int count = 1;
             Object[] options2 = {"Visa", "MasterCard"};
@@ -32,7 +32,7 @@ public class Generator {
                 else if (type == 1) ccNumber = "5" + generateMCFirstDigit() + generateRandomNumbers(14);
                 else ccNumber = "0000000000000000";
                 CC cc = new CC(ccNumber);
-                if (cc.validate(false) == "Good number!") {
+                if (Objects.equals(cc.validate(false), "Good number!")) {
                     output += ccNumber;
                     output += "\n";
                     count--;

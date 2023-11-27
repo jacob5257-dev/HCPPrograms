@@ -8,9 +8,9 @@
  */
 public class Student {
     // Creates instance variables
-    private String name;
-    private String major;
-    private double gpa;
+    private final String name;
+    private final String major;
+    private final double gpa;
 
     /**
      * Constructor for the Student class

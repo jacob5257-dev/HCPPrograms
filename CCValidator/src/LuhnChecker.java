@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LuhnChecker {
-    String digits;
+    final String digits;
 
     public LuhnChecker(String digits) {
         this.digits = digits;

@@ -7,7 +7,7 @@ public class Player {
     // Tokens the player has
     private int tokens;
     // Deck of cards
-    List<String> deck = new ArrayList<>();
+    final List<String> deck = new ArrayList<>();
 
     /**
      * Creates a new player with the specified number of tokens.

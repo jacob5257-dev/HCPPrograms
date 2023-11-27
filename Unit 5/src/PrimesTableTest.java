@@ -11,7 +11,6 @@ public class PrimesTableTest {
      * This method tests the PrimesTable class.
      * @param args The command line arguments (not used).
      * @since 2023-01-18
-     * @version 1.0
      * @author jacob5257
      * @see PrimesTable
      * @see PrimesTableTest
@@ -26,8 +25,8 @@ public class PrimesTableTest {
         }
         int counter = 0;
         // Print the array, formatted with printf.
-        for (int i = 0; i < primes.length; i++) {
-            System.out.printf("%5d", primes[i]);
+        for (int prime : primes) {
+            System.out.printf("%5d", prime);
             counter++;
             if (counter == 10) {
                 System.out.println();

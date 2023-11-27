@@ -7,7 +7,7 @@
 
 public class DaysInMonth {
     // Instance variable that holds the month number.
-    private int month;
+    private final int month;
 
     /**
      * Constructor that takes the number of the month as a parameter (1 for January, 2 for February, and so on)

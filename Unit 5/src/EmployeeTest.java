@@ -31,7 +31,7 @@ public class EmployeeTest {
         String name;
         double balance;
         Employee employee;
-        if (nameInput.getText().length() == 0 && balanceInput.getText().length() == 0) employee = new Employee();
+        if (nameInput.getText().isEmpty() && balanceInput.getText().isEmpty()) employee = new Employee();
         else {
             try {
                 name = nameInput.getText();

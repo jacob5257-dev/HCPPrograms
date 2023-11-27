@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class RandomGuessMatch {
+    @SuppressWarnings("InfiniteLoopStatement")
     public static void main(String[] args) {
         int max = 5;
         int min = 0;

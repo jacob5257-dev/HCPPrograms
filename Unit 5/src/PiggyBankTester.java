@@ -94,10 +94,10 @@ public class PiggyBankTester
 					int nickels2 = 0;
 					int dimes2 = 0;
 					int quarters2 = 0;
-					if (pennyString2.length() > 0) pennies2 = Integer.parseInt(pennyInput2.getText());
-					if (nickelString2.length() > 0) nickels2 = Integer.parseInt(nickelInput2.getText());
-					if (dimeString2.length() > 0) dimes2 = Integer.parseInt(dimeInput2.getText());
-					if (quarterString2.length() > 0) quarters2 = Integer.parseInt(quarterInput2.getText());
+					if (!pennyString2.isEmpty()) pennies2 = Integer.parseInt(pennyInput2.getText());
+					if (!nickelString2.isEmpty()) nickels2 = Integer.parseInt(nickelInput2.getText());
+					if (!dimeString2.isEmpty()) dimes2 = Integer.parseInt(dimeInput2.getText());
+					if (!quarterString2.isEmpty()) quarters2 = Integer.parseInt(quarterInput2.getText());
 					// Add the coins to the piggy bank
 					List<Integer> coinList = new ArrayList<Integer>();
 					coinList.add(quarters2);
@@ -113,7 +113,7 @@ public class PiggyBankTester
 			}
 		}
 		catch (NumberFormatException e) {
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 			// If the input is not a number, display an error message
 			JOptionPane.showMessageDialog(null, "Error: Input is not a number");
 		}

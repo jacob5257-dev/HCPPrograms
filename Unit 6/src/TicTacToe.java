@@ -6,7 +6,7 @@ public class TicTacToe
    /*****************************
       Constructs an empty board.
    ******************************/
-   private char[ ][ ] board;
+   private final char[ ][ ] board;
    private static final int ROWS = 3;
    private static final int COLUMNS = 3;
    public TicTacToe( )

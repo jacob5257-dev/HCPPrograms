@@ -8,9 +8,7 @@ import java.util.List;
  */
 public class StringComparer {
     // Instance variables holding the list of strings and the longest and shortest strings.
-    private List<String> list;
-    private String longest;
-    private String shortest;
+    private final List<String> list;
 
     /**
      * Constructor that takes a list of strings as a parameter.
@@ -34,11 +32,11 @@ public class StringComparer {
      */
     public String getLongest() {
         // If the list is empty, return null.
-        if (list.size() == 0) {
+        if (list.isEmpty()) {
             return null;
         }
         // Set the longest string to the first string in the list and changing it when a longer string is found.
-        longest = list.get(0);
+        String longest = list.get(0);
         for (String string : list) {
             if (string.length() > longest.length()) {
                 longest = string;
@@ -53,11 +51,11 @@ public class StringComparer {
      */
     public String getShortest() {
         // If the list is empty, return null.
-        if (list.size() == 0) {
+        if (list.isEmpty()) {
             return null;
         }
         // Set the shortest string to the first string in the list and changing it when a shorter string is found.
-        shortest = list.get(0);
+        String shortest = list.get(0);
         for (String string : list) {
             if (string.length() < shortest.length()) {
                 shortest = string;
