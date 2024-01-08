@@ -1,3 +1,5 @@
+import javax.swing.*;
+
 /**
  * Finds a word inside a word
  * @author jacob5257
@@ -22,6 +24,6 @@ public class FindWord {
      * @author jacob5257
      */
     public static void main(String[] args) {
-        System.out.println(findWord("Mississippi", "sip"));
+        System.out.println(findWord(JOptionPane.showInputDialog("Word? "), JOptionPane.showInputDialog("Substring? "))? "found" : "not found");
     }
 }

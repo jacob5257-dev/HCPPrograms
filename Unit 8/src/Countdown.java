@@ -1,3 +1,5 @@
+import javax.swing.*;
+
 /**
  * Counts down numbers and prints them
  * @author jacob5257
@@ -23,6 +25,6 @@ public class Countdown {
      */
     public static void main(String[] args) {
         // test the countdown
-        System.out.println(countdown(5));
+        System.out.println(countdown(Integer.parseInt(JOptionPane.showInputDialog("Number? "))));
     }
 }

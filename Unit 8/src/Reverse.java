@@ -1,3 +1,5 @@
+import javax.swing.*;
+
 /**
  * Reverses a string
  * @author jacob5257
@@ -24,6 +26,6 @@ public class Reverse {
      */
     public static void main(String[] args) {
         // Tests
-        System.out.println(reverse("Hello world!"));
+        System.out.println(reverse(JOptionPane.showInputDialog("String? ")));
     }
 }
