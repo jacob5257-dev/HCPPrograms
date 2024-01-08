@@ -22,7 +22,7 @@ import java.util.ArrayList;
  * @revisionAuthor jacob5257
  * @revisionDescription Bugfix.
  */
-//skipcq: JAVA-W1062
+//skipcq: JAVA-W1088
 public class PiggyBankTester {
 	public static void main(String[] args) {
 		// Set up a dialog input and request the number of coins to put in the piggy bank

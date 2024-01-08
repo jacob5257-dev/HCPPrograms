@@ -4,7 +4,7 @@ import javax.swing.JOptionPane;
    This program tests the TicTacToe class by prompting the user
    to set positions on the board and printing out the result.
 ****************************************************************/
-//skipcq: JAVA-W1062
+//skipcq: JAVA-W1088
 public class TicTacToeTest {
    public static void main(String[] args) {
       char player = 'x';                  // X gets the first move

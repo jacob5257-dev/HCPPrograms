@@ -11,6 +11,7 @@ import java.util.Scanner;
  * @version 1.0
  * @author jacob5257
  */
+//skipcq: JAVA-W1088
 public class ArrayUnitTest {
     /**
      * @see ArrayUnitTest

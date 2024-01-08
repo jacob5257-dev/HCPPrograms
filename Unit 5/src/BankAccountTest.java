@@ -7,7 +7,7 @@ import javax.swing.*;
  * @since 2023-01-26
  * @see BankAccount
  */
-//skipcq: JAVA-W1062
+//skipcq: JAVA-W1088
 public class BankAccountTest {
     /**
      * The main method.

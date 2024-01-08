@@ -6,7 +6,7 @@
  * @see PairOfNumbers
  * @see PairOfNumbersTest
  */
-//skipcq: JAVA-W1062
+//skipcq: JAVA-W1088
 public class PairOfNumbersTest {
     /**
      * This method tests the PairOfNumbers class.

@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
  * @since 2023-02-14
  * @see DaysInMonth
  */
-//skipcq: JAVA-W1062
+//skipcq: JAVA-W1088
 public class DaysInMonthTest {
     /**
      * This is the main method of the program.

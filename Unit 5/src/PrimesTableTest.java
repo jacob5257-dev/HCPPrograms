@@ -6,7 +6,7 @@
  * @see PrimesTable
  * @see PrimesTableTest
  */
-//skipcq: JAVA-W1062
+//skipcq: JAVA-W1088
 public class PrimesTableTest {
     /**
      * This method tests the PrimesTable class.

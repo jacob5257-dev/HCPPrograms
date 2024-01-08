@@ -9,7 +9,7 @@ import java.util.Scanner;
  * @version 1.0
  * @see LeapYear
  */
-//skipcq: JAVA-W1062
+//skipcq: JAVA-W1088
 public class LeapYearTest {
     public static void main(String[] args) throws FileNotFoundException {
         // Read the first five years from dates.dat and use the LeapYear class to determine if it is a leap year.

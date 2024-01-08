@@ -1,4 +1,4 @@
-//skipcq: JAVA-W1062
+//skipcq: JAVA-W1088
 public class CannonballTest {
     public static void main(String[] args) {
         // Warning! May not work!

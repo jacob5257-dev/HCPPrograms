@@ -8,7 +8,7 @@ import java.util.Scanner;
  * @see SodaCan
  * @see SodaCanTest
  */
-//skipcq: JAVA-W1062
+//skipcq: JAVA-W1088
 public class SodaCanTest {
     /**
      * This method tests the SodaCan class.
