@@ -64,7 +64,7 @@ public class Main {
     }
 
     public boolean splitOdd10Helper(int start, int[] nums, int sum1, int sum2) {
-        if (start >= nums.length) return (sum1 % 10 == 0 && sum2 % 2 == 1 || sum1 % 2 == 1 && sum2 % 10 == 0);
+        if (start >= nums.length) return (sum1 % 10 == 0 && sum2 % 2 != 0 || sum1 % 2 != 0 && sum2 % 10 == 0);
         if (splitOdd10Helper(start + 1, nums, sum1 + nums[start], sum2)) return true;
         return splitOdd10Helper(start + 1, nums, sum1, sum2 + nums[start]);
     }

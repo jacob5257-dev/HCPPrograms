@@ -7,6 +7,7 @@ import javax.swing.JOptionPane;
  * @author jacob5257
  * @see Easter
  */
+//skipcq: JAVA-W1062
 public class EasterTest {
     /**
      * This method tests the Easter class.

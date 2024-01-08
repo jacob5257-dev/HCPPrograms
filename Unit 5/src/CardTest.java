@@ -6,7 +6,7 @@ import java.util.Scanner;
  * @version 1.0
  * @since 2023-01-18
  */
-
+//skipcq: JAVA-W1062
 public class CardTest {
     /**
      * This method tests the Card class.

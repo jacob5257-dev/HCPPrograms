@@ -7,6 +7,7 @@ import javax.swing.JOptionPane;
  * @see Magic8Ball
  * @see Magic8BallTest
  */
+//skipcq: JAVA-W1062
 public class Magic8BallTest {
     /**
      * This method tests the Magic8Ball class.

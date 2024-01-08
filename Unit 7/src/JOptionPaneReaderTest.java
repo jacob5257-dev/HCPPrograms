@@ -1,5 +1,5 @@
 import javax.swing.*;
-
+//skipcq: JAVA-W1062
 public class JOptionPaneReaderTest {
     public static void main(String[] args) {
         String name = JOptionPane.showInputDialog("What is your name?");

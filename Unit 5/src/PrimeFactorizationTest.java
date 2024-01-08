@@ -7,6 +7,7 @@ import javax.swing.JOptionPane;
  * @author jacob5257
  * @see PrimeFactorization
  */
+//skipcq: JAVA-W1062
 public class PrimeFactorizationTest {
     /**
      * This method tests the PrimeFactorization class.

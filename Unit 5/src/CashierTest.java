@@ -9,6 +9,7 @@ import java.util.List;
  * @since    2023-01-18
  * @see      Cashier
  */
+//skipcq: JAVA-W1062
 public class CashierTest {
     /**
      * This method tests the Cashier class.

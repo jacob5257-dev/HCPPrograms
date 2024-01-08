@@ -10,6 +10,7 @@ import java.util.Scanner;
  * @version 1.0
  * @since 2023-03-09
  */
+//skipcq: JAVA-W1062
 public class DieRollTest {
     /**
      * @see DieRollTest

@@ -10,6 +10,7 @@ import java.util.ArrayList;
  * @version 1.0
  * @since 2023-01-01
  */
+//skipcq: JAVA-W1062
 public class StudentTest {
     /**
      * This method tests the Student class

@@ -9,6 +9,7 @@ import javax.swing.*;
  * @since 2023-02-02
  * @see VendingMachine
  */
+//skipcq: JAVA-W1062
 public class VendingMachineTest {
     public static void main(String[] args) {
         JTextField priceInput = new JTextField(5);

@@ -1,6 +1,6 @@
 import java.text.DecimalFormat;
 import javax.swing.*;
-
+//skipcq: JAVA-W1062
 public class UnitConverterTest {
     public static void main(String[] args) {
         Object[] options = {"Inches", "Feet", "Miles", "Meters", "Millimeters", "Centimeters", "Kilometers"};

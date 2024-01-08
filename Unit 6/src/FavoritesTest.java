@@ -10,6 +10,7 @@ import javax.swing.*;
  * @version 1.0
  * @since 2023-01-01
  */
+//skipcq: JAVA-W1062
 public class FavoritesTest {
     /**
      * @see FavoritesTest

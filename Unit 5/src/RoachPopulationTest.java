@@ -1,3 +1,4 @@
+//skipcq: JAVA-W1062
 public class RoachPopulationTest {
     public static void main(String[] args) {
         // Create a roach population

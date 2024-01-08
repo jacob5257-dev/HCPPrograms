@@ -22,10 +22,9 @@ import java.util.ArrayList;
  * @revisionAuthor jacob5257
  * @revisionDescription Bugfix.
  */
-public class PiggyBankTester 
-{
-	public static void main(String[] args) 
-	{
+//skipcq: JAVA-W1062
+public class PiggyBankTester {
+	public static void main(String[] args) {
 		// Set up a dialog input and request the number of coins to put in the piggy bank
 		JTextField quarterInput = new JTextField(5);
         JTextField dimeInput = new JTextField(5);

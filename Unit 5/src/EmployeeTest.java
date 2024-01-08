@@ -8,7 +8,7 @@ import javax.swing.*;
  * @see EmployeeTest
  * @see Employee
  */
-
+//skipcq: JAVA-W1062
 public class EmployeeTest {
     /**
      * Tests the Employee class.

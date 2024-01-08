@@ -10,6 +10,7 @@ import java.util.Scanner;
  * @see ThreeNumbers
  * @see ThreeNumbersTest
  */
+//skipcq: JAVA-W1062
 public class ThreeNumbersTest {
     /**
      * This method tests the ThreeNumbers class.

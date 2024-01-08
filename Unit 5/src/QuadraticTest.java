@@ -7,6 +7,7 @@ import javax.swing.*;
  * @since 2023-02-07
  * @see Quadratic
  */
+//skipcq: JAVA-W1062
 public class QuadraticTest {
     /**
      * The main method.

@@ -8,6 +8,7 @@ import java.util.Scanner;
  * @version 1.0
  * @see StringComparer
  */
+//skipcq: JAVA-W1062
 public class StringComparerTest {
     /**
      * The main method.

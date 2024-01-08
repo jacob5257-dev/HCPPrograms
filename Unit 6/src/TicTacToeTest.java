@@ -4,15 +4,13 @@ import javax.swing.JOptionPane;
    This program tests the TicTacToe class by prompting the user
    to set positions on the board and printing out the result.
 ****************************************************************/
-public class TicTacToeTest
-{
-   public static void main(String[] args)
-   {
+//skipcq: JAVA-W1062
+public class TicTacToeTest {
+   public static void main(String[] args) {
       char player = 'x';                  // X gets the first move
       
       TicTacToe game = new TicTacToe( );
-      while (true)
-      {
+      while (true) {
          System.out.println(game);                     // calls game.toString( )
          
          String input = JOptionPane.showInputDialog("Row for " + player + " (Cancel to exit)");
