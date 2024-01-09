@@ -12,10 +12,13 @@ public class Countdown {
      * @author jacob5257
      */
     public static String countdown(int n) {
+        // the ternary way
+        return (n < 0) ? "" : n + " " + countdown(n - 1);
+        // the if way
         // if the number is already less than 0, nothing to count
-        if (n < 0) return "";
+        // uncomment this line if (n < 0) return "";
         // return the current number and call countdown on 1 less than current number
-        else return n + " " + countdown(n - 1);
+        // uncomment this line else return n + " " + countdown(n - 1);
     }
 
     /**
