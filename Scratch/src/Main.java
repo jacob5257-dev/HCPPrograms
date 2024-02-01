@@ -5,12 +5,14 @@ import java.io.FileNotFoundException;
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
         Hangman hangman = new Hangman();
+        System.out.println("The category is: " + hangman.getCategory());
         while (hangman.getValidGuesses() != 0) {
             char[] currentDashes = hangman.getDashes();
             if (hangman.getGuessed()) {
                 System.out.println("You win!");
                 break;
             }
+            System.out.println(hangman);
             try {
                 String guess = JOptionPane.showInputDialog("Guess a letter: ");
                 if (guess == null) {
@@ -23,7 +25,6 @@ public class Main {
                 System.out.println(e.getMessage());
                 continue;
             }
-            //System.out.println(hangman);
             hangman.update();
             char[] newDashes = hangman.getDashes();
             boolean same = true;
@@ -33,14 +34,16 @@ public class Main {
                     break;
                 }
             }
-            if (same) hangman.useGuess();
+            if (same) {
+                hangman.useGuess();
+                System.out.println("That letter is not in the word.");
+            }
             if (!hasDashes(newDashes)) {
                 hangman.setGuessed(true);
                 System.out.println("You win!");
                 break;
             }
             System.out.println("You have " + hangman.getValidGuesses() + " guesses left.");
-            System.out.println(hangman);
         }
 
         if (hangman.getGuessed()) {

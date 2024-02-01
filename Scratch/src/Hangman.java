@@ -5,30 +5,34 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Hangman {
-    private String secretWord;
-    private char[] secretWordArray;
-    private List<Character> guessedLetters = new ArrayList<>();
+    private final String secretWord;
+    private final char[] secretWordArray;
+    private final List<Character> guessedLetters = new ArrayList<>();
     private boolean guessed = false;
-    private int validGuesses = 10;
+    private int validGuesses = 7;
     private char[] dashesArray;
+    private final String category;
 
     public Hangman() throws FileNotFoundException {
-        // word list from https://raw.githubusercontent.com/dwyl/english-words/master/words.txt
-        FileReader reader = new FileReader("Scratch/src/words.txt");
+        FileReader reader = new FileReader("Scratch/src/puzzles.txt");
         Scanner file = new Scanner(reader);
         List<String> words = new ArrayList<>();
         while (file.hasNext()) {
-            String word = file.next();
-            if (word.matches("^[a-zA-Z]*$")) {
-                words.add(word.toLowerCase());
-            }
+            String word = file.nextLine();
+            words.add(word);
         }
         file.close();
-        this.secretWord = words.get((int) (Math.random() * words.size()));
+        String[] split = words.get((int) (Math.random() * words.size())).split(":");
+        this.category = split[0];
+        this.secretWord = split[1];
         this.secretWordArray = this.secretWord.toCharArray();
         this.dashesArray = new char[this.secretWordArray.length];
         for (int i = 0; i < this.secretWordArray.length; i++) {
-            this.dashesArray[i] = '-';
+            if (this.secretWordArray[i] == ' ') {
+                this.dashesArray[i] = '/';
+            } else {
+                this.dashesArray[i] = '-';
+            }
         }
     }
 
@@ -38,8 +42,8 @@ public class Hangman {
 
     public void getGuess(String c) {
         if (c.length() != 1 || !c.matches("^[a-zA-Z]*$")) throw new IllegalArgumentException("Please enter a single letter.");
-        if (this.guessedLetters.contains(c.charAt(0))) throw new RuntimeException("You already guessed that letter.");
-        this.guessedLetters.add(c.charAt(0));
+        if (this.guessedLetters.contains(Character.toUpperCase(c.charAt(0)))) throw new RuntimeException("You already guessed that letter.");
+        this.guessedLetters.add(Character.toUpperCase(c.charAt(0)));
     }
 
     public void update() {
@@ -67,4 +71,6 @@ public class Hangman {
     public void setDashesArray(char[] dashesArray) { this.dashesArray = dashesArray; }
 
     public String getSecretWord() { return this.secretWord; }
+
+    public String getCategory() { return this.category; }
 }
