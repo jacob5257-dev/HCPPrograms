@@ -4,7 +4,7 @@ public class CeaserCipher {
     public static void main(String[] args) {
         while (true) {
             String option = JOptionPane.showInputDialog("<html>Choose from the following:<br><ul><li>\"e\" to encode</li><li>\"d\" to decode</li><li>\"q\" to quit</li><ul></html>");
-            if (null == option || option.length() == 0 || option.equals("q")) {
+            if (null == option || option.isEmpty() || option.equals("q")) {
                 System.exit(0);
             } else if (option.equals("e")) {
                 encrypt();
@@ -37,6 +37,7 @@ public class CeaserCipher {
             }
             encrypted += c;
         }
+        System.out.println(encrypted);
         JOptionPane.showMessageDialog(null, encrypted);
     }
 
