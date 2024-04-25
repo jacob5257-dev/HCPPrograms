@@ -22,3 +22,4 @@
 "looks like πr²" - jacob 2024
 "oh i know how to do this oh wait its the same thing"
 "everything is just triangles"
+"h is just a random variable"
