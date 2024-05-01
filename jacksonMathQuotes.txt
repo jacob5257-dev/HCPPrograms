@@ -25,3 +25,7 @@
 "h is just a random variable"
 "its about chinese" - charles 2024 but also repeated by jackson
 "i like my dd squared"
+"why not super squared"
+"return what"
+"is this even legal"
+"you just gotta make the extend longer"
