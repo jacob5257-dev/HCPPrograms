@@ -29,3 +29,4 @@
 "return what"
 "is this even legal"
 "you just gotta make the extend longer"
+"we all forgot trig"
