@@ -1,21 +1,24 @@
 import java.util.ArrayList;
 
-public class Hand {
+public class otherHand {
     private ArrayList<Card> hand;
     
-    public Hand() {
+    public otherHand() {
         hand = new ArrayList<>();
     }
     
     public void addCard(Deck deck) {
         hand.add(deck.removeCard());
         hand.sort((a, b) -> {
-            if (a.compareTo(b) > 0) {
-                return 1;
-            } else if (a.compareTo(b) < 0) {
-                return -1;
+            if (a.getSuit().equals(b.getSuit())) {
+                return Integer.compare(a.getNumber(), b.getNumber());
             }
-            return 0;
+            return switch (a.getSuit()) {
+                case "S" -> 1;
+                case "H" -> b.getSuit().equals("C") || b.getSuit().equals("D") ? 1 : -1;
+                case "C" -> b.getSuit().equals("D") ? 1 : -1;
+                default -> -1;
+            };
         });
     }
 
